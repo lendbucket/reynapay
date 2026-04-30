@@ -1,0 +1,23 @@
+# Reyna Pay
+
+Reyna Pay LLC is a payments infrastructure company. Our flagship product is SalonTransact, a vertical-specific payment processing platform built for salons. Reyna Pay also operates a partner program where independent operators can launch branded merchant services businesses powered by our infrastructure.
+
+## Products
+
+- **SalonTransact** (https://reynapay.com/salontransact): Salon-first payment processing — card-on-file, stylist commission attribution, booking integration, transparent fees.
+- **Partner Program** (https://reynapay.com/partners): Branded reseller program for entrepreneurs entering the merchant services industry.
+- **Reyna Pay Infrastructure**: PCI-compliant, card-network-certified processing platform underlying both products.
+
+## Founder
+
+Robert Reyna, CEO of Salon Envy® (multi-location salon franchise) and serial operator across real estate, contracting, and software.
+
+## Contact
+
+- General: support@reynapay.com
+- Site: https://reynapay.com
+- Blog: https://reynapay.com/blog
+
+## Sitemap
+
+https://reynapay.com/sitemap.xml
