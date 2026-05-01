@@ -7,16 +7,23 @@ import { getAllPostsMeta, CATEGORIES } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Blog — Salon payments, partner playbooks, founder notes",
-  description: "Insights on salon payment processing, the merchant services industry, building a payments business, and what we're learning at Reyna Pay.",
+  title: "Blog, Salon payments, partner playbooks, founder notes",
+  description:
+    "Insights on salon payment processing, the merchant services industry, building a payments business, and what we're learning at Reyna Pay.",
   path: "/blog",
 });
 
-export default async function BlogIndex({ searchParams }: { searchParams?: Promise<{ category?: string }> }) {
+export default async function BlogIndex({
+  searchParams,
+}: {
+  searchParams?: Promise<{ category?: string }>;
+}) {
   const params = (await searchParams) ?? {};
   const allPosts = getAllPostsMeta();
   const activeCategory = params.category;
-  const filtered = activeCategory ? allPosts.filter((p) => p.category === activeCategory) : allPosts;
+  const filtered = activeCategory
+    ? allPosts.filter((p) => p.category === activeCategory)
+    : allPosts;
 
   return (
     <>
@@ -30,14 +37,24 @@ export default async function BlogIndex({ searchParams }: { searchParams?: Promi
       <Section>
         <BlogCategoryFilter categories={CATEGORIES} active={activeCategory} />
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-[var(--color-text-muted)]">No posts in this category yet.</div>
+          <div className="text-center py-16 text-[var(--color-text-muted)]">
+            No posts in this category yet.
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {filtered.map((post) => <BlogCard key={post.slug} post={post} />)}
+            {filtered.map((post) => (
+              <BlogCard key={post.slug} post={post} />
+            ))}
           </div>
         )}
       </Section>
-      <CTASection title="Ready to take the next step?" primaryLabel="Apply as a salon" primaryHref="/apply" secondaryLabel="Apply as a partner" secondaryHref="/partners" />
+      <CTASection
+        title="Ready to take the next step?"
+        primaryLabel="Apply as a salon"
+        primaryHref="/apply"
+        secondaryLabel="Apply as a partner"
+        secondaryHref="/partners"
+      />
     </>
   );
 }

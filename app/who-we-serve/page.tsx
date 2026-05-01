@@ -9,7 +9,7 @@ import { INDUSTRIES } from "@/lib/site-config";
 import { INDUSTRY_CONTENT } from "@/lib/industries-content";
 
 export const metadata = buildMetadata({
-  title: "Industries we serve — Vertical-specific payment processing",
+  title: "Industries we serve, Vertical-specific payment processing",
   description:
     "Reyna Pay serves salons, restaurants, gyms, retail, professional services, and dozens more industries with vertical-specific payment processing infrastructure. Find your industry.",
   path: "/who-we-serve",
@@ -23,7 +23,9 @@ export const metadata = buildMetadata({
 });
 
 export default function WhoWeServePage() {
-  const grouped = INDUSTRIES.reduce<Record<string, (typeof INDUSTRIES)[number][]>>((acc, ind) => {
+  const grouped = INDUSTRIES.reduce<
+    Record<string, (typeof INDUSTRIES)[number][]>
+  >((acc, ind) => {
     if (!acc[ind.category]) acc[ind.category] = [];
     acc[ind.category].push(ind);
     return acc;
@@ -42,7 +44,10 @@ export default function WhoWeServePage() {
         eyebrow="Industries"
         headline={
           <>
-            Built for the industries <span className="text-[var(--color-brand)]">the giants ignore.</span>
+            Built for the industries{" "}
+            <span className="text-[var(--color-brand)]">
+              the giants ignore.
+            </span>
           </>
         }
         subheadline="Generic processors treat every business the same. We don't. Each industry on Reyna Pay gets purpose-built features, vertical-specific support, and pricing that reflects how that industry actually runs."
@@ -68,15 +73,31 @@ export default function WhoWeServePage() {
                     className="group card-base p-7 flex flex-col justify-between hover:border-[var(--color-brand)] transition-all"
                   >
                     <div>
-                      {Icon && <Icon size={22} strokeWidth={1.75} className="text-[var(--color-brand)] mb-3" aria-hidden />}
-                      <h3 className="text-lg mb-2 font-semibold group-hover:text-[var(--color-brand)] transition-colors">{ind.name}</h3>
+                      {Icon && (
+                        <Icon
+                          size={22}
+                          strokeWidth={1.75}
+                          className="text-[var(--color-brand)] mb-3"
+                          aria-hidden
+                        />
+                      )}
+                      <h3 className="text-lg mb-2 font-semibold group-hover:text-[var(--color-brand)] transition-colors">
+                        {ind.name}
+                      </h3>
                       <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed">
-                        {content?.hero.subheadline.slice(0, 110) ?? `Payment processing for ${ind.name.toLowerCase()}.`}
-                        {content && content.hero.subheadline.length > 110 ? "…" : ""}
+                        {content?.hero.subheadline.slice(0, 110) ??
+                          `Payment processing for ${ind.name.toLowerCase()}.`}
+                        {content && content.hero.subheadline.length > 110
+                          ? "…"
+                          : ""}
                       </p>
                     </div>
                     <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-brand)]">
-                      Learn more <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                      Learn more{" "}
+                      <ArrowRight
+                        size={14}
+                        className="group-hover:translate-x-0.5 transition-transform"
+                      />
                     </div>
                   </Link>
                 );

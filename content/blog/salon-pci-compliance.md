@@ -1,14 +1,14 @@
 ---
 title: "PCI compliance for salons: What you actually need to know"
 slug: "salon-pci-compliance"
-excerpt: "PCI compliance sounds scary and bureaucratic. For most salons, it's actually pretty manageable — as long as you understand what your processor is doing for you and what you have to handle yourself."
+excerpt: "PCI compliance sounds scary and bureaucratic. For most salons, it's actually pretty manageable, as long as you understand what your processor is doing for you and what you have to handle yourself."
 date: "2026-03-25"
 category: "compliance"
 author: "Robert Reyna"
 ogImage: "/og/pci-compliance.png"
 ---
 
-If you've ever gotten a letter from your payment processor mentioning "PCI DSS compliance" and wondered whether you should be panicking, this post is for you. PCI sounds intimidating. For most salons, it's actually one of the more manageable compliance topics — as long as you know what your processor is doing for you and what you're responsible for.
+If you've ever gotten a letter from your payment processor mentioning "PCI DSS compliance" and wondered whether you should be panicking, this post is for you. PCI sounds intimidating. For most salons, it's actually one of the more manageable compliance topics, as long as you know what your processor is doing for you and what you're responsible for.
 
 This post explains what PCI is, why it exists, what salons specifically have to do, and the common mistakes that turn a manageable compliance task into a real liability.
 
@@ -18,7 +18,7 @@ PCI DSS stands for Payment Card Industry Data Security Standard. It's a set of s
 
 If you take credit cards at your salon, you're subject to PCI DSS. There's no exemption for small businesses.
 
-That said — the burden varies dramatically based on how your salon handles card data. A salon that takes cards through a modern processor with tokenization has very different PCI obligations than a salon that stores card numbers in an old POS system or writes them down on paper.
+That said, the burden varies dramatically based on how your salon handles card data. A salon that takes cards through a modern processor with tokenization has very different PCI obligations than a salon that stores card numbers in an old POS system or writes them down on paper.
 
 ## The four merchant levels
 
@@ -54,7 +54,7 @@ The salons that have real PCI problems are the ones that handle card data outsid
 
 **Writing card numbers on paper.** Customer calls to book an appointment, gives card number over the phone, front desk writes it on a sticky note to charge later. The sticky note is now a PCI compliance disaster. Card data was stored on paper, accessed by anyone walking by, and probably thrown in the regular trash later.
 
-**Storing card numbers in spreadsheets or POS systems.** "We keep regulars' card numbers in our customer database for convenience." If the actual card number (not a token) is stored in your salon's local system, you've expanded your PCI scope dramatically — and you're a data breach waiting to happen.
+**Storing card numbers in spreadsheets or POS systems.** "We keep regulars' card numbers in our customer database for convenience." If the actual card number (not a token) is stored in your salon's local system, you've expanded your PCI scope dramatically, and you're a data breach waiting to happen.
 
 **Emailing card numbers.** "Just email me the card number and I'll run it." Email is unencrypted. Card data sent via email violates PCI DSS and creates real liability.
 
@@ -70,9 +70,9 @@ If you read the list above and recognized your salon, here's the remediation pat
 
 **Step one: stop the bleeding.** No more handwritten card numbers. No more storing cards in spreadsheets. No more emailing card numbers. This is the most important step and the easiest to do today.
 
-**Step two: enroll customers in card-on-file properly.** If you've been keeping card numbers for convenience, stop. Instead, use your processor's card-on-file feature — which stores tokens, not actual card numbers. The customer experience is identical (faster checkout for regulars), but the legal posture is completely different. See [our post on card-on-file at the salon](/blog/salon-card-on-file) for the proper rollout.
+**Step two: enroll customers in card-on-file properly.** If you've been keeping card numbers for convenience, stop. Instead, use your processor's card-on-file feature, which stores tokens, not actual card numbers. The customer experience is identical (faster checkout for regulars), but the legal posture is completely different. See [our post on card-on-file at the salon](/blog/salon-card-on-file) for the proper rollout.
 
-**Step three: clean up the existing data.** If you have spreadsheets, sticky notes, or POS records with actual card numbers, get rid of them. Shred paper. Securely delete digital files (basic delete is not enough — use a tool that overwrites the data). Audit your team's phones and emails for stored card data.
+**Step three: clean up the existing data.** If you have spreadsheets, sticky notes, or POS records with actual card numbers, get rid of them. Shred paper. Securely delete digital files (basic delete is not enough, use a tool that overwrites the data). Audit your team's phones and emails for stored card data.
 
 **Step four: train your staff.** Front desk staff are the most common breach vector at salons. They need to know: never write down card numbers, never accept them via email, always use the terminal. Annual training is part of PCI DSS anyway.
 
@@ -82,7 +82,7 @@ If you read the list above and recognized your salon, here's the remediation pat
 
 PCI compliance isn't just about avoiding fines. It's also about what happens when something goes wrong.
 
-If your salon has a data breach involving cardholder data — say, a hacker compromises your POS system or a stolen laptop has card data on it — and you can demonstrate you were PCI compliant at the time, the financial consequences are usually limited to forensic investigation costs and customer notification.
+If your salon has a data breach involving cardholder data, say, a hacker compromises your POS system or a stolen laptop has card data on it, and you can demonstrate you were PCI compliant at the time, the financial consequences are usually limited to forensic investigation costs and customer notification.
 
 If you can't demonstrate compliance, the consequences expand significantly: card brand fines, increased processing rates, potential merchant account termination, civil liability under state breach notification laws, and class action exposure.
 
@@ -132,6 +132,6 @@ For deeper PCI DSS reference material, [the PCI Security Standards Council publi
 
 [SalonTransact](/salontransact) operates on PCI DSS Level 1 infrastructure. Tokenization is built into every transaction. Salons on the platform are typically eligible for SAQ A (the simplest questionnaire). We guide merchants through annual SAQ completion and provide all required compliance documentation.
 
-If you're worried your current setup isn't compliant — or if you've been doing some of the things in the "what gets you in trouble" list above — [book a call](/contact) and we'll walk you through what the cleanup looks like. Switching to a properly compliant processor is part of the fix; the rest is operational hygiene we can help you set up.
+If you're worried your current setup isn't compliant, or if you've been doing some of the things in the "what gets you in trouble" list above, [book a call](/contact) and we'll walk you through what the cleanup looks like. Switching to a properly compliant processor is part of the fix; the rest is operational hygiene we can help you set up.
 
 For related reading, see [card-on-file at the salon: how to set it up legally and without losing customers](/blog/salon-card-on-file).

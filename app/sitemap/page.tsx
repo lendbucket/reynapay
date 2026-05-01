@@ -6,8 +6,9 @@ import { INDUSTRIES, SOLUTIONS, PRODUCTS } from "@/lib/site-config";
 import { getAllPostsMeta } from "@/lib/blog";
 
 export const metadata = buildMetadata({
-  title: "Sitemap — Reyna Pay",
-  description: "Complete index of every page on reynapay.com — products, solutions, industries, blog posts, and resources.",
+  title: "Sitemap, Reyna Pay",
+  description:
+    "Complete index of every page on reynapay.com, products, solutions, industries, blog posts, and resources.",
   path: "/sitemap",
 });
 
@@ -39,11 +40,18 @@ export default function SitemapPage() {
               <li key={p.slug}>
                 <a
                   href={p.url}
-                  target={p.url.startsWith("http") && !p.url.includes("reynapay.com") ? "_blank" : undefined}
+                  target={
+                    p.url.startsWith("http") && !p.url.includes("reynapay.com")
+                      ? "_blank"
+                      : undefined
+                  }
                   rel="noopener"
                   className="text-[0.9375rem] text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]"
                 >
-                  {p.name} <span className="text-xs font-mono text-[var(--color-ink-subtle)]">({p.domain})</span>
+                  {p.name}{" "}
+                  <span className="text-xs font-mono text-[var(--color-ink-subtle)]">
+                    ({p.domain})
+                  </span>
                 </a>
               </li>
             ))}
@@ -87,19 +95,36 @@ export default function SitemapPage() {
   );
 }
 
-function SitemapColumn({ title, children }: { title: string; children: React.ReactNode }) {
+function SitemapColumn({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-subtle)] mb-4">{title}</h3>
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-subtle)] mb-4">
+        {title}
+      </h3>
       <ul className="space-y-2">{children}</ul>
     </div>
   );
 }
 
-function SitemapLink({ href, children }: { href: string; children: React.ReactNode }) {
+function SitemapLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <li>
-      <Link href={href} className="text-[0.9375rem] text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]">
+      <Link
+        href={href}
+        className="text-[0.9375rem] text-[var(--color-ink-muted)] hover:text-[var(--color-brand)]"
+      >
         {children}
       </Link>
     </li>

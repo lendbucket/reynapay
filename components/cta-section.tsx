@@ -33,9 +33,17 @@ export function CTASection({
       />
       <div className="container-page relative">
         <div className="max-w-3xl mx-auto text-center">
-          {eyebrow && <div className="eyebrow eyebrow-on-brand mb-5">{eyebrow}</div>}
-          <h2 className="text-[var(--color-accent)] mb-5 text-balance">{title}</h2>
-          {description && <p className="text-[var(--color-accent)]/85 text-lg mb-8 leading-relaxed">{description}</p>}
+          {eyebrow && (
+            <div className="eyebrow eyebrow-on-brand mb-5">{eyebrow}</div>
+          )}
+          <h2 className="text-[var(--color-accent)] mb-5 text-balance">
+            {title}
+          </h2>
+          {description && (
+            <p className="text-[var(--color-accent)]/85 text-lg mb-8 leading-relaxed">
+              {description}
+            </p>
+          )}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button href={primaryHref} variant="cream" size="lg">
               {primaryLabel} <ArrowRight size={16} />

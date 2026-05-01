@@ -41,7 +41,16 @@ export function buildMetadata({
     },
     robots: noindex
       ? { index: false, follow: false }
-      : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
   };
 }
 
@@ -50,11 +59,11 @@ export const SITE = {
   name: "Reyna Pay",
   legalName: "Reyna Pay LLC",
   description:
-    "Vertical-first payment processing infrastructure. SalonTransact, KasseApp, and a partner network — on one transparent platform.",
+    "Vertical-first payment processing infrastructure. SalonTransact, KasseApp, and a partner network, on one transparent platform.",
   email: "support@reynapay.com",
-  phone: "[PLACEHOLDER — Robert to replace]",
+  phone: "[PLACEHOLDER, Robert to replace]",
   address: {
-    street: "[PLACEHOLDER — Wyoming address]",
+    street: "[PLACEHOLDER, Wyoming address]",
     locality: "[PLACEHOLDER]",
     region: "WY",
     postalCode: "[PLACEHOLDER]",

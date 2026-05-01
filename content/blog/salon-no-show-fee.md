@@ -8,7 +8,7 @@ author: "Robert Reyna"
 ogImage: "/og/no-show-fee.png"
 ---
 
-A typical mid-sized salon loses $40,000 to $80,000 a year to no-shows. That's not a guess — it's what the math works out to when you take a typical no-show rate (8-15%), multiply by an average ticket size, and assume the empty slots can't be rebooked on short notice. For multi-location operators, the number is much larger.
+A typical mid-sized salon loses $40,000 to $80,000 a year to no-shows. That's not a guess, it's what the math works out to when you take a typical no-show rate (8-15%), multiply by an average ticket size, and assume the empty slots can't be rebooked on short notice. For multi-location operators, the number is much larger.
 
 No-show fees are how salons stop the bleeding. But "charging a no-show fee" sounds simple and isn't. Done wrong, you get chargebacks, one-star reviews, and lost regulars. Done right, your no-show rate drops 40-60% and the customers who do no-show pay for the slot they wasted.
 
@@ -18,7 +18,7 @@ This post is the playbook.
 
 People no-show for three reasons. They forget. They have something come up. Or they decided not to come and didn't bother to cancel.
 
-The first two are honest. The third is the one that destroys salons. A regular customer who books two appointments a year and forgets one is annoying but tolerable. A customer who books three appointments a quarter and ghosts one of them every time is structurally costing the salon money — and that customer is making the calculation that ghosting is free.
+The first two are honest. The third is the one that destroys salons. A regular customer who books two appointments a year and forgets one is annoying but tolerable. A customer who books three appointments a quarter and ghosts one of them every time is structurally costing the salon money, and that customer is making the calculation that ghosting is free.
 
 A no-show fee changes the calculation. When ghosting costs $50, customers either show up, cancel in advance, or stop booking. All three outcomes are better for the salon than the status quo.
 
@@ -51,7 +51,7 @@ Here's the chargeback math. When a customer disputes a charge with their bank, t
 
 A salon that has all four of these in their evidence pack wins about 70% of no-show fee chargebacks. A salon missing any of them wins about 20%. The difference is the difference between the no-show fee being a real revenue protection mechanism vs. just a number on the wall.
 
-Modern salon-specific platforms (including [SalonTransact](/salontransact)) build the evidence pack automatically — when a chargeback comes in, the system pulls the booking timestamp, the consent record, the reminder communications, and the charge notification, and assembles them into a single submission to the card network. Manual evidence assembly is what kills chargeback win rates at salons.
+Modern salon-specific platforms (including [SalonTransact](/salontransact)) build the evidence pack automatically, when a chargeback comes in, the system pulls the booking timestamp, the consent record, the reminder communications, and the charge notification, and assembles them into a single submission to the card network. Manual evidence assembly is what kills chargeback win rates at salons.
 
 ## A real-world rollout sequence
 
@@ -59,9 +59,9 @@ Here's the playbook we use when introducing no-show fees at a salon for the firs
 
 **Week 1-2: Set up the infrastructure.** Configure card-on-file in your POS. Update your booking page with the new policy language. Update your booking confirmation email template. Train front desk on the script.
 
-**Week 3: Soft announce.** Email your existing customer base. "Starting [date], we're introducing a $50 no-show fee. Cancel more than 24 hours ahead and there's no charge. We're doing this because empty chairs hurt our team and our other customers — when one slot goes unused, we can't rebook it on short notice." Include FAQ.
+**Week 3: Soft announce.** Email your existing customer base. "Starting [date], we're introducing a $50 no-show fee. Cancel more than 24 hours ahead and there's no charge. We're doing this because empty chairs hurt our team and our other customers, when one slot goes unused, we can't rebook it on short notice." Include FAQ.
 
-**Week 4 onward: Hard enforcement.** Start charging fees on no-shows. Don't make exceptions in the first month — exceptions create precedent. Communicate clearly when fees are charged. If a regular customer pushes back, listen and decide whether to refund as a goodwill gesture (your call) — but document the exception.
+**Week 4 onward: Hard enforcement.** Start charging fees on no-shows. Don't make exceptions in the first month, exceptions create precedent. Communicate clearly when fees are charged. If a regular customer pushes back, listen and decide whether to refund as a goodwill gesture (your call), but document the exception.
 
 The first 30 days are the hardest. Some customers will be annoyed. A few will leave. By day 60, the policy is normal and your no-show rate is measurably lower.
 
@@ -71,9 +71,9 @@ Three things that consistently undermine no-show policies at salons.
 
 **Inconsistent enforcement.** As discussed above. Either everyone or nobody.
 
-**Fees that are too small.** A $10 no-show fee doesn't change behavior. The fee needs to be high enough that the customer notices — most salons land at 50-100% of the service price, with $50 being a common floor.
+**Fees that are too small.** A $10 no-show fee doesn't change behavior. The fee needs to be high enough that the customer notices, most salons land at 50-100% of the service price, with $50 being a common floor.
 
-**Charging fees for late arrivals.** Charging the full no-show fee for a customer who arrives 10 minutes late will create chargebacks and bad reviews — and arguably should. Late arrivals are different from no-shows. Have a separate policy (e.g., "if you arrive more than 15 minutes late, we may need to reschedule and apply a 50% rescheduling fee").
+**Charging fees for late arrivals.** Charging the full no-show fee for a customer who arrives 10 minutes late will create chargebacks and bad reviews, and arguably should. Late arrivals are different from no-shows. Have a separate policy (e.g., "if you arrive more than 15 minutes late, we may need to reschedule and apply a 50% rescheduling fee").
 
 For more on the legal mechanics of charging stored cards, [the Federal Trade Commission has guidance on negative-option billing](https://www.ftc.gov/business-guidance/resources/complying-telemarketing-sales-rule) that's worth reading. It applies more directly to subscriptions but the disclosure principles map cleanly to no-show fees.
 

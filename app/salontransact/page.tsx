@@ -21,7 +21,7 @@ import { JsonLd, productSchema, faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "SalonTransact — The payment platform built for salons",
+  title: "SalonTransact, The payment platform built for salons",
   description:
     "Card-on-file, stylist commission attribution, no-show automation, transparent pricing. SalonTransact is payment processing designed from the ground up for salons.",
   path: "/salontransact",
@@ -33,25 +33,25 @@ const features = [
     icon: CreditCard,
     title: "Card-on-file recognition",
     description:
-      "Customers tap their card once. Next time they walk in, the system knows them. Save 30 seconds at every checkout — and unlock no-show fees, prepaid services, and one-tap rebooking.",
+      "Customers tap their card once. Next time they walk in, the system knows them. Save 30 seconds at every checkout, and unlock no-show fees, prepaid services, and one-tap rebooking.",
   },
   {
     icon: Users,
     title: "Stylist payroll attribution",
     description:
-      "Stylists log into the platform with their own profile. Tips, commissions, and product sales auto-attribute to whoever performed the service. Payday is automatic — no spreadsheets.",
+      "Stylists log into the platform with their own profile. Tips, commissions, and product sales auto-attribute to whoever performed the service. Payday is automatic, no spreadsheets.",
   },
   {
     icon: ShieldAlert,
     title: "Fraud + chargeback protection",
     description:
-      "Velocity controls flag suspicious transactions before they ship. When a chargeback comes in, our system auto-builds an evidence pack — receipt, signature, customer history — to win the dispute.",
+      "Velocity controls flag suspicious transactions before they ship. When a chargeback comes in, our system auto-builds an evidence pack, receipt, signature, customer history, to win the dispute.",
   },
   {
     icon: CalendarCheck,
     title: "Booking integration",
     description:
-      "Pre-authorize cards at booking time, not at checkout. No-show fees auto-charge per your policy. Late-cancellation fees the same way. The customer agreed to it when they booked — collect what you're owed.",
+      "Pre-authorize cards at booking time, not at checkout. No-show fees auto-charge per your policy. Late-cancellation fees the same way. The customer agreed to it when they booked, collect what you're owed.",
   },
   {
     icon: LineChart,
@@ -75,7 +75,7 @@ const features = [
     icon: Crown,
     title: "Customer LTV scoring",
     description:
-      "Every customer profile shows lifetime value, visit frequency, and tip history. Your front desk knows who's gold the moment they walk in — and your stylists know who to retain.",
+      "Every customer profile shows lifetime value, visit frequency, and tip history. Your front desk knows who's gold the moment they walk in, and your stylists know who to retain.",
   },
 ];
 
@@ -177,12 +177,12 @@ const faqItems = [
   {
     question: "What does pricing actually look like?",
     answer:
-      "We publish our pricing transparently — see /pricing for full details. Plans start at $0/month with per-transaction fees, scaling to flat-rate or interchange-plus pricing for higher-volume merchants. We're typically 0.3-0.7% lower than Square or Stripe on equivalent volume.",
+      "We publish our pricing transparently, see /pricing for full details. Plans start at $0/month with per-transaction fees, scaling to flat-rate or interchange-plus pricing for higher-volume merchants. We're typically 0.3-0.7% lower than Square or Stripe on equivalent volume.",
   },
   {
     question: "What's a chargeback evidence pack?",
     answer:
-      "When a customer disputes a charge, the card network requires you (the merchant) to submit evidence — receipts, signatures, communication records — to defend the transaction. SalonTransact auto-compiles this evidence the moment a chargeback hits, including signed receipts, customer profile, and visit history. Pro and Enterprise plans get a dedicated rep to manage the dispute end-to-end.",
+      "When a customer disputes a charge, the card network requires you (the merchant) to submit evidence, receipts, signatures, communication records, to defend the transaction. SalonTransact auto-compiles this evidence the moment a chargeback hits, including signed receipts, customer profile, and visit history. Pro and Enterprise plans get a dedicated rep to manage the dispute end-to-end.",
   },
   {
     question: "Can stylists see each other's commission data?",
@@ -192,7 +192,7 @@ const faqItems = [
   {
     question: "Do you integrate with my booking software?",
     answer:
-      "We have direct integrations with the major salon booking platforms and an open API for custom setups. Specific integration availability varies — book a call and we'll confirm yours.",
+      "We have direct integrations with the major salon booking platforms and an open API for custom setups. Specific integration availability varies, book a call and we'll confirm yours.",
   },
   {
     question: "What happens if I want to leave?",
@@ -208,7 +208,7 @@ export default function SalonTransactPage() {
         data={productSchema({
           name: "SalonTransact",
           description:
-            "Payment processing platform built specifically for salons — card-on-file, stylist commission attribution, no-show automation, and transparent pricing.",
+            "Payment processing platform built specifically for salons, card-on-file, stylist commission attribution, no-show automation, and transparent pricing.",
           url: "https://reynapay.com/salontransact",
         })}
       />
@@ -217,7 +217,7 @@ export default function SalonTransactPage() {
       <HeroSection
         eyebrow="SalonTransact"
         headline="The payment platform built for salons."
-        subheadline="Process cards, manage stylists, recognize regulars, fight chargebacks. All in one portal — built from the ground up for the way salons actually run."
+        subheadline="Process cards, manage stylists, recognize regulars, fight chargebacks. All in one portal, built from the ground up for the way salons actually run."
         primaryCta={{ label: "Apply now", href: "/apply" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
         visual={<ScreenshotPlaceholder label="PORTAL DASHBOARD SCREENSHOT" />}
@@ -252,7 +252,9 @@ export default function SalonTransactPage() {
                     {f.description}
                   </p>
                 </div>
-                <ScreenshotPlaceholder label={`${f.title.toUpperCase()} SCREENSHOT`} />
+                <ScreenshotPlaceholder
+                  label={`${f.title.toUpperCase()} SCREENSHOT`}
+                />
               </div>
             );
           })}
@@ -264,14 +266,16 @@ export default function SalonTransactPage() {
         <SectionHeader
           eyebrow="Compare"
           title="SalonTransact vs the alternatives"
-          description="The honest version. We're not best at everything — we're best at salons."
+          description="The honest version. We're not best at everything, we're best at salons."
         />
         <div className="overflow-x-auto -mx-4 px-4">
           <table className="w-full min-w-[640px] text-left text-sm bg-white rounded-[var(--radius-card)] shadow-[var(--shadow-card)] overflow-hidden">
             <thead>
               <tr className="bg-[var(--color-card)] border-b border-[var(--color-border)]">
                 <th className="p-4 font-semibold">Feature</th>
-                <th className="p-4 font-semibold text-[var(--color-teal)]">SalonTransact</th>
+                <th className="p-4 font-semibold text-[var(--color-teal)]">
+                  SalonTransact
+                </th>
                 <th className="p-4 font-semibold">Square</th>
                 <th className="p-4 font-semibold">Stripe</th>
                 <th className="p-4 font-semibold">Clover</th>
@@ -279,7 +283,10 @@ export default function SalonTransactPage() {
             </thead>
             <tbody>
               {comparisonRows.map((row) => (
-                <tr key={row.feature} className="border-b border-[var(--color-border)] last:border-0">
+                <tr
+                  key={row.feature}
+                  className="border-b border-[var(--color-border)] last:border-0"
+                >
                   <td className="p-4 font-medium">{row.feature}</td>
                   <ComparisonCell value={row.salontransact} highlight />
                   <ComparisonCell value={row.square} />
@@ -297,7 +304,10 @@ export default function SalonTransactPage() {
         <Card className="max-w-3xl mx-auto text-center !p-10">
           <h2 className="mb-4">Transparent pricing, zero gotchas</h2>
           <p className="text-[var(--color-text-secondary)] text-lg mb-2">
-            Pricing starts at <span className="text-[var(--color-text-primary)] font-semibold">$0/month</span>
+            Pricing starts at{" "}
+            <span className="text-[var(--color-text-primary)] font-semibold">
+              $0/month
+            </span>
             {" + "}
             <span className="text-[var(--color-text-primary)] font-semibold">
               [PLACEHOLDER]% per transaction
@@ -305,7 +315,8 @@ export default function SalonTransactPage() {
             .
           </p>
           <p className="text-[var(--color-text-muted)] text-sm mb-8">
-            Volume discounts available. Custom pricing for multi-location and franchise groups.
+            Volume discounts available. Custom pricing for multi-location and
+            franchise groups.
           </p>
           <Button href="/pricing" size="lg">
             See full pricing
@@ -343,14 +354,22 @@ function ComparisonCell({
   if (value === true) {
     return (
       <td className={cls}>
-        <Check size={18} className="text-[var(--color-teal)]" aria-label="Yes" />
+        <Check
+          size={18}
+          className="text-[var(--color-teal)]"
+          aria-label="Yes"
+        />
       </td>
     );
   }
   if (value === false) {
     return (
       <td className={cls}>
-        <X size={18} className="text-[var(--color-text-muted)]" aria-label="No" />
+        <X
+          size={18}
+          className="text-[var(--color-text-muted)]"
+          aria-label="No"
+        />
       </td>
     );
   }

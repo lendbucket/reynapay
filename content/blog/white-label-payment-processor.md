@@ -18,7 +18,7 @@ This post breaks down what white-label actually means in payments, the four leve
 
 A "white-label" product is a product manufactured by one company and sold under another company's brand. The end customer sees only the reseller's brand. The manufacturer is invisible.
 
-Applied to payments, that means: the end merchant signs up with your brand. Their merchant statement carries your brand. The customer support phone number they call rings to your brand. The portal they log into looks like your brand. The mobile app, the receipts, the marketing — all your brand.
+Applied to payments, that means: the end merchant signs up with your brand. Their merchant statement carries your brand. The customer support phone number they call rings to your brand. The portal they log into looks like your brand. The mobile app, the receipts, the marketing, all your brand.
 
 The processor underneath (the actual entity holding the merchant agreement, providing the rails, doing the underwriting) is invisible to the merchant.
 
@@ -30,7 +30,7 @@ In practice, there's a spectrum of how much branding control a reseller actually
 
 ### Level 1: Co-branded affiliate
 
-You refer merchants to a processor. The processor's brand shows up everywhere — on the merchant statement, the portal, the support line. You get a small "powered by" mention or a logo in a corner. You earn a referral commission.
+You refer merchants to a processor. The processor's brand shows up everywhere, on the merchant statement, the portal, the support line. You get a small "powered by" mention or a logo in a corner. You earn a referral commission.
 
 This is what most ISOs and "agent programs" actually offer. It's not white-label. It's affiliate marketing dressed up.
 
@@ -48,13 +48,13 @@ This is what most companies that claim "white-label" actually offer. It's much b
 
 ### Level 4: True white-label (sponsor bank model)
 
-You're the named entity on the merchant agreement. Your brand is everywhere — portal, statements, support, marketing, settlement notices. The processor and sponsor bank are technical infrastructure invisible to the merchant. You handle merchant relationships, support, sales, and risk.
+You're the named entity on the merchant agreement. Your brand is everywhere, portal, statements, support, marketing, settlement notices. The processor and sponsor bank are technical infrastructure invisible to the merchant. You handle merchant relationships, support, sales, and risk.
 
-This is true white-label. It's also operationally and legally heavy — you typically need to be a registered ISO or payment facilitator (PayFac), maintain compliance programs, and have direct relationships with sponsor banks. Most resellers don't actually want this; they think they do until they see the compliance overhead.
+This is true white-label. It's also operationally and legally heavy, you typically need to be a registered ISO or payment facilitator (PayFac), maintain compliance programs, and have direct relationships with sponsor banks. Most resellers don't actually want this; they think they do until they see the compliance overhead.
 
 ## What most resellers actually want
 
-Here's the honest truth most aspiring payments resellers don't realize: **you probably don't want true white-label.** True white-label means you're responsible for compliance programs, AML/KYC infrastructure, risk underwriting, dispute management, and direct sponsor bank relationships. That's a real business with real overhead — the kind of overhead that requires hiring a compliance officer, building risk infrastructure, and probably needing a few million dollars of working capital.
+Here's the honest truth most aspiring payments resellers don't realize: **you probably don't want true white-label.** True white-label means you're responsible for compliance programs, AML/KYC infrastructure, risk underwriting, dispute management, and direct sponsor bank relationships. That's a real business with real overhead, the kind of overhead that requires hiring a compliance officer, building risk infrastructure, and probably needing a few million dollars of working capital.
 
 What most resellers actually want is **Level 3**: a branded portal and customer-facing experience, where the merchant primarily perceives your brand, but the processor handles compliance, underwriting, support, and the legal weight of being the named merchant services provider.
 
@@ -97,7 +97,7 @@ Different levels of white-label come with different economics.
 
 **Level 2 (co-branded):** similar economics to Level 1, slightly better terms because you're providing some value (lead generation, account management).
 
-**Level 3 (branded portal):** 20-35% of net processing margin is common. The Reyna Pay Partner Program is at 25%. Partners do real work — onboarding merchants, providing front-line support, maintaining the customer relationship — and the economics reflect that.
+**Level 3 (branded portal):** 20-35% of net processing margin is common. The Reyna Pay Partner Program is at 25%. Partners do real work, onboarding merchants, providing front-line support, maintaining the customer relationship, and the economics reflect that.
 
 **Level 4 (true white-label / ISO):** you keep most of the margin (50-80%) but you also bear all the operational and compliance cost. Net economics depend heavily on volume.
 
@@ -117,6 +117,6 @@ The [Reyna Pay Partner Program](/partners) is a Level 3 offering. Partners get:
 
 The partner brings merchants. We provide the infrastructure. The merchant primarily perceives the partner's brand. We're the named merchant services provider on the agreement (which means partners don't need ISO licensing or compliance infrastructure of their own).
 
-For partners who want to build a real branded payments business without the operational weight of Level 4, this is the right structure. For partners who want to be Level 4 (true ISO), we can help with that too — but it's a different conversation, and most don't actually want it once they see what it requires.
+For partners who want to build a real branded payments business without the operational weight of Level 4, this is the right structure. For partners who want to be Level 4 (true ISO), we can help with that too, but it's a different conversation, and most don't actually want it once they see what it requires.
 
 If you want to talk through whether the partner program fits what you're trying to build, [book a call](/contact). For related reading on how to start a payments business legally, see [how to start a payment processing business legally in 2026](/blog/how-to-start-a-payments-company).

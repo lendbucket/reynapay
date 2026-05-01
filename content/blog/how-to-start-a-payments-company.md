@@ -1,7 +1,7 @@
 ---
 title: "How to start a payment processing business legally in 2026"
 slug: "how-to-start-a-payments-company"
-excerpt: "Starting a payments business has fewer barriers than you think — and more legal landmines than you'd expect. Here's the path most successful operators actually take in 2026."
+excerpt: "Starting a payments business has fewer barriers than you think, and more legal landmines than you'd expect. Here's the path most successful operators actually take in 2026."
 date: "2026-04-04"
 category: "industry"
 author: "Robert Reyna"
@@ -25,13 +25,13 @@ The barriers to entry:
 - **Compliance infrastructure.** AML/KYC programs, sanctions screening, dispute management, PCI compliance. You can outsource pieces of this but you're still on the hook.
 - **Capital requirements.** Sponsor banks may require minimum capital reserves and bonding. Plus working capital to absorb chargebacks and merchant fraud risk before you can collect on residuals.
 
-Realistic timeline: 6-12 months from "I want to start" to "I'm a registered ISO selling deals." Realistic upfront capital: $100k-$500k depending on sponsor bank requirements. Ongoing operating cost: meaningful — compliance, ops staff, risk management.
+Realistic timeline: 6-12 months from "I want to start" to "I'm a registered ISO selling deals." Realistic upfront capital: $100k-$500k depending on sponsor bank requirements. Ongoing operating cost: meaningful, compliance, ops staff, risk management.
 
 This route makes sense if you've worked in payments for years, have sponsor bank relationships already, and have access to capital. For most people reading this, it doesn't.
 
 ## Route 2: Become a payment facilitator (PayFac)
 
-A PayFac aggregates merchants under a single master merchant agreement with a sponsor bank. Stripe, Square, and Toast are PayFacs. Sub-merchants don't sign their own merchant agreement with a sponsor bank — they sign with the PayFac, who handles underwriting, settlement, and risk.
+A PayFac aggregates merchants under a single master merchant agreement with a sponsor bank. Stripe, Square, and Toast are PayFacs. Sub-merchants don't sign their own merchant agreement with a sponsor bank, they sign with the PayFac, who handles underwriting, settlement, and risk.
 
 The barriers to entry:
 
@@ -84,19 +84,19 @@ A simple decision tree.
 
 **Do you have $1M+ in capital, payments industry experience, and a sponsor bank relationship?** Become an ISO or PayFac. Build a real payments business. Long timeline, big upside.
 
-**Do you have $0-$10k in capital and want to sell payments without owning infrastructure?** Become an independent agent at a generic ISO, or — better — become a partner at a vertical-specific platform. Faster launch, smaller commission per deal, much lower operational complexity.
+**Do you have $0-$10k in capital and want to sell payments without owning infrastructure?** Become an independent agent at a generic ISO, or, better, become a partner at a vertical-specific platform. Faster launch, smaller commission per deal, much lower operational complexity.
 
 **Are you a developer/founder building a vertical SaaS where payments is core to the product?** Consider becoming a PayFac long-term. In the short term, embed an existing payments platform's API.
 
-For most operators reading this — people with sales experience and a network, but not deep payments expertise or institutional capital — Route 4 (vertical-specific partner program) is the right answer in 2026. The economics are good, the operational complexity is manageable, and you can actually launch and start earning within weeks instead of years.
+For most operators reading this, people with sales experience and a network, but not deep payments expertise or institutional capital, Route 4 (vertical-specific partner program) is the right answer in 2026. The economics are good, the operational complexity is manageable, and you can actually launch and start earning within weeks instead of years.
 
 ## The legal landmines
 
 Three things that trip up new payments operators consistently.
 
-**State money transmitter licensing.** If you ever take possession of customer funds (even briefly, before remitting them to the merchant), you may trigger state money transmitter licensing in 49 states. Each state has its own application, its own bond requirement, and its own timeline. Getting licensed in all 49 takes 18-36 months and costs $1M+ in legal fees and bonding. This is one of the main reasons to operate as a partner under an existing entity — they hold the licenses, you don't have to.
+**State money transmitter licensing.** If you ever take possession of customer funds (even briefly, before remitting them to the merchant), you may trigger state money transmitter licensing in 49 states. Each state has its own application, its own bond requirement, and its own timeline. Getting licensed in all 49 takes 18-36 months and costs $1M+ in legal fees and bonding. This is one of the main reasons to operate as a partner under an existing entity, they hold the licenses, you don't have to.
 
-**FTC Business Opportunity Rule.** If you sell a "business opportunity" (something that helps the buyer start a business in exchange for an upfront payment), you may trigger FTC disclosure requirements. This is why payments partner programs typically structure as $0 upfront enrollment with a monthly SaaS fee — the SaaS fee is for software, not for selling a business opportunity. We talk about this directly in [our partner program FAQ](/partners).
+**FTC Business Opportunity Rule.** If you sell a "business opportunity" (something that helps the buyer start a business in exchange for an upfront payment), you may trigger FTC disclosure requirements. This is why payments partner programs typically structure as $0 upfront enrollment with a monthly SaaS fee, the SaaS fee is for software, not for selling a business opportunity. We talk about this directly in [our partner program FAQ](/partners).
 
 **Misrepresenting your legal status.** If you tell merchants you're "their payment processor" but you're actually a referrer or sub-agent, you may have misrepresented your role. This can trigger state consumer protection laws and card network sanctions. Always be clear about who's actually holding the merchant agreement.
 
@@ -130,4 +130,4 @@ The best partner programs are transparent on all five. The worst hide one or mor
 - Underwriting, compliance, chargeback management handled by Reyna Pay
 - 30-day notice to exit, with continued residuals on existing merchants per the partner agreement
 
-If you want to talk through whether the program fits what you're trying to build, [book a call](/contact). We'll be honest about whether you're a fit — some applicants we approve, some we don't, and some we tell to do something else entirely.
+If you want to talk through whether the program fits what you're trying to build, [book a call](/contact). We'll be honest about whether you're a fit, some applicants we approve, some we don't, and some we tell to do something else entirely.

@@ -10,18 +10,31 @@ export function generateStaticParams() {
   return SOLUTIONS.map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const sol = SOLUTIONS.find((s) => s.slug === slug);
-  if (!sol) return buildMetadata({ title: "Not found", description: "", path: `/solutions/${slug}` });
+  if (!sol)
+    return buildMetadata({
+      title: "Not found",
+      description: "",
+      path: `/solutions/${slug}`,
+    });
   return buildMetadata({
-    title: `${sol.name} — Reyna Pay solutions`,
+    title: `${sol.name}, Reyna Pay solutions`,
     description: `${sol.description} Available across all Reyna Pay vertical products and partner platforms.`,
     path: `/solutions/${slug}`,
   });
 }
 
-export default async function SolutionPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function SolutionPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const sol = SOLUTIONS.find((s) => s.slug === slug);
   if (!sol) notFound();

@@ -13,7 +13,9 @@ export interface PricingTier {
 
 export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
   return (
-    <div className={`grid gap-6 grid-cols-1 ${tiers.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
+    <div
+      className={`grid gap-6 grid-cols-1 ${tiers.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}
+    >
       {tiers.map((tier) => (
         <div
           key={tier.name}
@@ -34,9 +36,13 @@ export function PricingTable({ tiers }: { tiers: PricingTier[] }) {
           </p>
           <div className="mb-6">
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold tracking-tight">{tier.price}</span>
+              <span className="text-4xl font-bold tracking-tight">
+                {tier.price}
+              </span>
               {tier.priceDetail && (
-                <span className="text-sm text-[var(--color-text-muted)]">{tier.priceDetail}</span>
+                <span className="text-sm text-[var(--color-text-muted)]">
+                  {tier.priceDetail}
+                </span>
               )}
             </div>
           </div>

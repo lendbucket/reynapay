@@ -1,26 +1,26 @@
 ---
 title: "Reyna Pay vs Square vs Clover for salons: A real comparison"
 slug: "reyna-pay-vs-square-vs-clover"
-excerpt: "Three payment platforms commonly evaluated by salon owners. Here's the honest, feature-by-feature comparison — including where each one is genuinely better."
+excerpt: "Three payment platforms commonly evaluated by salon owners. Here's the honest, feature-by-feature comparison, including where each one is genuinely better."
 date: "2026-03-30"
 category: "product"
 author: "Robert Reyna"
 ogImage: "/og/comparison.png"
 ---
 
-Most "payment processor comparison" articles online are useless because they're written by affiliate marketers ranking whichever platform pays the highest commission that quarter. This one isn't. We built one of these platforms (SalonTransact, on the Reyna Pay infrastructure) so we have an obvious bias — but we'll be transparent about where Square and Clover are genuinely better, because they are in some specific cases.
+Most "payment processor comparison" articles online are useless because they're written by affiliate marketers ranking whichever platform pays the highest commission that quarter. This one isn't. We built one of these platforms (SalonTransact, on the Reyna Pay infrastructure) so we have an obvious bias, but we'll be transparent about where Square and Clover are genuinely better, because they are in some specific cases.
 
 This post is the honest comparison.
 
 ## What each platform actually is
 
-**Square** is a flat-rate, all-in-one payments and POS company. They started with a tiny card reader for iPhones and have expanded into a full small business platform — payroll, online ordering, marketing, banking, lending. They serve every kind of small business: retail, restaurants, salons, professional services. The underlying philosophy is "simple and broadly applicable."
+**Square** is a flat-rate, all-in-one payments and POS company. They started with a tiny card reader for iPhones and have expanded into a full small business platform, payroll, online ordering, marketing, banking, lending. They serve every kind of small business: retail, restaurants, salons, professional services. The underlying philosophy is "simple and broadly applicable."
 
 **Clover** is a hardware-first POS company owned by Fiserv. They sell terminals (Clover Mini, Clover Station, Clover Flex) on multi-year hardware leases and the payment processing rides on top. The hardware is good. The lease terms are punishing. Clover's strength is restaurants and retailers that want a turnkey hardware setup.
 
 **SalonTransact** (our product, on Reyna Pay infrastructure) is a vertical-specific salon payments platform. Built around stylist commission attribution, card-on-file, no-show fee automation, and multi-location reporting. Not built for restaurants or retail. Built for salons, barbershops, spas, and personal-care businesses.
 
-These are three different products solving different problems. The question isn't "which is best" — it's "which is the right fit for your salon."
+These are three different products solving different problems. The question isn't "which is best", it's "which is the right fit for your salon."
 
 ## Pricing comparison
 
@@ -32,26 +32,26 @@ For a typical mid-sized salon doing $40,000/month in card volume:
 
 **SalonTransact Pro** at the published $49/month + 2.4% + $0.20: roughly $1,049 total monthly cost on $40k volume. Slightly cheaper than Square, slightly cheaper than Clover, with full salon-specific feature set included (no add-ons).
 
-For salons doing under $20k/month: Square is often the simplest and the price difference is small. Above $30k/month, SalonTransact's pricing edge widens. Above $80k/month, interchange-plus on SalonTransact Enterprise typically saves 0.4-0.7% over Square's flat rate — meaningful money at scale.
+For salons doing under $20k/month: Square is often the simplest and the price difference is small. Above $30k/month, SalonTransact's pricing edge widens. Above $80k/month, interchange-plus on SalonTransact Enterprise typically saves 0.4-0.7% over Square's flat rate, meaningful money at scale.
 
-[PLACEHOLDER — Robert to confirm published rates align with these comparisons.]
+[PLACEHOLDER, Robert to confirm published rates align with these comparisons.]
 
 ## Feature comparison
 
-| Feature | SalonTransact | Square | Clover |
-|---|---|---|---|
-| Salon-specific design | ✓ | Generic | Generic |
-| Stylist commission attribution | ✓ Built-in | Limited (Appointments) | Add-on |
-| Card-on-file with consent flow | ✓ | Limited | ✓ |
-| No-show fee automation | ✓ | Manual | Manual |
-| Booking integration | ✓ Native + open API | Limited (own product) | Limited (own product) |
-| Transparent pricing dashboard | ✓ | Flat-rate (no detail) | Flat-rate (no detail) |
-| Multi-location with separate MIDs | ✓ | Limited | Limited |
-| Same-day payouts | ✓ Toggle | Available (fee) | Available (fee) |
-| Chargeback evidence packs | ✓ Auto | Self-serve | Self-serve |
-| Hardware lock-in | ✗ | ✗ | ✓ Multi-year leases |
-| Long-term contract required | ✗ | ✗ | Often |
-| Owned by salon operators | ✓ | ✗ | ✗ |
+| Feature                           | SalonTransact       | Square                 | Clover                |
+| --------------------------------- | ------------------- | ---------------------- | --------------------- |
+| Salon-specific design             | ✓                   | Generic                | Generic               |
+| Stylist commission attribution    | ✓ Built-in          | Limited (Appointments) | Add-on                |
+| Card-on-file with consent flow    | ✓                   | Limited                | ✓                     |
+| No-show fee automation            | ✓                   | Manual                 | Manual                |
+| Booking integration               | ✓ Native + open API | Limited (own product)  | Limited (own product) |
+| Transparent pricing dashboard     | ✓                   | Flat-rate (no detail)  | Flat-rate (no detail) |
+| Multi-location with separate MIDs | ✓                   | Limited                | Limited               |
+| Same-day payouts                  | ✓ Toggle            | Available (fee)        | Available (fee)       |
+| Chargeback evidence packs         | ✓ Auto              | Self-serve             | Self-serve            |
+| Hardware lock-in                  | ✗                   | ✗                      | ✓ Multi-year leases   |
+| Long-term contract required       | ✗                   | ✗                      | Often                 |
+| Owned by salon operators          | ✓                   | ✗                      | ✗                     |
 
 The biggest differences are in salon-specific workflows. Square and Clover both serve salons but their feature sets are designed for the broad small-business market. Salon-specific functions exist as add-ons or workarounds. SalonTransact is designed entirely around salon use cases.
 
@@ -89,7 +89,7 @@ Where we genuinely think SalonTransact is the better choice.
 
 **Multi-location salons and franchises.** Separate MIDs with rolled-up reporting is something Square and Clover don't do well. For groups, this matters.
 
-**Salons running booking-integrated workflows.** Pre-authorize at booking, no-show fee automation, card-on-file at scale — these workflows are first-class on SalonTransact. They're patchwork on Square and Clover.
+**Salons running booking-integrated workflows.** Pre-authorize at booking, no-show fee automation, card-on-file at scale, these workflows are first-class on SalonTransact. They're patchwork on Square and Clover.
 
 **Salons that want pricing transparency.** Interchange-plus pricing with line-item breakdown isn't available on Square (flat-rate) and isn't standard on Clover. For larger salons that want to know exactly what they're paying, transparency wins.
 
@@ -99,9 +99,9 @@ Where we genuinely think SalonTransact is the better choice.
 
 A note on the practical question of switching.
 
-**Square to SalonTransact.** Relatively painless. Customer database exports cleanly from Square. Card-on-file tokens require re-enrollment (this is true between any two processors — tokens don't transfer). Hardware doesn't transfer (different terminal vendors usually). Total switching effort: 1-2 weeks of parallel running.
+**Square to SalonTransact.** Relatively painless. Customer database exports cleanly from Square. Card-on-file tokens require re-enrollment (this is true between any two processors, tokens don't transfer). Hardware doesn't transfer (different terminal vendors usually). Total switching effort: 1-2 weeks of parallel running.
 
-**Clover to SalonTransact.** Trickier because Clover hardware leases are typically multi-year. Even if SalonTransact saves money on processing, you may still owe lease payments on Clover terminals. Worth doing the math — sometimes it's still worth switching, sometimes it's worth waiting until the lease ends.
+**Clover to SalonTransact.** Trickier because Clover hardware leases are typically multi-year. Even if SalonTransact saves money on processing, you may still owe lease payments on Clover terminals. Worth doing the math, sometimes it's still worth switching, sometimes it's worth waiting until the lease ends.
 
 **Either to either, in general.** Two-week parallel run is the standard playbook. Run both processors for two weeks. Move customers gradually. Reconcile carefully.
 
@@ -117,6 +117,6 @@ Three questions that determine the right answer for most salons.
 
 **Are you currently locked into a Clover hardware lease?** Run the numbers carefully. Sometimes switching mid-lease still saves money. Sometimes it makes more sense to wait until the lease ends.
 
-If you want a side-by-side analysis of your current processor vs. SalonTransact, [send us your last three months of statements](/contact) and we'll do the math. We'll tell you honestly whether switching saves you money — and we'll tell you when it doesn't.
+If you want a side-by-side analysis of your current processor vs. SalonTransact, [send us your last three months of statements](/contact) and we'll do the math. We'll tell you honestly whether switching saves you money, and we'll tell you when it doesn't.
 
 For related reading, see [the complete guide to choosing a salon payment processor in 2026](/blog/best-payment-processor-for-salons-2026) and [why every salon is overpaying for credit card processing](/blog/why-salons-overpay-credit-card-processing).

@@ -19,7 +19,7 @@ import { JsonLd, faqPageSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Reyna Pay Partner Program — Build a branded payments business",
+  title: "Reyna Pay Partner Program, Build a branded payments business",
   description:
     "Bring us merchants. We provide the infrastructure, compliance, and support. You get a branded portal at your-business.reynapay.com and earn recurring commission on every transaction.",
   path: "/partners",
@@ -31,7 +31,7 @@ const partnerBenefits = [
     icon: Palette,
     title: "Branded merchant portal",
     description:
-      "Your logo, your colors, your subdomain. Merchants you bring in see your brand — not Reyna Pay's. We handle the infrastructure invisibly behind your brand.",
+      "Your logo, your colors, your subdomain. Merchants you bring in see your brand, not Reyna Pay's. We handle the infrastructure invisibly behind your brand.",
   },
   {
     icon: Megaphone,
@@ -43,7 +43,7 @@ const partnerBenefits = [
     icon: ShieldCheck,
     title: "Underwriting handled",
     description:
-      "Submit a merchant application — we approve or decline within 24 hours. Risk, compliance, KYC, OFAC checks: ours to manage. You focus on bringing the next merchant.",
+      "Submit a merchant application, we approve or decline within 24 hours. Risk, compliance, KYC, OFAC checks: ours to manage. You focus on bringing the next merchant.",
   },
   {
     icon: Banknote,
@@ -58,7 +58,7 @@ const idealPartners = [
     icon: Briefcase,
     title: "Independent sales reps",
     description:
-      "Currently selling for a large processor and tired of the comp plan changing every quarter? Bring your book — own your residuals.",
+      "Currently selling for a large processor and tired of the comp plan changing every quarter? Bring your book, own your residuals.",
   },
   {
     icon: TrendingUp,
@@ -89,7 +89,7 @@ const faqItems = [
   {
     question: "Am I a licensed money transmitter?",
     answer:
-      "No. You operate as an independent referrer or independent sales agent — not a money transmitter. Reyna Pay LLC is the merchant services provider; merchants contract with Reyna Pay directly. You get attribution and commission for the relationship. This structure means you don't need state money transmitter licenses to operate.",
+      "No. You operate as an independent referrer or independent sales agent, not a money transmitter. Reyna Pay LLC is the merchant services provider; merchants contract with Reyna Pay directly. You get attribution and commission for the relationship. This structure means you don't need state money transmitter licenses to operate.",
   },
   {
     question: "How is commission calculated?",
@@ -109,7 +109,7 @@ const faqItems = [
   {
     question: "What if a merchant has a problem?",
     answer:
-      "Reyna Pay handles all merchant support, chargebacks, and technical issues. You're not on the hook for support — but you're welcome to be the relationship contact if you want to. Many partners use our support as their support.",
+      "Reyna Pay handles all merchant support, chargebacks, and technical issues. You're not on the hook for support, but you're welcome to be the relationship contact if you want to. Many partners use our support as their support.",
   },
   {
     question: "Can I co-brand with my LLC?",
@@ -119,7 +119,7 @@ const faqItems = [
   {
     question: "How do I exit the program if it doesn't work out?",
     answer:
-      "30-day notice to cancel. We continue paying residuals on existing merchants for the life of those merchant accounts (subject to your partner agreement). You're not held hostage — but you keep earning on what you built.",
+      "30-day notice to cancel. We continue paying residuals on existing merchants for the life of those merchant accounts (subject to your partner agreement). You're not held hostage, but you keep earning on what you built.",
   },
 ];
 
@@ -139,30 +139,40 @@ export default function PartnersPage() {
 
       {/* How it works */}
       <Section variant="soft" id="how-it-works">
-        <SectionHeader eyebrow="How it works" title="Three steps to your own payments business" />
+        <SectionHeader
+          eyebrow="How it works"
+          title="Three steps to your own payments business"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card>
-            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">01</div>
+            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">
+              01
+            </div>
             <h3 className="text-xl mb-3">You apply, we approve</h3>
             <p className="text-[var(--color-text-secondary)] text-[0.9375rem] leading-relaxed">
-              Tell us about your business, your network, and what verticals you sell into. We
-              approve qualified partners within 5 business days.
+              Tell us about your business, your network, and what verticals you
+              sell into. We approve qualified partners within 5 business days.
             </p>
           </Card>
           <Card>
-            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">02</div>
+            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">
+              02
+            </div>
             <h3 className="text-xl mb-3">You get a branded portal</h3>
             <p className="text-[var(--color-text-secondary)] text-[0.9375rem] leading-relaxed">
-              Custom subdomain, your logo, your colors. Marketing toolkit shipped to your inbox.
-              Onboarding call to walk you through the platform.
+              Custom subdomain, your logo, your colors. Marketing toolkit
+              shipped to your inbox. Onboarding call to walk you through the
+              platform.
             </p>
           </Card>
           <Card>
-            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">03</div>
+            <div className="text-5xl font-bold text-[var(--color-teal)]/20 mb-3">
+              03
+            </div>
             <h3 className="text-xl mb-3">You earn on every transaction</h3>
             <p className="text-[var(--color-text-secondary)] text-[0.9375rem] leading-relaxed">
-              Standard rate: 25% of net processing margin. Paid monthly via ACH. As long as your
-              merchants process with us, you get paid.
+              Standard rate: 25% of net processing margin. Paid monthly via ACH.
+              As long as your merchants process with us, you get paid.
             </p>
           </Card>
         </div>
@@ -173,14 +183,17 @@ export default function PartnersPage() {
         <SectionHeader
           eyebrow="What you get"
           title="A complete payments business in a box"
-          description="Everything you'd need to launch a merchant services agency — without the licensing, the underwriting infrastructure, or the bank sponsorship paperwork."
+          description="Everything you'd need to launch a merchant services agency, without the licensing, the underwriting infrastructure, or the bank sponsorship paperwork."
         />
         <FeatureGrid features={partnerBenefits} columns={4} />
       </Section>
 
       {/* Who this is for */}
       <Section variant="soft">
-        <SectionHeader eyebrow="Who this is for" title="Built for operators who already sell" />
+        <SectionHeader
+          eyebrow="Who this is for"
+          title="Built for operators who already sell"
+        />
         <FeatureGrid features={idealPartners} columns={4} />
       </Section>
 
@@ -189,14 +202,19 @@ export default function PartnersPage() {
         <Card className="max-w-3xl mx-auto !p-10">
           <h2 className="mb-4 text-center">Pricing transparency</h2>
           <p className="text-[var(--color-text-secondary)] text-center mb-6 leading-relaxed">
-            Partner program: <strong className="text-[var(--color-text-primary)]">$0 to start</strong>.
-            Monthly software fee for the branded portal:{" "}
-            <strong className="text-[var(--color-text-primary)]">$99/month</strong> on the standard
-            plan. We never charge upfront enrollment fees. We never charge for marketing materials,
-            training, or onboarding.
+            Partner program:{" "}
+            <strong className="text-[var(--color-text-primary)]">
+              $0 to start
+            </strong>
+            . Monthly software fee for the branded portal:{" "}
+            <strong className="text-[var(--color-text-primary)]">
+              $99/month
+            </strong>{" "}
+            on the standard plan. We never charge upfront enrollment fees. We
+            never charge for marketing materials, training, or onboarding.
           </p>
           <p className="text-[var(--color-text-muted)] text-sm text-center mb-6">
-            [PLACEHOLDER — Robert to confirm final pricing]
+            [PLACEHOLDER, Robert to confirm final pricing]
           </p>
           <div className="flex justify-center">
             <Button href="/pricing">See partner pricing</Button>
@@ -208,20 +226,25 @@ export default function PartnersPage() {
       <section className="bg-[var(--color-surface)] py-8 border-t border-[var(--color-border)]">
         <div className="container-page">
           <p className="text-xs text-[var(--color-text-muted)] leading-relaxed max-w-4xl mx-auto text-center">
-            <strong>Disclosure:</strong> Reyna Pay LLC is the merchant services provider for all
-            merchants on the platform. Partners are independent referrers, not licensed money
-            transmitters or money services businesses. Partner agreements are available on
-            request. Income examples are illustrative; actual earnings depend on the partner's
-            production. The Reyna Pay Partner Program is not a franchise or business opportunity
-            under federal or state law and does not require an FTC Franchise Disclosure Document or
-            equivalent state registration. No earnings claims are made or implied.
+            <strong>Disclosure:</strong> Reyna Pay LLC is the merchant services
+            provider for all merchants on the platform. Partners are independent
+            referrers, not licensed money transmitters or money services
+            businesses. Partner agreements are available on request. Income
+            examples are illustrative; actual earnings depend on the partner's
+            production. The Reyna Pay Partner Program is not a franchise or
+            business opportunity under federal or state law and does not require
+            an FTC Franchise Disclosure Document or equivalent state
+            registration. No earnings claims are made or implied.
           </p>
         </div>
       </section>
 
       {/* FAQ */}
       <Section variant="soft">
-        <SectionHeader eyebrow="Partner FAQ" title="What partners ask us first" />
+        <SectionHeader
+          eyebrow="Partner FAQ"
+          title="What partners ask us first"
+        />
         <FAQ items={faqItems} />
       </Section>
 
