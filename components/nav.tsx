@@ -60,10 +60,12 @@ export default function Nav() {
       }`}
     >
       <div className="container-page flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2.5 font-semibold text-[var(--color-ink)]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Reyna Pay" className="h-7 w-auto" onError={(e) => { (e.target as HTMLImageElement).src = "/logo.png"; }} />
-          <span className="text-[0.9375rem] tracking-tight">Reyna Pay</span>
+        <Link href="/" className="flex items-center gap-2.5 font-semibold text-[var(--color-ink)]" aria-label="Reyna Pay home">
+          {/* Logo wordmark — white logo on emerald chip so it reads on light header */}
+          <span className="inline-flex items-center justify-center h-8 px-2.5 rounded-[var(--radius-md)] bg-[var(--color-brand)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Reyna Pay" className="h-4 w-auto" />
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -147,7 +149,7 @@ export default function Nav() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-4rem)] overflow-y-auto">
           <div className="container-page py-4">
-            <MobileSection title="Products" items={PRODUCTS.map((p) => ({ label: p.name, href: p.url, external: true }))} />
+            <MobileSection title="Products" items={PRODUCTS.map((p) => ({ label: p.name, href: p.url, external: !p.url.includes("reynapay.com") }))} />
             <MobileSection
               title="Solutions"
               items={SOLUTIONS.slice(0, 8).map((s) => ({ label: s.name, href: `/solutions/${s.slug}` }))}
@@ -175,22 +177,25 @@ export default function Nav() {
 function MegaProducts() {
   return (
     <div className="grid grid-cols-3 gap-8">
-      {PRODUCTS.map((p) => (
-        <a
-          key={p.slug}
-          href={p.url}
-          target={p.url.startsWith("http") && !p.url.includes("reynapay.com") ? "_blank" : undefined}
-          rel="noopener"
-          className="group p-5 rounded-[var(--radius-lg)] border border-transparent hover:border-[var(--color-border)] hover:bg-[var(--color-surface-2)] transition-all"
-        >
-          <div className="flex items-center justify-between mb-2">
-            <h4 className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors">{p.name}</h4>
-            <ArrowRight size={14} className="text-[var(--color-ink-subtle)] group-hover:text-[var(--color-brand)] group-hover:translate-x-0.5 transition-all" />
-          </div>
-          <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed">{p.tagline}</p>
-          <div className="mt-3 text-xs text-[var(--color-ink-subtle)] font-mono">{p.domain}</div>
-        </a>
-      ))}
+      {PRODUCTS.map((p) => {
+        const isExternal = !p.url.includes("reynapay.com");
+        return (
+          <a
+            key={p.slug}
+            href={p.url}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener" : undefined}
+            className="group p-5 rounded-[var(--radius-lg)] border border-transparent hover:border-[var(--color-border)] hover:bg-[var(--color-surface-2)] transition-all"
+          >
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors">{p.name}</h4>
+              <ArrowRight size={14} className="text-[var(--color-ink-subtle)] group-hover:text-[var(--color-brand)] group-hover:translate-x-0.5 transition-all" />
+            </div>
+            <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed">{p.tagline}</p>
+            <div className="mt-3 text-xs text-[var(--color-ink-subtle)] font-mono">{p.domain}</div>
+          </a>
+        );
+      })}
     </div>
   );
 }
@@ -215,7 +220,6 @@ function MegaSolutions() {
 }
 
 function MegaIndustries() {
-  // Group by category
   const grouped = INDUSTRIES.reduce<Record<string, typeof INDUSTRIES[number][]>>((acc, ind) => {
     if (!acc[ind.category]) acc[ind.category] = [];
     acc[ind.category].push(ind);

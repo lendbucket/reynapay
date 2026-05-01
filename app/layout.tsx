@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import StickyApplyCTA from "@/components/sticky-apply-cta";
@@ -64,10 +65,6 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: "https://reynapay.com" },
   icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
-  verification: {
-    // Drop your Google Search Console verification code here when you have it
-    // google: "your-verification-token",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -79,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <StickyApplyCTA />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
 import { Section, SectionHeader } from "@/components/section";
@@ -30,6 +29,16 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   if (!ind) notFound();
 
   const product = PRODUCTS.find((p) => p.slug === ind.primaryProduct);
+
+  // Determine the right link target for the recommended product:
+  // - "platform" = Reyna Pay itself (link to /apply)
+  // - "salontransact" = on-site /salontransact route exists (Stage 1-3)
+  // - other products = link out to their domain
+  function productHref(p: typeof PRODUCTS[number]): { href: string; external: boolean } {
+    if (p.slug === "platform") return { href: "/apply", external: false };
+    if (p.slug === "salontransact") return { href: "/salontransact", external: false };
+    return { href: p.url, external: true };
+  }
 
   return (
     <>
@@ -68,19 +77,33 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           description="This page will expand with industry-specific features, case studies, pricing, and FAQs in Stage 5B. For now, here's how to get started."
         />
         <div className="max-w-2xl mx-auto text-center">
-          {product && (
-            <div className="mb-8">
-              <p className="text-[var(--color-ink-muted)] mb-4">
-                For {ind.name.toLowerCase()}, our recommended product is:
-              </p>
-              <Link
-                href={product.slug === "platform" ? "/" : `/${product.slug}`}
-                className="inline-flex items-center gap-2 text-[var(--color-brand)] font-semibold text-lg hover:underline"
-              >
-                {product.name} <ArrowRight size={16} />
-              </Link>
-            </div>
-          )}
+          {product && (() => {
+            const { href, external } = productHref(product);
+            return (
+              <div className="mb-8">
+                <p className="text-[var(--color-ink-muted)] mb-4">
+                  For {ind.name.toLowerCase()}, our recommended product is:
+                </p>
+                {external ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-2 text-[var(--color-brand)] font-semibold text-lg hover:underline"
+                  >
+                    {product.name} <ArrowRight size={16} />
+                  </a>
+                ) : (
+                  <a
+                    href={href}
+                    className="inline-flex items-center gap-2 text-[var(--color-brand)] font-semibold text-lg hover:underline"
+                  >
+                    {product.name} <ArrowRight size={16} />
+                  </a>
+                )}
+              </div>
+            );
+          })()}
         </div>
       </Section>
 
