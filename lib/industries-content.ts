@@ -15,30 +15,77 @@ import {
   PawPrint,
 } from "lucide-react";
 
+export interface IndustryStat {
+  value: string;
+  label: string;
+}
+
+export interface IndustryUseCase {
+  title: string;
+  description: string;
+}
+
+export interface IndustryTestimonial {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+}
+
+export interface IndustryFeature {
+  title: string;
+  description: string;
+  /** Optional image — direct hotlink to free-license image (Unsplash/Pexels). */
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
 export interface IndustryContent {
   hero: {
     headline: string;
     subheadline: string;
+    /** Background image for the hero — optional. Direct hotlink. */
+    imageUrl?: string;
+    imageAlt?: string;
+    /** Primary CTA override; defaults to "Get started" → /apply */
+    primaryCtaLabel?: string;
+    primaryCtaHref?: string;
+  };
+  /** Optional: the painful status quo the page is positioning against. */
+  problem?: {
+    title: string;
+    body: string;
+    bullets?: string[];
+  };
+  /** Optional: a "the math" / outcomes section with concrete numbers. */
+  outcomes?: {
+    title: string;
+    description: string;
+    stats: IndustryStat[];
   };
   whyUs: {
     title: string;
     description: string;
   };
-  features: Array<{
-    title: string;
-    description: string;
-  }>;
-  faqs: Array<{
-    question: string;
-    answer: string;
-  }>;
-  relatedSolutions: string[]; // slugs from SOLUTIONS
-  relatedIndustries: string[]; // slugs from INDUSTRIES
-  relatedBlogPosts: string[]; // slugs from /content/blog
+  features: IndustryFeature[];
+  /** Optional: real-world use cases ("when you'd use this") */
+  useCases?: IndustryUseCase[];
+  /** Optional: social proof. Mark isPlaceholder when not real yet. */
+  testimonial?: IndustryTestimonial & { isPlaceholder?: boolean };
+  faqs: Array<{ question: string; answer: string }>;
+  relatedSolutions: string[];
+  relatedIndustries: string[];
+  relatedBlogPosts: string[];
   icon: LucideIcon;
   seoKeywords: string[];
 }
 
+/**
+ * NOTE: Stage 5B-FRAMEWORK preserves the existing minimal content for all 17 industries.
+ * Stage 5B-CONTENT-1 (next) will add the new optional fields (problem, outcomes, useCases,
+ * testimonial, hero imagery, feature imagery) for the beauty vertical (6 industries).
+ * Stage 5B-CONTENT-2 etc. will fill the remaining industries.
+ */
 export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   salons: {
     icon: Scissors,
@@ -375,7 +422,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Tech commission attribution",
-        description: "Service revenue and tips attribute to the lash/brow tech. Junior vs. senior commission rates supported.",
+        description:
+          "Service revenue and tips attribute to the lash/brow tech. Junior vs. senior commission rates supported.",
       },
       {
         title: "Prepaid set bundles",
@@ -434,7 +482,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Integrated payments",
-        description: "Same provider for POS and processing means clean reconciliation at end of day. No third-party payment integration drift.",
+        description:
+          "Same provider for POS and processing means clean reconciliation at end of day. No third-party payment integration drift.",
       },
     ],
     faqs: [
@@ -492,7 +541,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Late-night reconciliation",
-        description: "End-of-night reports for cash handling, card batches, tip distribution. Owner sees the whole night's math in one view.",
+        description:
+          "End-of-night reports for cash handling, card batches, tip distribution. Owner sees the whole night's math in one view.",
       },
     ],
     faqs: [
@@ -615,7 +665,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         question: "Will the platform work on a tablet over cellular?",
-        answer: "Yes. KasseApp is optimized for tablets on cellular. The offline capability handles intermittent connectivity gracefully.",
+        answer:
+          "Yes. KasseApp is optimized for tablets on cellular. The offline capability handles intermittent connectivity gracefully.",
       },
     ],
     relatedSolutions: ["card-on-file", "interchange-plus-pricing", "pos-integration"],
@@ -666,7 +717,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         question: "Can I sell class packages alongside memberships?",
-        answer: "Yes. Both work side by side. Customers can be members, package buyers, or drop-ins — all in the same system.",
+        answer:
+          "Yes. Both work side by side. Customers can be members, package buyers, or drop-ins — all in the same system.",
       },
       {
         question: "How does multi-location member access work?",
@@ -755,7 +807,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Parts vs. labor breakdown",
-        description: "Reports split parts and labor revenue separately. Labor commission attribution per technician supported.",
+        description:
+          "Reports split parts and labor revenue separately. Labor commission attribution per technician supported.",
       },
       {
         title: "Fleet account net-30 billing",
@@ -816,7 +869,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Boarding deposit collection",
-        description: "Boarding requires a deposit at booking. Card-on-file, configurable deposit percentage, balance collected at pickup.",
+        description:
+          "Boarding requires a deposit at booking. Card-on-file, configurable deposit percentage, balance collected at pickup.",
       },
       {
         title: "Groomer commission attribution",
@@ -926,7 +980,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       },
       {
         title: "Fraud screening",
-        description: "Velocity controls, BIN-level checks, AVS, CVV verification. Configurable thresholds let you tune for your risk tolerance.",
+        description:
+          "Velocity controls, BIN-level checks, AVS, CVV verification. Configurable thresholds let you tune for your risk tolerance.",
       },
       {
         title: "Developer API",
@@ -969,7 +1024,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     features: [
       {
         title: "Invoice-to-payment flow",
-        description: "Send a branded invoice, customer pays via card or ACH. Reconciliation auto-marks the invoice paid.",
+        description:
+          "Send a branded invoice, customer pays via card or ACH. Reconciliation auto-marks the invoice paid.",
       },
       {
         title: "Retainer and recurring billing",

@@ -2,7 +2,7 @@ import { type HTMLAttributes, type ReactNode } from "react";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  variant?: "default" | "soft" | "deep" | "card" | "brand" | "brand-dark";
+  variant?: "default" | "soft" | "deep" | "card" | "brand" | "brand-dark" | "cream";
   containerClassName?: string;
 }
 
@@ -20,6 +20,7 @@ export function Section({
     card: "bg-[var(--color-card)]",               // warm off-white
     brand: "bg-[var(--color-brand)] text-[var(--color-accent)]",
     "brand-dark": "bg-[var(--color-brand-dark)] text-[var(--color-accent)]",
+    cream: "bg-[var(--color-surface)]",
   }[variant];
   return (
     <section className={`section ${bg} ${className}`} {...rest}>

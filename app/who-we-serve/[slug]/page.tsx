@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Quote } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
 import { Section, SectionHeader } from "@/components/section";
 import { CTASection } from "@/components/cta-section";
@@ -55,6 +55,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
     return { href: p.url, external: true };
   }
 
+  const primaryCtaLabel = content.hero.primaryCtaLabel ?? "Get started";
+  const primaryCtaHref = content.hero.primaryCtaHref ?? "/apply";
+
   return (
     <>
       <JsonLd
@@ -73,40 +76,171 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       />
       <JsonLd data={faqPageSchema(content.faqs)} />
 
-      <HeroSection
-        eyebrow={ind.category}
-        headline={content.hero.headline}
-        subheadline={content.hero.subheadline}
-        primaryCta={{ label: "Get started", href: "/apply" }}
-        secondaryCta={{ label: "See pricing", href: "/pricing" }}
-      />
+      {/* HERO with optional image */}
+      {content.hero.imageUrl ? (
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={content.hero.imageUrl}
+              alt={content.hero.imageAlt ?? ind.name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/95 via-[var(--color-brand)]/85 to-[var(--color-brand)]/40" />
+          </div>
+          <div className="relative container-page py-20 md:py-28">
+            <div className="max-w-2xl text-[var(--color-accent)]">
+              <div className="eyebrow eyebrow-on-brand mb-5">{ind.category}</div>
+              <h1 className="mb-5 text-balance text-[var(--color-accent)]">{content.hero.headline}</h1>
+              <p className="text-[1.0625rem] md:text-xl text-[var(--color-accent)]/90 leading-relaxed mb-8 max-w-xl">{content.hero.subheadline}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button href={primaryCtaHref} variant="cream" size="lg">
+                  {primaryCtaLabel} <ArrowRight size={16} />
+                </Button>
+                <Button href="/pricing" variant="outline-cream" size="lg">
+                  See pricing
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <HeroSection
+          eyebrow={ind.category}
+          headline={content.hero.headline}
+          subheadline={content.hero.subheadline}
+          primaryCta={{ label: primaryCtaLabel, href: primaryCtaHref }}
+          secondaryCta={{ label: "See pricing", href: "/pricing" }}
+        />
+      )}
 
-      {/* Why us */}
+      {/* PROBLEM section (optional) */}
+      {content.problem && (
+        <Section variant="default">
+          <div className="max-w-3xl mx-auto">
+            <div className="eyebrow mb-4">The reality</div>
+            <h2 className="mb-5 text-balance">{content.problem.title}</h2>
+            <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed mb-6">{content.problem.body}</p>
+            {content.problem.bullets && content.problem.bullets.length > 0 && (
+              <ul className="space-y-3">
+                {content.problem.bullets.map((b, i) => (
+                  <li key={i} className="flex items-start gap-3 text-[var(--color-ink-muted)] leading-relaxed">
+                    <span className="text-[var(--color-brand)] font-bold mt-0.5">→</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </Section>
+      )}
+
+      {/* OUTCOMES / THE MATH section (optional) */}
+      {content.outcomes && (
+        <Section variant="brand">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="eyebrow eyebrow-on-brand mb-5">The math</div>
+            <h2 className="mb-5 text-balance text-[var(--color-accent)]">{content.outcomes.title}</h2>
+            <p className="text-lg text-[var(--color-accent)]/85 leading-relaxed mb-12 max-w-2xl mx-auto">{content.outcomes.description}</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {content.outcomes.stats.map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-3xl md:text-4xl font-bold text-[var(--color-accent)] mb-2 tracking-tight">{s.value}</div>
+                  <div className="text-sm text-[var(--color-accent)]/80 leading-snug">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {/* WHY US */}
       <Section variant="default">
         <div className="max-w-3xl mx-auto text-center">
           <div className="eyebrow mb-4">Why Reyna Pay</div>
-          <h2 className="mb-5">{content.whyUs.title}</h2>
+          <h2 className="mb-5 text-balance">{content.whyUs.title}</h2>
           <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed">{content.whyUs.description}</p>
+          <div className="mt-8">
+            <Button href={primaryCtaHref} size="lg">
+              {primaryCtaLabel} <ArrowRight size={16} />
+            </Button>
+          </div>
         </div>
       </Section>
 
-      {/* Features */}
+      {/* FEATURES — image-supported */}
       <Section variant="soft">
         <SectionHeader eyebrow="Built for the work" title={`Features built for ${ind.name.toLowerCase()}.`} />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {content.features.map((f) => (
-            <Card key={f.title}>
-              <h3 className="text-lg mb-3 font-semibold flex items-start gap-2.5">
-                <CheckCircle2 size={20} className="text-[var(--color-brand)] flex-shrink-0 mt-0.5" />
-                {f.title}
-              </h3>
-              <p className="text-[0.9375rem] text-[var(--color-ink-muted)] leading-relaxed pl-7">{f.description}</p>
-            </Card>
-          ))}
+        <div className="space-y-12 md:space-y-16 max-w-6xl mx-auto">
+          {content.features.map((f, i) => {
+            const reverse = i % 2 === 1;
+            const hasImage = Boolean(f.imageUrl);
+            return (
+              <div key={f.title} className={`grid ${hasImage ? "lg:grid-cols-2 gap-10" : "grid-cols-1"} items-center`}>
+                {hasImage && f.imageUrl && (
+                  <div className={reverse ? "lg:order-2" : ""}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={f.imageUrl}
+                      alt={f.imageAlt ?? f.title}
+                      className="w-full aspect-[4/3] object-cover rounded-[var(--radius-lg)] shadow-[var(--shadow-md)]"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className={hasImage ? (reverse ? "lg:order-1" : "") : "max-w-3xl mx-auto"}>
+                  <h3 className="text-2xl md:text-3xl mb-4 font-semibold leading-tight flex items-start gap-3">
+                    <CheckCircle2 size={24} className="text-[var(--color-brand)] flex-shrink-0 mt-1" />
+                    {f.title}
+                  </h3>
+                  <p className="text-[var(--color-ink-muted)] text-lg leading-relaxed pl-9">{f.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </Section>
 
-      {/* Recommended product */}
+      {/* USE CASES (optional) */}
+      {content.useCases && content.useCases.length > 0 && (
+        <Section variant="default">
+          <SectionHeader eyebrow="Real-world use cases" title={`How ${ind.name.toLowerCase()} actually use Reyna Pay.`} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
+            {content.useCases.map((u, i) => (
+              <Card key={i}>
+                <div className="text-[var(--color-brand)] font-bold text-2xl mb-3 tracking-tight">{String(i + 1).padStart(2, "0")}</div>
+                <h3 className="text-lg mb-2 font-semibold">{u.title}</h3>
+                <p className="text-[0.9375rem] text-[var(--color-ink-muted)] leading-relaxed">{u.description}</p>
+              </Card>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {/* TESTIMONIAL (optional) */}
+      {content.testimonial && (
+        <Section variant="cream">
+          <div className="max-w-3xl mx-auto">
+            <Card className="!p-8 md:!p-12 relative">
+              <Quote size={48} className="text-[var(--color-brand)]/20 absolute top-6 left-6" aria-hidden />
+              <blockquote className="text-xl md:text-2xl text-[var(--color-ink)] leading-relaxed mb-6 relative pl-12">
+                &ldquo;{content.testimonial.quote}&rdquo;
+              </blockquote>
+              <div className="pl-12">
+                <div className="font-semibold text-base">{content.testimonial.name}</div>
+                <div className="text-sm text-[var(--color-ink-muted)]">
+                  {content.testimonial.role}, {content.testimonial.company}
+                </div>
+                {content.testimonial.isPlaceholder && (
+                  <div className="mt-3 text-[10px] text-[var(--color-warning)] uppercase tracking-wider">[PLACEHOLDER — Robert to replace]</div>
+                )}
+              </div>
+            </Card>
+          </div>
+        </Section>
+      )}
+
+      {/* RECOMMENDED PRODUCT */}
       {product &&
         (() => {
           const { href, external } = productHref(product);
@@ -114,14 +248,16 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             <Section variant="default">
               <div className="max-w-2xl mx-auto text-center">
                 <div className="eyebrow mb-4">Recommended product</div>
-                <h2 className="mb-4">For {ind.name.toLowerCase()}, we recommend {product.name}.</h2>
-                <p className="text-[var(--color-ink-muted)] mb-8 leading-relaxed">{product.description}</p>
+                <h2 className="mb-4">
+                  For {ind.name.toLowerCase()}, we recommend {product.name}.
+                </h2>
+                <p className="text-[var(--color-ink-muted)] mb-8 leading-relaxed text-lg">{product.description}</p>
                 {external ? (
-                  <Button href={href}>
+                  <Button href={href} size="lg">
                     Visit {product.name} <ArrowRight size={16} />
                   </Button>
                 ) : (
-                  <Button href={href}>
+                  <Button href={href} size="lg">
                     Learn more about {product.name} <ArrowRight size={16} />
                   </Button>
                 )}
@@ -131,12 +267,12 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         })()}
 
       {/* FAQ */}
-      <Section variant="deep">
+      <Section variant="soft">
         <SectionHeader eyebrow="FAQ" title={`Common questions for ${ind.name.toLowerCase()}.`} />
         <FAQ items={content.faqs} />
       </Section>
 
-      {/* Related solutions */}
+      {/* RELATED SOLUTIONS */}
       {relatedSolutions.length > 0 && (
         <Section variant="default">
           <SectionHeader eyebrow="Related capabilities" title="Solutions that power this industry." />
@@ -155,9 +291,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* Related industries */}
+      {/* RELATED INDUSTRIES */}
       {relatedIndustries.length > 0 && (
-        <Section variant="soft">
+        <Section variant="cream">
           <SectionHeader eyebrow="Related industries" title="Other verticals we serve." />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {relatedIndustries.map((i) => (
@@ -173,7 +309,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* Related blog posts */}
+      {/* RELATED BLOG POSTS */}
       {relatedPosts.length > 0 && (
         <Section variant="default">
           <SectionHeader eyebrow="Further reading" title="From the Reyna Pay blog." />
@@ -194,8 +330,8 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       <CTASection
         title={`Ready to upgrade your ${ind.name.toLowerCase()} payment processing?`}
         description="Apply in two minutes. Most merchants approved within 24 hours."
-        primaryLabel="Get started"
-        primaryHref="/apply"
+        primaryLabel={primaryCtaLabel}
+        primaryHref={primaryCtaHref}
         secondaryLabel="Talk to sales"
         secondaryHref="/contact"
       />
