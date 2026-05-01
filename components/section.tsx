@@ -2,7 +2,7 @@ import { type HTMLAttributes, type ReactNode } from "react";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  variant?: "default" | "surface" | "teal";
+  variant?: "default" | "surface" | "cream" | "brand" | "ink";
   containerClassName?: string;
 }
 
@@ -15,8 +15,10 @@ export function Section({
 }: SectionProps) {
   const bg = {
     default: "bg-white",
-    surface: "bg-[var(--color-surface)]",
-    teal: "bg-[var(--color-teal)] text-white",
+    surface: "bg-[var(--color-surface-2)]",
+    cream: "bg-[var(--color-accent)]",
+    brand: "bg-[var(--color-brand)] text-white",
+    ink: "bg-[var(--color-ink)] text-white",
   }[variant];
   return (
     <section className={`section ${bg} ${className}`} {...rest}>
@@ -39,23 +41,15 @@ export function SectionHeader({
   inverted?: boolean;
 }) {
   return (
-    <div className={`${centered ? "text-center mx-auto" : ""} max-w-3xl mb-12`}>
+    <div className={`${centered ? "text-center mx-auto" : ""} max-w-3xl mb-12 md:mb-16`}>
       {eyebrow && (
-        <div
-          className={`text-sm font-semibold uppercase tracking-wider mb-3 ${
-            inverted ? "text-white/80" : "text-[var(--color-teal)]"
-          }`}
-        >
+        <div className={`mb-4 inline-block ${inverted ? "eyebrow eyebrow-on-dark" : "eyebrow"}`}>
           {eyebrow}
         </div>
       )}
-      <h2 className={inverted ? "text-white" : ""}>{title}</h2>
+      <h2 className={`text-balance ${inverted ? "text-white" : ""}`}>{title}</h2>
       {description && (
-        <p
-          className={`mt-4 text-lg ${
-            inverted ? "text-white/90" : "text-[var(--color-text-secondary)]"
-          }`}
-        >
+        <p className={`mt-5 text-lg leading-relaxed ${inverted ? "text-white/85" : "text-[var(--color-ink-muted)]"}`}>
           {description}
         </p>
       )}

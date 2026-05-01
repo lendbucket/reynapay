@@ -1,12 +1,25 @@
 # Reyna Pay
 
-Reyna Pay LLC is a payments infrastructure company. Our flagship product is SalonTransact, a vertical-specific payment processing platform built for salons. Reyna Pay also operates a partner program where independent operators can launch branded merchant services businesses powered by our infrastructure.
+Reyna Pay LLC is a vertical-first payment processing infrastructure company. We power industry-specific payment products including SalonTransact (for salons, salontransact.com) and KasseApp (for restaurants/POS, kasseapp.com), plus a partner network of branded payment products across many industries.
+
+## Mission
+
+To build vertical-specific payment processors for industries the giants ignore — with transparent pricing, real support, and infrastructure that fits how each industry actually operates.
 
 ## Products
 
-- **SalonTransact** (https://reynapay.com/salontransact): Salon-first payment processing — card-on-file, stylist commission attribution, booking integration, transparent fees.
-- **Partner Program** (https://reynapay.com/partners): Branded reseller program for entrepreneurs entering the merchant services industry.
-- **Reyna Pay Infrastructure**: PCI-compliant, card-network-certified processing platform underlying both products.
+- **SalonTransact** (https://salontransact.com): Salon-first payment processing — card-on-file, stylist commission attribution, no-show automation, booking integration.
+- **KasseApp** (https://kasseapp.com): POS and payments for restaurants, bars, and food service — table management, tip pools, kitchen ticketing, integrated payments.
+- **Reyna Pay Platform** (https://reynapay.com): The infrastructure powering it all. PCI-compliant, card-network certified, bank-sponsored.
+- **Reyna Pay Partner Program** (https://reynapay.com/partners): For entrepreneurs launching their own branded payment business in their vertical.
+
+## Industries we serve
+
+Salons, barbershops, med spas, tattoo studios, nail salons, lash & brow studios, restaurants, bars, coffee shops, food trucks, gyms, yoga & pilates studios, auto repair shops, pet grooming, retail, e-commerce, professional services. See https://reynapay.com/who-we-serve for the full list.
+
+## Solutions / capabilities
+
+Card-on-file payments, no-show fee automation, stylist commission tracking, tip pool management, multi-location reporting, white-label payment processing, interchange-plus pricing, chargeback evidence packs, same-day payouts, recurring billing, booking integration, POS integration. See https://reynapay.com/solutions.
 
 ## Founder
 
@@ -17,7 +30,9 @@ Robert Reyna, CEO of Salon Envy® (multi-location salon franchise) and serial op
 - General: support@reynapay.com
 - Site: https://reynapay.com
 - Blog: https://reynapay.com/blog
+- Partner inquiries: https://reynapay.com/partners
 
 ## Sitemap
 
-https://reynapay.com/sitemap.xml
+- HTML: https://reynapay.com/sitemap
+- XML: https://reynapay.com/sitemap.xml
