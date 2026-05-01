@@ -76,9 +76,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
       />
       <JsonLd data={faqPageSchema(content.faqs)} />
 
-      {/* HERO with optional image */}
+      {/* HERO with optional image — CENTERED, properly spaced */}
       {content.hero.imageUrl ? (
-        <section className="relative overflow-hidden">
+        <section className="relative overflow-hidden" style={{ paddingTop: "5.5rem", paddingBottom: "5.5rem" }}>
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -86,14 +86,14 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
               alt={content.hero.imageAlt ?? ind.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-brand)]/95 via-[var(--color-brand)]/85 to-[var(--color-brand)]/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-brand)]/95 via-[var(--color-brand)]/85 to-[var(--color-brand)]/90" />
           </div>
-          <div className="relative container-page py-20 md:py-28">
-            <div className="max-w-2xl text-[var(--color-accent)]">
-              <div className="eyebrow eyebrow-on-brand mb-5">{ind.category}</div>
+          <div className="relative container-page">
+            <div className="max-w-3xl mx-auto text-center text-[var(--color-accent)]">
+              <div className="eyebrow eyebrow-on-brand mb-5 inline-block">{ind.category}</div>
               <h1 className="mb-5 text-balance text-[var(--color-accent)]">{content.hero.headline}</h1>
-              <p className="text-[1.0625rem] md:text-xl text-[var(--color-accent)]/90 leading-relaxed mb-8 max-w-xl">{content.hero.subheadline}</p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <p className="text-[1.0625rem] md:text-xl text-[var(--color-accent)]/90 leading-relaxed mb-8 max-w-2xl mx-auto">{content.hero.subheadline}</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button href={primaryCtaHref} variant="cream" size="lg">
                   {primaryCtaLabel} <ArrowRight size={16} />
                 </Button>
@@ -114,18 +114,18 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         />
       )}
 
-      {/* PROBLEM section (optional) */}
+      {/* PROBLEM section — CENTERED */}
       {content.problem && (
         <Section variant="default">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto text-center">
             <div className="eyebrow mb-4">The reality</div>
             <h2 className="mb-5 text-balance">{content.problem.title}</h2>
-            <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed mb-6">{content.problem.body}</p>
+            <p className="text-lg text-[var(--color-ink-muted)] leading-relaxed mb-8">{content.problem.body}</p>
             {content.problem.bullets && content.problem.bullets.length > 0 && (
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-left max-w-2xl mx-auto">
                 {content.problem.bullets.map((b, i) => (
                   <li key={i} className="flex items-start gap-3 text-[var(--color-ink-muted)] leading-relaxed">
-                    <span className="text-[var(--color-brand)] font-bold mt-0.5">→</span>
+                    <span className="text-[var(--color-brand)] font-bold mt-0.5 flex-shrink-0">→</span>
                     <span>{b}</span>
                   </li>
                 ))}
@@ -135,11 +135,11 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* OUTCOMES / THE MATH section (optional) */}
+      {/* OUTCOMES / THE MATH section — already centered */}
       {content.outcomes && (
         <Section variant="brand">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="eyebrow eyebrow-on-brand mb-5">The math</div>
+            <div className="eyebrow eyebrow-on-brand mb-5 inline-block">The math</div>
             <h2 className="mb-5 text-balance text-[var(--color-accent)]">{content.outcomes.title}</h2>
             <p className="text-lg text-[var(--color-accent)]/85 leading-relaxed mb-12 max-w-2xl mx-auto">{content.outcomes.description}</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -154,7 +154,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* WHY US */}
+      {/* WHY US — CENTERED */}
       <Section variant="default">
         <div className="max-w-3xl mx-auto text-center">
           <div className="eyebrow mb-4">Why Reyna Pay</div>
@@ -168,15 +168,15 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </div>
       </Section>
 
-      {/* FEATURES — image-supported */}
+      {/* FEATURES — alternating image/text, properly centered when no image */}
       <Section variant="soft">
         <SectionHeader eyebrow="Built for the work" title={`Features built for ${ind.name.toLowerCase()}.`} />
-        <div className="space-y-12 md:space-y-16 max-w-6xl mx-auto">
+        <div className="space-y-12 md:space-y-20 max-w-6xl mx-auto">
           {content.features.map((f, i) => {
             const reverse = i % 2 === 1;
             const hasImage = Boolean(f.imageUrl);
             return (
-              <div key={f.title} className={`grid ${hasImage ? "lg:grid-cols-2 gap-10" : "grid-cols-1"} items-center`}>
+              <div key={f.title} className={`grid ${hasImage ? "lg:grid-cols-2 gap-10 lg:gap-16 items-center" : "grid-cols-1"}`}>
                 {hasImage && f.imageUrl && (
                   <div className={reverse ? "lg:order-2" : ""}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -188,7 +188,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
                     />
                   </div>
                 )}
-                <div className={hasImage ? (reverse ? "lg:order-1" : "") : "max-w-3xl mx-auto"}>
+                <div className={hasImage ? (reverse ? "lg:order-1" : "") : "max-w-3xl mx-auto text-center"}>
                   <h3 className="text-2xl md:text-3xl mb-4 font-semibold leading-tight flex items-start gap-3">
                     <CheckCircle2 size={24} className="text-[var(--color-brand)] flex-shrink-0 mt-1" />
                     {f.title}
@@ -201,7 +201,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </div>
       </Section>
 
-      {/* USE CASES (optional) */}
+      {/* USE CASES */}
       {content.useCases && content.useCases.length > 0 && (
         <Section variant="default">
           <SectionHeader eyebrow="Real-world use cases" title={`How ${ind.name.toLowerCase()} actually use Reyna Pay.`} />
@@ -217,9 +217,9 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* TESTIMONIAL (optional) */}
+      {/* TESTIMONIAL */}
       {content.testimonial && (
-        <Section variant="cream">
+        <Section variant="soft">
           <div className="max-w-3xl mx-auto">
             <Card className="!p-8 md:!p-12 relative">
               <Quote size={48} className="text-[var(--color-brand)]/20 absolute top-6 left-6" aria-hidden />
@@ -240,7 +240,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         </Section>
       )}
 
-      {/* RECOMMENDED PRODUCT */}
+      {/* RECOMMENDED PRODUCT — CENTERED */}
       {product &&
         (() => {
           const { href, external } = productHref(product);
@@ -248,7 +248,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             <Section variant="default">
               <div className="max-w-2xl mx-auto text-center">
                 <div className="eyebrow mb-4">Recommended product</div>
-                <h2 className="mb-4">
+                <h2 className="mb-4 text-balance">
                   For {ind.name.toLowerCase()}, we recommend {product.name}.
                 </h2>
                 <p className="text-[var(--color-ink-muted)] mb-8 leading-relaxed text-lg">{product.description}</p>
@@ -267,16 +267,18 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         })()}
 
       {/* FAQ */}
-      <Section variant="soft">
+      <Section variant="deep">
         <SectionHeader eyebrow="FAQ" title={`Common questions for ${ind.name.toLowerCase()}.`} />
-        <FAQ items={content.faqs} />
+        <div className="max-w-3xl mx-auto">
+          <FAQ items={content.faqs} />
+        </div>
       </Section>
 
       {/* RELATED SOLUTIONS */}
       {relatedSolutions.length > 0 && (
         <Section variant="default">
           <SectionHeader eyebrow="Related capabilities" title="Solutions that power this industry." />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {relatedSolutions.map((s) => (
               <Link
                 key={s.slug}
@@ -293,7 +295,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
       {/* RELATED INDUSTRIES */}
       {relatedIndustries.length > 0 && (
-        <Section variant="cream">
+        <Section variant="soft">
           <SectionHeader eyebrow="Related industries" title="Other verticals we serve." />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
             {relatedIndustries.map((i) => (
