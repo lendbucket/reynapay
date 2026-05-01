@@ -3,7 +3,37 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ArrowRight,
+  Scissors,
+  Coffee,
+  Dumbbell,
+  Wrench,
+  ShoppingBag,
+  Briefcase,
+  Sparkles,
+  Pen,
+  GlassWater,
+  Truck,
+  Activity,
+  Globe,
+  PawPrint,
+  Building2,
+  CreditCard,
+  Calendar,
+  Users,
+  MapPin,
+  Repeat,
+  Shield,
+  Zap,
+  BarChart3,
+  Layers,
+  Receipt,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Button } from "./button";
 import { PRODUCTS, INDUSTRIES, SOLUTIONS } from "@/lib/site-config";
 
@@ -23,6 +53,41 @@ const NAV_ITEMS: MenuItem[] = [
   { label: "About", href: "/about" },
 ];
 
+const INDUSTRY_ICONS: Record<string, LucideIcon> = {
+  salons: Scissors,
+  barbershops: Scissors,
+  "med-spas": Sparkles,
+  "tattoo-studios": Pen,
+  "nail-salons": Sparkles,
+  "lash-and-brow": Sparkles,
+  restaurants: Coffee,
+  bars: GlassWater,
+  "coffee-shops": Coffee,
+  "food-trucks": Truck,
+  "gyms-and-fitness": Dumbbell,
+  "yoga-studios": Activity,
+  "auto-repair": Wrench,
+  "pet-grooming": PawPrint,
+  retail: ShoppingBag,
+  ecommerce: Globe,
+  "professional-services": Briefcase,
+};
+
+const SOLUTION_ICONS: Record<string, LucideIcon> = {
+  "card-on-file": CreditCard,
+  "no-show-fees": Calendar,
+  "stylist-commission-tracking": Users,
+  "tip-pools": Receipt,
+  "multi-location-reporting": MapPin,
+  "white-label-payments": Layers,
+  "interchange-plus-pricing": BarChart3,
+  "chargeback-protection": Shield,
+  "same-day-payouts": Zap,
+  "recurring-billing": Repeat,
+  "booking-integration": Calendar,
+  "pos-integration": Layers,
+};
+
 export default function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,17 +99,23 @@ export default function Nav() {
     setOpenMega(null);
   }, [pathname]);
 
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
   function openMenu(name: string) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenMega(name);
   }
   function scheduleClose() {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    closeTimer.current = setTimeout(() => setOpenMega(null), 120);
+    closeTimer.current = setTimeout(() => setOpenMega(null), 150);
   }
 
   return (
-    <header className="sticky top-0 z-40 bg-[var(--color-brand)] text-[var(--color-accent)] shadow-[var(--shadow-sm)]">
+    <header className="sticky top-0 z-40 relative bg-[var(--color-brand)] text-[var(--color-accent)] shadow-[var(--shadow-sm)]">
       <div className="container-page flex items-center justify-between h-16">
         <Link href="/" className="flex items-center" aria-label="Reyna Pay home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,7 +184,7 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mega menus — cream panel below brand nav */}
+      {/* Mega menus */}
       {openMega && (
         <div
           onMouseEnter={() => openMenu(openMega)}
@@ -128,27 +199,36 @@ export default function Nav() {
         </div>
       )}
 
-      {/* Mobile drawer — emerald with cream text */}
+      {/* Mobile drawer */}
       {mobileOpen && (
         <div className="lg:hidden bg-[var(--color-brand-dark)] text-[var(--color-accent)] max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-white/10">
           <div className="container-page py-4">
-            <MobileSection title="Products" items={PRODUCTS.map((p) => ({ label: p.name, href: p.url, external: !p.url.includes("reynapay.com") }))} />
             <MobileSection
-              title="Solutions"
-              items={SOLUTIONS.slice(0, 8).map((s) => ({ label: s.name, href: `/solutions/${s.slug}` }))}
+              title="Products"
+              items={PRODUCTS.map((p) => ({ label: p.name, href: p.url, external: !p.url.includes("reynapay.com") }))}
             />
-            <MobileSection
-              title="Industries"
-              items={INDUSTRIES.slice(0, 10).map((i) => ({ label: i.name, href: `/who-we-serve/${i.slug}` }))}
-            />
+            <MobileSection title="Solutions" items={SOLUTIONS.map((s) => ({ label: s.name, href: `/solutions/${s.slug}` }))} />
+            <MobileSection title="Industries" items={INDUSTRIES.map((i) => ({ label: i.name, href: `/who-we-serve/${i.slug}` }))} />
             <div className="border-t border-white/10 my-4" />
-            <Link href="/pricing" className="block py-3 text-base font-medium text-[var(--color-accent)]">Pricing</Link>
-            <Link href="/partners" className="block py-3 text-base font-medium text-[var(--color-accent)]">Partners</Link>
-            <Link href="/blog" className="block py-3 text-base font-medium text-[var(--color-accent)]">Blog</Link>
-            <Link href="/about" className="block py-3 text-base font-medium text-[var(--color-accent)]">About</Link>
-            <Link href="/contact" className="block py-3 text-base font-medium text-[var(--color-accent)]">Contact</Link>
+            <Link href="/pricing" className="block py-3 text-base font-medium text-[var(--color-accent)]">
+              Pricing
+            </Link>
+            <Link href="/partners" className="block py-3 text-base font-medium text-[var(--color-accent)]">
+              Partners
+            </Link>
+            <Link href="/blog" className="block py-3 text-base font-medium text-[var(--color-accent)]">
+              Blog
+            </Link>
+            <Link href="/about" className="block py-3 text-base font-medium text-[var(--color-accent)]">
+              About
+            </Link>
+            <Link href="/contact" className="block py-3 text-base font-medium text-[var(--color-accent)]">
+              Contact
+            </Link>
             <div className="pt-4 pb-4">
-              <Button href="/apply" variant="cream" className="w-full">Get started</Button>
+              <Button href="/apply" variant="cream" className="w-full">
+                Get started
+              </Button>
             </div>
           </div>
         </div>
@@ -159,74 +239,146 @@ export default function Nav() {
 
 function MegaProducts() {
   return (
-    <div className="grid grid-cols-3 gap-6">
-      {PRODUCTS.map((p) => {
-        const isExternal = !p.url.includes("reynapay.com");
-        return (
-          <a
-            key={p.slug}
-            href={p.url}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener" : undefined}
-            className="group p-5 rounded-[var(--radius-lg)] bg-[var(--color-card)] border border-[var(--color-border)] hover:border-[var(--color-brand)] hover:shadow-[var(--shadow-md)] transition-all"
-          >
-            <div className="flex items-center justify-between mb-2">
-              <h4 className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors">{p.name}</h4>
-              <ArrowRight size={14} className="text-[var(--color-ink-subtle)] group-hover:text-[var(--color-brand)] group-hover:translate-x-0.5 transition-all" />
-            </div>
-            <p className="text-sm text-[var(--color-ink-muted)] leading-relaxed">{p.tagline}</p>
-            <div className="mt-3 text-xs text-[var(--color-ink-subtle)] font-mono">{p.domain}</div>
-          </a>
-        );
-      })}
+    <div className="grid grid-cols-12 gap-8">
+      <div className="col-span-8 grid grid-cols-2 gap-4">
+        {PRODUCTS.map((p) => {
+          const isExternal = !p.url.includes("reynapay.com");
+          return (
+            <a
+              key={p.slug}
+              href={p.url}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener" : undefined}
+              className="group p-5 rounded-[var(--radius-lg)] bg-[var(--color-card)] border border-[var(--color-border)] hover:border-[var(--color-brand)] hover:shadow-[var(--shadow-md)] transition-all block"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors text-base">{p.name}</h4>
+                  <p className="text-[0.8125rem] text-[var(--color-ink-muted)] leading-relaxed mt-1">{p.tagline}</p>
+                  <div className="mt-3 text-[0.6875rem] text-[var(--color-brand)] font-mono font-semibold">{p.domain}</div>
+                </div>
+                <ArrowRight
+                  size={16}
+                  className="text-[var(--color-ink-subtle)] group-hover:text-[var(--color-brand)] group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-0.5"
+                />
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <div className="col-span-4 bg-gradient-to-br from-[var(--color-brand)] to-[var(--color-brand-dark)] rounded-[var(--radius-lg)] p-6 text-[var(--color-accent)] flex flex-col justify-between">
+        <div>
+          <div className="text-[0.6875rem] uppercase tracking-wider opacity-80 mb-2 font-semibold">Become a partner</div>
+          <h4 className="text-lg font-semibold mb-2">Launch your own branded payments business.</h4>
+          <p className="text-[0.8125rem] opacity-80 leading-relaxed">
+            25% of net processing margin. Branded portal at your subdomain. We handle compliance.
+          </p>
+        </div>
+        <Link href="/partners" className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold hover:gap-2 transition-all">
+          Apply to be a partner <ArrowRight size={14} />
+        </Link>
+      </div>
     </div>
   );
 }
 
 function MegaSolutions() {
   return (
-    <div className="grid grid-cols-3 gap-x-6 gap-y-2">
-      {SOLUTIONS.map((s) => (
-        <Link
-          key={s.slug}
-          href={`/solutions/${s.slug}`}
-          className="group flex items-start gap-3 p-3 rounded-[var(--radius-md)] hover:bg-[var(--color-card)] transition-colors"
-        >
-          <div>
-            <div className="font-medium text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors text-[0.9375rem]">{s.name}</div>
-            <div className="text-xs text-[var(--color-ink-muted)] mt-0.5">{s.description}</div>
-          </div>
+    <div className="grid grid-cols-12 gap-8">
+      <div className="col-span-9">
+        <div className="text-[0.6875rem] uppercase tracking-wider text-[var(--color-ink-subtle)] font-semibold mb-4">All capabilities</div>
+        <div className="grid grid-cols-3 gap-2">
+          {SOLUTIONS.map((s) => {
+            const Icon = SOLUTION_ICONS[s.slug];
+            return (
+              <Link
+                key={s.slug}
+                href={`/solutions/${s.slug}`}
+                className="group flex items-start gap-3 p-3 rounded-[var(--radius-md)] hover:bg-[var(--color-card)] transition-colors"
+              >
+                {Icon && (
+                  <div className="flex-shrink-0 w-8 h-8 rounded-[var(--radius-md)] bg-[var(--color-brand-tint)] flex items-center justify-center group-hover:bg-[var(--color-brand)] transition-colors">
+                    <Icon size={16} strokeWidth={1.75} className="text-[var(--color-brand)] group-hover:text-[var(--color-accent)] transition-colors" />
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <div className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors text-[0.875rem] leading-tight">
+                    {s.name}
+                  </div>
+                  <div className="text-[0.75rem] text-[var(--color-ink-muted)] mt-0.5 leading-snug">{s.description}</div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <div className="col-span-3 bg-[var(--color-surface-3)] rounded-[var(--radius-lg)] p-5 flex flex-col justify-between">
+        <div>
+          <div className="text-[0.6875rem] uppercase tracking-wider text-[var(--color-brand)] font-semibold mb-2">See pricing</div>
+          <h4 className="text-base font-semibold mb-2">Transparent pricing.</h4>
+          <p className="text-[0.8125rem] text-[var(--color-ink-muted)] leading-relaxed">No hidden interchange padding. No long-term contracts.</p>
+        </div>
+        <Link href="/pricing" className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-[var(--color-brand)] hover:gap-2 transition-all">
+          View pricing <ArrowRight size={14} />
         </Link>
-      ))}
+      </div>
     </div>
   );
 }
 
 function MegaIndustries() {
-  const grouped = INDUSTRIES.reduce<Record<string, typeof INDUSTRIES[number][]>>((acc, ind) => {
+  const grouped = INDUSTRIES.reduce<Record<string, (typeof INDUSTRIES)[number][]>>((acc, ind) => {
     if (!acc[ind.category]) acc[ind.category] = [];
     acc[ind.category].push(ind);
     return acc;
   }, {});
   return (
-    <div className="grid grid-cols-4 gap-8">
-      {Object.entries(grouped).map(([cat, items]) => (
-        <div key={cat}>
-          <div className="text-xs font-semibold uppercase tracking-wider text-[var(--color-ink-subtle)] mb-3">{cat}</div>
-          <ul className="space-y-1.5">
-            {items.map((ind) => (
-              <li key={ind.slug}>
-                <Link
-                  href={`/who-we-serve/${ind.slug}`}
-                  className="text-[0.9375rem] text-[var(--color-ink-muted)] hover:text-[var(--color-brand)] transition-colors"
-                >
-                  {ind.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+    <div className="grid grid-cols-12 gap-8">
+      <div className="col-span-9">
+        <div className="text-[0.6875rem] uppercase tracking-wider text-[var(--color-ink-subtle)] font-semibold mb-4">Industries we serve</div>
+        <div className="grid grid-cols-3 gap-x-6 gap-y-6">
+          {Object.entries(grouped).map(([cat, items]) => (
+            <div key={cat}>
+              <div className="text-[0.75rem] font-semibold text-[var(--color-brand)] mb-2.5">{cat}</div>
+              <ul className="space-y-1">
+                {items.map((ind) => {
+                  const Icon = INDUSTRY_ICONS[ind.slug] || Building2;
+                  return (
+                    <li key={ind.slug}>
+                      <Link
+                        href={`/who-we-serve/${ind.slug}`}
+                        className="group flex items-center gap-2.5 py-1.5 px-2 -mx-2 rounded-[var(--radius-md)] hover:bg-[var(--color-card)] transition-colors"
+                      >
+                        <Icon size={14} strokeWidth={1.75} className="text-[var(--color-ink-subtle)] group-hover:text-[var(--color-brand)] transition-colors flex-shrink-0" />
+                        <span className="text-[0.875rem] text-[var(--color-ink-muted)] group-hover:text-[var(--color-brand)] transition-colors leading-tight">
+                          {ind.name}
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+      <div className="col-span-3 bg-[var(--color-surface-3)] rounded-[var(--radius-lg)] p-5 flex flex-col justify-between">
+        <div>
+          <div className="text-[0.6875rem] uppercase tracking-wider text-[var(--color-brand)] font-semibold mb-2">All industries</div>
+          <h4 className="text-base font-semibold mb-2">Don't see your vertical?</h4>
+          <p className="text-[0.8125rem] text-[var(--color-ink-muted)] leading-relaxed">
+            Reyna Pay's infrastructure works for almost any business. Talk to us.
+          </p>
+        </div>
+        <div className="mt-4 flex flex-col gap-2">
+          <Link href="/who-we-serve" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-brand)] hover:gap-2 transition-all">
+            Browse all industries <ArrowRight size={14} />
+          </Link>
+          <Link href="/contact" className="inline-flex items-center gap-1.5 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-brand)] transition-colors">
+            Talk to sales →
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
