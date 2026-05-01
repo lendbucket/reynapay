@@ -82,7 +82,7 @@ export default function HomePage() {
         subheadline="Reyna Pay powers vertical-specific payment products for salons, restaurants, gyms, retail, and dozens more. Transparent pricing. Real support. Infrastructure that scales with you."
         primaryCta={{ label: "Get started", href: "/apply" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        trustline="PCI DSS Level 1 · Card-network certified · DEPLOY-CHECK-V1"
+        trustline="PCI DSS Level 1, Card-network certified"
         visual={<HeroVisual />}
       />
 

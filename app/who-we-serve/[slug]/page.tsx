@@ -69,10 +69,9 @@ export default async function IndustryPage({
     .map((s) => INDUSTRIES.find((i) => i.slug === s))
     .filter((i): i is NonNullable<typeof i> => Boolean(i));
 
-  function productHref(p: (typeof PRODUCTS)[number]): {
-    href: string;
-    external: boolean;
-  } {
+  function productHref(
+    p: (typeof PRODUCTS)[number],
+  ): { href: string; external: boolean } {
     if (p.slug === "platform") return { href: "/apply", external: false };
     if (p.slug === "salontransact")
       return { href: "/salontransact", external: false };
@@ -88,7 +87,10 @@ export default async function IndustryPage({
         data={breadcrumbSchema([
           { name: "Home", url: "https://reynapay.com" },
           { name: "Industries", url: "https://reynapay.com/who-we-serve" },
-          { name: ind.name, url: `https://reynapay.com/who-we-serve/${slug}` },
+          {
+            name: ind.name,
+            url: `https://reynapay.com/who-we-serve/${slug}`,
+          },
         ])}
       />
       <JsonLd
@@ -100,11 +102,14 @@ export default async function IndustryPage({
       />
       <JsonLd data={faqPageSchema(content.faqs)} />
 
-      {/* HERO with optional image — CENTERED, properly spaced */}
       {content.hero.imageUrl ? (
         <section
-          className="relative overflow-hidden"
-          style={{ paddingTop: "5.5rem", paddingBottom: "5.5rem" }}
+          className="relative overflow-hidden flex items-center"
+          style={{
+            minHeight: "560px",
+            paddingTop: "5rem",
+            paddingBottom: "5rem",
+          }}
         >
           <div className="absolute inset-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,9 +118,9 @@ export default async function IndustryPage({
               alt={content.hero.imageAlt ?? ind.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-brand)]/95 via-[var(--color-brand)]/85 to-[var(--color-brand)]/90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-brand)]/95 via-[var(--color-brand)]/85 to-[var(--color-brand)]/92" />
           </div>
-          <div className="relative container-page">
+          <div className="relative container-page w-full">
             <div className="max-w-3xl mx-auto text-center text-[var(--color-accent)]">
               <div className="eyebrow eyebrow-on-brand mb-5 inline-block">
                 {ind.category}
@@ -147,7 +152,6 @@ export default async function IndustryPage({
         />
       )}
 
-      {/* PROBLEM section — CENTERED */}
       {content.problem && (
         <Section variant="default">
           <div className="max-w-3xl mx-auto text-center">
@@ -175,7 +179,6 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* OUTCOMES / THE MATH section — already centered */}
       {content.outcomes && (
         <Section variant="brand">
           <div className="max-w-4xl mx-auto text-center">
@@ -204,7 +207,6 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* WHY US — CENTERED */}
       <Section variant="default">
         <div className="max-w-3xl mx-auto text-center">
           <div className="eyebrow mb-4">Why Reyna Pay</div>
@@ -220,7 +222,6 @@ export default async function IndustryPage({
         </div>
       </Section>
 
-      {/* FEATURES — alternating image/text, properly centered when no image */}
       <Section variant="soft">
         <SectionHeader
           eyebrow="Built for the work"
@@ -272,7 +273,6 @@ export default async function IndustryPage({
         </div>
       </Section>
 
-      {/* USE CASES */}
       {content.useCases && content.useCases.length > 0 && (
         <Section variant="default">
           <SectionHeader
@@ -295,7 +295,6 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* TESTIMONIAL */}
       {content.testimonial && (
         <Section variant="soft">
           <div className="max-w-3xl mx-auto">
@@ -326,7 +325,6 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* RECOMMENDED PRODUCT — CENTERED */}
       {product &&
         (() => {
           const { href, external } = productHref(product);
@@ -354,7 +352,6 @@ export default async function IndustryPage({
           );
         })()}
 
-      {/* FAQ */}
       <Section variant="deep">
         <SectionHeader
           eyebrow="FAQ"
@@ -365,7 +362,6 @@ export default async function IndustryPage({
         </div>
       </Section>
 
-      {/* RELATED SOLUTIONS */}
       {relatedSolutions.length > 0 && (
         <Section variant="default">
           <SectionHeader
@@ -391,7 +387,6 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* RELATED INDUSTRIES */}
       {relatedIndustries.length > 0 && (
         <Section variant="soft">
           <SectionHeader
@@ -414,13 +409,9 @@ export default async function IndustryPage({
         </Section>
       )}
 
-      {/* RELATED BLOG POSTS */}
       {relatedPosts.length > 0 && (
         <Section variant="default">
-          <SectionHeader
-            eyebrow="Further reading"
-            title="From the Reyna Pay blog."
-          />
+          <SectionHeader eyebrow="Further reading" title="From the Reyna Pay blog." />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
             {relatedPosts.map((p) => (
               <Link
