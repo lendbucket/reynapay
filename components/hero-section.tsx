@@ -23,15 +23,15 @@ export function HeroSection({
   return (
     <section
       className="relative overflow-hidden gradient-mesh-cream"
-      style={{ paddingTop: "6rem", paddingBottom: "5rem" }}
+      style={{ paddingTop: "4.5rem", paddingBottom: "4.5rem" }}
     >
       <div className="absolute inset-0 bg-grid opacity-40 -z-10" />
       <div className="container-page relative">
-        <div className="md:pt-8 lg:pt-12">
+        <div className="md:pt-4 lg:pt-6">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className={visual ? "lg:col-span-6" : "lg:col-span-9 mx-auto text-center"}>
               {eyebrow && (
-                <div className="eyebrow mb-6" style={{ marginTop: "0.5rem" }}>
+                <div className="eyebrow mb-6">
                   {eyebrow}
                 </div>
               )}

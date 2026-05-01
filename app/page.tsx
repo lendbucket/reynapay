@@ -96,6 +96,16 @@ export default function HomePage() {
               rel="noopener"
               className="group card-base p-7 flex flex-col"
             >
+              {p.logoFile && (
+                <div className="h-12 mb-4 flex items-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.logoFile}
+                    alt={p.name}
+                    className="max-h-7 max-w-[140px] w-auto object-contain"
+                  />
+                </div>
+              )}
               <div className="text-[0.6875rem] font-semibold uppercase tracking-wider text-[var(--color-brand)] mb-3 font-mono">
                 {p.domain}
               </div>
