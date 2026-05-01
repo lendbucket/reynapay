@@ -21,31 +21,40 @@ export function HeroSection({
   trustline,
 }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden gradient-mesh-cream">
+    <section
+      className="relative overflow-hidden gradient-mesh-cream"
+      style={{ paddingTop: "6rem", paddingBottom: "5rem" }}
+    >
       <div className="absolute inset-0 bg-grid opacity-40 -z-10" />
-      <div className="container-page pt-20 pb-16 md:pt-32 md:pb-24 relative">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          <div className={visual ? "lg:col-span-6" : "lg:col-span-9 mx-auto text-center"}>
-            {eyebrow && <div className="eyebrow mb-6">{eyebrow}</div>}
-            <h1 className="mb-5 text-balance">{headline}</h1>
-            <p className="text-[1.0625rem] md:text-xl text-[var(--color-ink-muted)] leading-relaxed mb-8 max-w-xl">
-              {subheadline}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <Button href={primaryCta.href} size="lg">
-                {primaryCta.label} <ArrowRight size={16} />
-              </Button>
-              {secondaryCta && (
-                <Button href={secondaryCta.href} variant="secondary" size="lg">
-                  {secondaryCta.label}
+      <div className="container-page relative">
+        <div className="md:pt-8 lg:pt-12">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className={visual ? "lg:col-span-6" : "lg:col-span-9 mx-auto text-center"}>
+              {eyebrow && (
+                <div className="eyebrow mb-6" style={{ marginTop: "0.5rem" }}>
+                  {eyebrow}
+                </div>
+              )}
+              <h1 className="mb-5 text-balance">{headline}</h1>
+              <p className="text-[1.0625rem] md:text-xl text-[var(--color-ink-muted)] leading-relaxed mb-8 max-w-xl">
+                {subheadline}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Button href={primaryCta.href} size="lg">
+                  {primaryCta.label} <ArrowRight size={16} />
                 </Button>
+                {secondaryCta && (
+                  <Button href={secondaryCta.href} variant="secondary" size="lg">
+                    {secondaryCta.label}
+                  </Button>
+                )}
+              </div>
+              {trustline && (
+                <p className="text-xs text-[var(--color-ink-subtle)] font-medium">{trustline}</p>
               )}
             </div>
-            {trustline && (
-              <p className="text-xs text-[var(--color-ink-subtle)] font-medium">{trustline}</p>
-            )}
+            {visual && <div className="lg:col-span-6">{visual}</div>}
           </div>
-          {visual && <div className="lg:col-span-6">{visual}</div>}
         </div>
       </div>
     </section>
