@@ -1,8 +1,3 @@
-/**
- * Central config for site-wide data — products, verticals, cross-domain links.
- * Edit this file to add/remove products or industries; the rest of the site picks it up.
- */
-
 export const SITE_CONFIG = {
   name: "Reyna Pay",
   legalName: "Reyna Pay LLC",
@@ -10,20 +5,17 @@ export const SITE_CONFIG = {
   url: "https://reynapay.com",
   email: "support@reynapay.com",
   description:
-    "Vertical-first payment processing infrastructure. We power SalonTransact, KasseApp, and a network of branded payment products across dozens of industries.",
+    "Vertical-first payment processing infrastructure. We power SalonTransact, KasseApp, RunMySalon, and a network of branded payment products across dozens of industries.",
   tagline: "Payment processing built for every industry.",
 };
 
-/**
- * Reyna Pay's product portfolio. Each product has its own domain — these get linked
- * from the home page, footer, and product pages for SEO + cross-domain authority.
- */
 export const PRODUCTS = [
   {
     name: "SalonTransact",
     slug: "salontransact",
     domain: "salontransact.com",
     url: "https://salontransact.com",
+    logoFile: "/products/salontransact.png",
     tagline: "Payment processing for salons, barbers, and beauty professionals.",
     description:
       "Card-on-file, stylist commission attribution, no-show automation, and booking integration — built for salons.",
@@ -34,28 +26,36 @@ export const PRODUCTS = [
     slug: "kasseapp",
     domain: "kasseapp.com",
     url: "https://kasseapp.com",
+    logoFile: "/products/kasseapp.png",
     tagline: "POS and payments for restaurants, bars, and food service.",
     description:
       "Cloud POS with table management, tip pools, kitchen ticketing, and integrated payments. Built for restaurants and bars.",
     industries: ["restaurants", "bars", "coffee-shops", "food-trucks", "quick-service"],
   },
-  // Third domain placeholder — replace when you tell me the name
+  {
+    name: "RunMySalon",
+    slug: "runmysalon",
+    domain: "runmysalon.com",
+    url: "https://runmysalon.com",
+    logoFile: "/products/runmysalon.png",
+    tagline: "Booking and management for the modern salon.",
+    description:
+      "Online booking, calendar management, client records, and integrated payments — the operations layer for salons.",
+    industries: ["salons", "barbershops", "med-spas"],
+  },
   {
     name: "Reyna Pay Platform",
     slug: "platform",
     domain: "reynapay.com",
     url: "https://reynapay.com",
+    logoFile: "/logo.png",
     tagline: "The infrastructure powering it all.",
     description:
-      "PCI-compliant, card-network-certified processing platform. Powers SalonTransact, KasseApp, and our partner network.",
+      "PCI-compliant, card-network-certified processing platform. Powers SalonTransact, KasseApp, RunMySalon, and our partner network.",
     industries: ["all"],
   },
 ] as const;
 
-/**
- * Industries we serve. Each gets its own /who-we-serve/[slug] page in Stage 5B.
- * "primaryProduct" tells the page which Reyna Pay product to recommend.
- */
 export const INDUSTRIES = [
   { slug: "salons", name: "Salons", category: "Beauty & Personal Care", primaryProduct: "salontransact" },
   { slug: "barbershops", name: "Barbershops", category: "Beauty & Personal Care", primaryProduct: "salontransact" },
@@ -76,10 +76,6 @@ export const INDUSTRIES = [
   { slug: "professional-services", name: "Professional Services", category: "B2B Services", primaryProduct: "platform" },
 ] as const;
 
-/**
- * Solutions = use cases / capabilities (different from industries).
- * Each gets its own /solutions/[slug] page in Stage 5B.
- */
 export const SOLUTIONS = [
   { slug: "card-on-file", name: "Card-on-file payments", description: "Securely store cards for repeat customers." },
   { slug: "no-show-fees", name: "No-show fee automation", description: "Charge cancellation fees automatically." },

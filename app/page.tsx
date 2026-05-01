@@ -76,26 +76,32 @@ export default function HomePage() {
         subheadline="Reyna Pay powers vertical-specific payment products for salons, restaurants, gyms, retail, and dozens more. Transparent pricing. Real support. Infrastructure that scales with you."
         primaryCta={{ label: "Get started", href: "/apply" }}
         secondaryCta={{ label: "See pricing", href: "/pricing" }}
-        trustline="PCI DSS Level 1 · Card-network certified · Bank-sponsored"
+        trustline="PCI DSS Level 1 · Card-network certified"
         visual={<HeroVisual />}
       />
 
       {/* Logo / domain strip */}
-      <Section variant="soft" className="!py-10">
+      <Section variant="soft" className="!py-12">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-wider text-[var(--color-ink-subtle)] font-semibold mb-6">
+          <p className="text-xs uppercase tracking-wider text-[var(--color-ink-subtle)] font-semibold mb-8">
             Powering vertical-specific payment products across the web
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            {PRODUCTS.map((p) => (
+          <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-6">
+            {PRODUCTS.filter((p) => p.slug !== "platform").map((p) => (
               <a
                 key={p.slug}
                 href={p.url}
-                target={p.url.startsWith("http") && !p.url.includes("reynapay.com") ? "_blank" : undefined}
+                target="_blank"
                 rel="noopener"
-                className="text-base font-semibold text-[var(--color-ink-muted)] hover:text-[var(--color-brand)] transition-colors flex items-center gap-2"
+                className="group flex items-center gap-3 transition-opacity hover:opacity-80"
+                aria-label={`Visit ${p.name}`}
               >
-                {p.name}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.logoFile}
+                  alt={p.name}
+                  className="h-7 w-auto opacity-70 group-hover:opacity-100 transition-opacity"
+                />
                 <span className="text-xs font-mono text-[var(--color-ink-subtle)]">{p.domain}</span>
               </a>
             ))}
@@ -119,6 +125,14 @@ export default function HomePage() {
               rel="noopener"
               className="group card-base p-7 flex flex-col"
             >
+              {p.logoFile && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={p.logoFile}
+                  alt={p.name}
+                  className="h-8 w-auto mb-4"
+                />
+              )}
               <div className="text-[0.6875rem] font-semibold uppercase tracking-wider text-[var(--color-brand)] mb-3 font-mono">
                 {p.domain}
               </div>

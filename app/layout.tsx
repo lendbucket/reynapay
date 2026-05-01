@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Reyna Pay",
   },
   description:
-    "Reyna Pay powers vertical-specific payment processing for salons, restaurants, gyms, retail, and dozens more industries. SalonTransact, KasseApp, and our partner network — all on one transparent infrastructure.",
+    "Reyna Pay powers vertical-specific payment processing for salons, restaurants, gyms, retail, and dozens more industries. SalonTransact, KasseApp, RunMySalon, and our partner network — all on one transparent infrastructure.",
   applicationName: "Reyna Pay",
   authors: [{ name: "Reyna Pay LLC" }],
   generator: "Next.js",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: "https://reynapay.com",
     siteName: "Reyna Pay",
     title: "Reyna Pay — Vertical-first payment processing infrastructure",
-    description: "Vertical-specific payment processing. SalonTransact, KasseApp, and a partner network — on one transparent infrastructure.",
+    description: "Vertical-specific payment processing. SalonTransact, KasseApp, RunMySalon, and a partner network — on one transparent infrastructure.",
     images: [{ url: "/og/default.png", width: 1200, height: 630, alt: "Reyna Pay" }],
   },
   twitter: {
@@ -64,7 +64,16 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   alternates: { canonical: "https://reynapay.com" },
-  icons: { icon: "/favicon.ico", apple: "/apple-touch-icon.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-32.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
