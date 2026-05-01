@@ -45,7 +45,7 @@ export function HeroSection({
               <p className="text-xs text-[var(--color-ink-subtle)] font-medium">{trustline}</p>
             )}
           </div>
-          {visual && <div className="lg:col-span-6">{visual}</div>}
+          {visual && <div className="lg:col-span-6 min-w-0">{visual}</div>}
         </div>
       </div>
     </section>
@@ -88,12 +88,12 @@ export function HeroVisual() {
             <TxRow merchant="Ironclad Auto — Service" amount="$1,240.00" />
           </div>
         </div>
-      </div>
-      <div className="absolute -bottom-4 -right-4 hidden md:block">
-        <div className="bg-[var(--color-brand)] text-[var(--color-accent)] rounded-[var(--radius-lg)] p-4 shadow-[var(--shadow-lg)] max-w-[200px]">
-          <div className="text-xs uppercase tracking-wider opacity-80 mb-1">Saved this month</div>
-          <div className="text-2xl font-bold">$1,847</div>
-          <div className="text-xs opacity-80 mt-1">vs. previous processor</div>
+        <div className="absolute bottom-4 right-4 hidden md:block">
+          <div className="bg-[var(--color-brand)] text-[var(--color-accent)] rounded-[var(--radius-lg)] p-4 shadow-[var(--shadow-lg)] max-w-[200px]">
+            <div className="text-xs uppercase tracking-wider opacity-80 mb-1">Saved this month</div>
+            <div className="text-2xl font-bold">$1,847</div>
+            <div className="text-xs opacity-80 mt-1">vs. previous processor</div>
+          </div>
         </div>
       </div>
     </div>

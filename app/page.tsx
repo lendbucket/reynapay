@@ -8,14 +8,7 @@ import {
   HeartHandshake,
   ArrowRight,
   CheckCircle2,
-  CreditCard,
   Building2,
-  Briefcase,
-  Coffee,
-  Scissors,
-  Dumbbell,
-  Wrench,
-  ShoppingBag,
 } from "lucide-react";
 import Link from "next/link";
 import { HeroSection, HeroVisual } from "@/components/hero-section";
@@ -65,15 +58,6 @@ const whyFeatures = [
     description: "Standard T+1 settlement. Same-day payouts available — toggle on when payroll can't wait.",
   },
 ];
-
-const industryIcons: Record<string, typeof CreditCard> = {
-  salons: Scissors,
-  restaurants: Coffee,
-  "gyms-and-fitness": Dumbbell,
-  "auto-repair": Wrench,
-  retail: ShoppingBag,
-  "professional-services": Briefcase,
-};
 
 export default function HomePage() {
   return (
@@ -159,22 +143,18 @@ export default function HomePage() {
           description="Generic processors treat every business the same. We don't. Each industry on Reyna Pay gets purpose-built features, vertical-specific support, and pricing that reflects their reality."
         />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {INDUSTRIES.slice(0, 12).map((ind) => {
-            const Icon = industryIcons[ind.slug] || Building2;
-            return (
-              <Link
-                key={ind.slug}
-                href={`/who-we-serve/${ind.slug}`}
-                className="group card-base p-5 hover:border-[var(--color-brand)] transition-all"
-              >
-                <Icon size={20} strokeWidth={1.75} className="text-[var(--color-brand)] mb-3" />
-                <div className="text-[0.9375rem] font-semibold group-hover:text-[var(--color-brand)] transition-colors">
-                  {ind.name}
-                </div>
-                <div className="text-xs text-[var(--color-ink-subtle)] mt-0.5">{ind.category}</div>
-              </Link>
-            );
-          })}
+          {INDUSTRIES.slice(0, 12).map((ind) => (
+            <Link
+              key={ind.slug}
+              href={`/who-we-serve/${ind.slug}`}
+              className="group card-base p-5 hover:border-[var(--color-brand)] transition-all flex flex-col"
+            >
+              <div className="text-[0.9375rem] font-semibold group-hover:text-[var(--color-brand)] transition-colors">
+                {ind.name}
+              </div>
+              <div className="text-xs text-[var(--color-ink-subtle)] mt-1">{ind.category}</div>
+            </Link>
+          ))}
         </div>
         <div className="mt-10 text-center">
           <Button href="/who-we-serve" variant="secondary" size="lg">

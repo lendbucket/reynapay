@@ -94,7 +94,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-6 text-[11px] text-[var(--color-accent)]/50 leading-relaxed max-w-4xl">
+        <p className="mt-6 text-[12px] text-[var(--color-accent)]/70 leading-relaxed max-w-4xl">
           Reyna Pay LLC is the merchant services provider for all merchants on the platform. Partners are independent referrers, not licensed money transmitters. Card processing is subject to underwriting approval. Rates and terms vary based on merchant category, processing volume, and risk profile.
         </p>
       </div>
