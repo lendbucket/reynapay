@@ -40,7 +40,7 @@ export default function WhoWeServePage() {
       />
 
       {Object.entries(grouped).map(([cat, items]) => (
-        <Section key={cat} variant={cat === Object.keys(grouped)[0] ? "default" : "surface"}>
+        <Section key={cat} variant={cat === Object.keys(grouped)[0] ? "default" : "soft"}>
           <SectionHeader eyebrow={cat} title={`${cat} payment processing`} centered={false} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {items.map((ind) => (

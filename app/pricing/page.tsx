@@ -160,7 +160,7 @@ export default function PricingPage() {
         secondaryCta={{ label: "Talk to sales", href: "/contact" }}
       />
 
-      <Section variant="surface" id="for-salons">
+      <Section variant="soft" id="for-salons">
         <SectionHeader
           eyebrow="For salons"
           title="Pricing for salon owners"
@@ -184,7 +184,7 @@ export default function PricingPage() {
         </p>
       </Section>
 
-      <Section variant="surface">
+      <Section variant="soft">
         <Card className="max-w-3xl mx-auto !p-10">
           <h2 className="mb-4 text-center">What's never in the price</h2>
           <ul className="space-y-3 text-[var(--color-text-secondary)] mt-6">

@@ -21,10 +21,10 @@ export function CTASection({
   secondaryHref,
 }: CTASectionProps) {
   return (
-    <section className="section relative overflow-hidden bg-[var(--color-brand)] text-white">
-      <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+    <section className="section relative overflow-hidden bg-[var(--color-brand)] text-[var(--color-accent)]">
+      <div className="absolute inset-0 bg-grid opacity-[0.05]" />
       <div
-        className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-20 blur-3xl"
+        className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-15 blur-3xl"
         style={{ background: "var(--color-accent)" }}
       />
       <div
@@ -33,15 +33,20 @@ export function CTASection({
       />
       <div className="container-page relative">
         <div className="max-w-3xl mx-auto text-center">
-          {eyebrow && <div className="eyebrow eyebrow-on-dark mb-5">{eyebrow}</div>}
-          <h2 className="text-white mb-5 text-balance">{title}</h2>
-          {description && <p className="text-white/85 text-lg mb-8 leading-relaxed">{description}</p>}
+          {eyebrow && <div className="eyebrow eyebrow-on-brand mb-5">{eyebrow}</div>}
+          <h2 className="text-[var(--color-accent)] mb-5 text-balance">{title}</h2>
+          {description && <p className="text-[var(--color-accent)]/85 text-lg mb-8 leading-relaxed">{description}</p>}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button href={primaryHref} variant="white" size="lg">
+            <Button href={primaryHref} variant="cream" size="lg">
               {primaryLabel} <ArrowRight size={16} />
             </Button>
             {secondaryLabel && secondaryHref && (
-              <Button href={secondaryHref} variant="ghost" size="lg" className="!text-white hover:!bg-white/10">
+              <Button
+                href={secondaryHref}
+                variant="ghost"
+                size="lg"
+                className="!text-[var(--color-accent)] hover:!bg-white/10"
+              >
                 {secondaryLabel}
               </Button>
             )}

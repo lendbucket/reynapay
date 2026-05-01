@@ -33,7 +33,7 @@ export default function AboutPage() {
         secondaryCta={{ label: "See SalonTransact", href: "/salontransact" }}
       />
 
-      <Section variant="surface">
+      <Section variant="soft">
         <div className="max-w-3xl mx-auto">
           <div className="text-sm font-semibold uppercase tracking-wider text-[var(--color-teal)] mb-4">Founder story</div>
           <h2 className="mb-8">A processor I'd actually want to work with.</h2>
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section variant="surface">
+      <Section variant="soft">
         <SectionHeader eyebrow="Team" title="Operators, not consultants" />
         <div className="max-w-2xl mx-auto">
           <Card className="!p-10">

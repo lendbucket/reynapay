@@ -138,7 +138,7 @@ export default function PartnersPage() {
       />
 
       {/* How it works */}
-      <Section variant="surface" id="how-it-works">
+      <Section variant="soft" id="how-it-works">
         <SectionHeader eyebrow="How it works" title="Three steps to your own payments business" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card>
@@ -179,7 +179,7 @@ export default function PartnersPage() {
       </Section>
 
       {/* Who this is for */}
-      <Section variant="surface">
+      <Section variant="soft">
         <SectionHeader eyebrow="Who this is for" title="Built for operators who already sell" />
         <FeatureGrid features={idealPartners} columns={4} />
       </Section>
@@ -220,7 +220,7 @@ export default function PartnersPage() {
       </section>
 
       {/* FAQ */}
-      <Section variant="surface">
+      <Section variant="soft">
         <SectionHeader eyebrow="Partner FAQ" title="What partners ask us first" />
         <FAQ items={faqItems} />
       </Section>

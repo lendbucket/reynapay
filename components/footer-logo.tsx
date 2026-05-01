@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 
-export function FooterLogo() {
+export default function FooterLogo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5 mb-5 font-semibold text-white">
+    <Link href="/" className="inline-flex items-center" aria-label="Reyna Pay home">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.svg" alt="Reyna Pay" className="h-8 w-auto invert" onError={(e) => { (e.target as HTMLImageElement).src = "/logo.png"; }} />
-      <span className="text-base">Reyna Pay</span>
+      <img src="/logo.png" alt="Reyna Pay" className="h-6 w-auto" />
     </Link>
   );
 }

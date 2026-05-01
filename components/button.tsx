@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "white" | "cream";
+type Variant = "primary" | "secondary" | "ghost" | "cream" | "outline-cream";
 type Size = "sm" | "md" | "lg";
 
 interface BaseProps {
@@ -24,15 +24,15 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-dark)] active:bg-[var(--color-brand-dark)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)]",
+    "bg-[var(--color-brand)] text-[var(--color-accent)] hover:bg-[var(--color-brand-dark)] active:bg-[var(--color-brand-darker)] shadow-[var(--shadow-sm)] hover:shadow-[var(--shadow-md)]",
   secondary:
-    "bg-white text-[var(--color-ink)] border border-[var(--color-border-strong)] hover:bg-[var(--color-surface-2)] hover:border-[var(--color-ink-subtle)]",
+    "bg-[var(--color-card)] text-[var(--color-brand)] border border-[var(--color-border-strong)] hover:bg-[var(--color-surface-2)] hover:border-[var(--color-brand)]",
   ghost:
-    "bg-transparent text-[var(--color-ink)] hover:bg-[var(--color-surface-2)]",
-  white:
-    "bg-white text-[var(--color-brand)] hover:bg-[var(--color-accent)] shadow-[var(--shadow-sm)]",
+    "bg-transparent text-[var(--color-ink)] hover:bg-[var(--color-card)]",
   cream:
-    "bg-[var(--color-accent)] text-[var(--color-brand)] hover:bg-[var(--color-accent-dark)]",
+    "bg-[var(--color-accent)] text-[var(--color-brand)] hover:bg-[var(--color-accent-dark)] shadow-[var(--shadow-sm)]",
+  "outline-cream":
+    "bg-transparent text-[var(--color-accent)] border border-[var(--color-accent)]/40 hover:bg-[var(--color-accent)]/10 hover:border-[var(--color-accent)]",
 };
 
 const sizeClasses: Record<Size, string> = {

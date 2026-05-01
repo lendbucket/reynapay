@@ -21,10 +21,9 @@ export function HeroSection({
   trustline,
 }: HeroSectionProps) {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 gradient-mesh -z-10" />
-      <div className="absolute inset-0 bg-grid opacity-50 -z-10" />
-      <div className="container-page pt-12 pb-16 md:pt-24 md:pb-24">
+    <section className="relative overflow-hidden gradient-mesh-cream">
+      <div className="absolute inset-0 bg-grid opacity-40 -z-10" />
+      <div className="container-page pt-12 pb-16 md:pt-24 md:pb-24 relative">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className={visual ? "lg:col-span-6" : "lg:col-span-9 mx-auto text-center"}>
             {eyebrow && <div className="eyebrow mb-5">{eyebrow}</div>}
@@ -56,8 +55,7 @@ export function HeroSection({
 export function HeroVisual() {
   return (
     <div className="relative">
-      {/* Mock dashboard */}
-      <div className="relative bg-white rounded-[var(--radius-xl)] shadow-[var(--shadow-lg)] border border-[var(--color-border)] overflow-hidden">
+      <div className="relative bg-[var(--color-card)] rounded-[var(--radius-xl)] shadow-[var(--shadow-lg)] border border-[var(--color-border)] overflow-hidden">
         <div className="bg-[var(--color-surface-2)] border-b border-[var(--color-border)] p-3 flex items-center gap-2">
           <div className="flex gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full bg-[var(--color-border-strong)]" />
@@ -91,9 +89,8 @@ export function HeroVisual() {
           </div>
         </div>
       </div>
-      {/* Floating chip */}
       <div className="absolute -bottom-4 -right-4 hidden md:block">
-        <div className="bg-[var(--color-brand)] text-white rounded-[var(--radius-lg)] p-4 shadow-[var(--shadow-lg)] max-w-[200px]">
+        <div className="bg-[var(--color-brand)] text-[var(--color-accent)] rounded-[var(--radius-lg)] p-4 shadow-[var(--shadow-lg)] max-w-[200px]">
           <div className="text-xs uppercase tracking-wider opacity-80 mb-1">Saved this month</div>
           <div className="text-2xl font-bold">$1,847</div>
           <div className="text-xs opacity-80 mt-1">vs. previous processor</div>
@@ -114,7 +111,7 @@ function TxRow({ merchant, amount }: { merchant: string; amount: string }) {
 
 export function ScreenshotPlaceholder({ label }: { label: string }) {
   return (
-    <div className="aspect-[4/3] rounded-[var(--radius-lg)] bg-[var(--color-surface-2)] border border-[var(--color-border)] flex items-center justify-center text-xs text-[var(--color-ink-subtle)] uppercase tracking-wider font-mono">
+    <div className="aspect-[4/3] rounded-[var(--radius-lg)] bg-[var(--color-card)] border border-[var(--color-border)] flex items-center justify-center text-xs text-[var(--color-ink-subtle)] uppercase tracking-wider font-mono">
       [{label}]
     </div>
   );

@@ -24,7 +24,7 @@ export default function ContactPage() {
         secondaryCta={{ label: "Apply as a partner", href: "#form" }}
       />
 
-      <Section variant="surface">
+      <Section variant="soft">
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2" id="form">
             <Card className="!p-8 md:!p-10">

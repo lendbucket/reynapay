@@ -27,7 +27,7 @@ export default function StickyApplyCTA() {
     <div className="lg:hidden fixed bottom-4 left-4 right-4 z-30">
       <Link
         href="/apply"
-        className="block w-full text-center bg-[var(--color-brand)] text-white font-semibold py-3.5 rounded-[var(--radius-md)] shadow-[var(--shadow-lg)] hover:bg-[var(--color-brand-dark)] transition-colors"
+        className="block w-full text-center bg-[var(--color-brand)] text-[var(--color-accent)] font-semibold py-3.5 rounded-[var(--radius-md)] shadow-[var(--shadow-lg)] hover:bg-[var(--color-brand-dark)] transition-colors"
       >
         Get started — apply in 2 minutes
       </Link>

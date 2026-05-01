@@ -224,7 +224,7 @@ export default function SalonTransactPage() {
       />
 
       {/* Alternating feature sections */}
-      <Section variant="surface">
+      <Section variant="soft">
         <SectionHeader
           eyebrow="Features"
           title="Eight things every salon processor should do"
@@ -269,7 +269,7 @@ export default function SalonTransactPage() {
         <div className="overflow-x-auto -mx-4 px-4">
           <table className="w-full min-w-[640px] text-left text-sm bg-white rounded-[var(--radius-card)] shadow-[var(--shadow-card)] overflow-hidden">
             <thead>
-              <tr className="bg-[var(--color-surface)] border-b border-[var(--color-border)]">
+              <tr className="bg-[var(--color-card)] border-b border-[var(--color-border)]">
                 <th className="p-4 font-semibold">Feature</th>
                 <th className="p-4 font-semibold text-[var(--color-teal)]">SalonTransact</th>
                 <th className="p-4 font-semibold">Square</th>
@@ -293,7 +293,7 @@ export default function SalonTransactPage() {
       </Section>
 
       {/* Pricing teaser */}
-      <Section variant="surface">
+      <Section variant="soft">
         <Card className="max-w-3xl mx-auto text-center !p-10">
           <h2 className="mb-4">Transparent pricing, zero gotchas</h2>
           <p className="text-[var(--color-text-secondary)] text-lg mb-2">

@@ -97,7 +97,7 @@ export default function HomePage() {
       />
 
       {/* Logo / domain strip */}
-      <Section variant="surface" className="!py-10">
+      <Section variant="soft" className="!py-10">
         <div className="text-center">
           <p className="text-xs uppercase tracking-wider text-[var(--color-ink-subtle)] font-semibold mb-6">
             Powering vertical-specific payment products across the web
@@ -120,7 +120,7 @@ export default function HomePage() {
       </Section>
 
       {/* Three products band */}
-      <Section>
+      <Section variant="default">
         <SectionHeader
           eyebrow="Our products"
           title="One platform, multiple verticals."
@@ -152,7 +152,7 @@ export default function HomePage() {
       </Section>
 
       {/* Industries we serve */}
-      <Section variant="cream">
+      <Section variant="deep">
         <SectionHeader
           eyebrow="Who we serve"
           title="Built for the industries the giants ignore."
@@ -184,7 +184,7 @@ export default function HomePage() {
       </Section>
 
       {/* Why Reyna Pay */}
-      <Section>
+      <Section variant="default">
         <SectionHeader
           eyebrow="Why Reyna Pay"
           title="The processor we wished we'd had."
@@ -194,7 +194,7 @@ export default function HomePage() {
       </Section>
 
       {/* Trust band */}
-      <Section variant="surface">
+      <Section variant="soft">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           <div className="lg:col-span-1">
             <div className="eyebrow mb-4">Trust & compliance</div>
@@ -224,7 +224,7 @@ export default function HomePage() {
       </Section>
 
       {/* Two paths */}
-      <Section>
+      <Section variant="default">
         <SectionHeader
           eyebrow="Two ways in"
           title="Whether you take payments or sell payments — we built it for you."

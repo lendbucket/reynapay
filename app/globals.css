@@ -4,23 +4,26 @@
   /* Brand */
   --color-brand: #004643;
   --color-brand-dark: #003633;
+  --color-brand-darker: #002624;
   --color-brand-light: #006a64;
-  --color-brand-tint: #e6efee;
+  --color-brand-tint: #e3ede9;
 
   --color-accent: #f0ede5;
   --color-accent-dark: #e3dfd2;
   --color-accent-deep: #d4cfbb;
+  --color-accent-soft: #f7f5ee;
 
-  /* Neutrals */
-  --color-ink: #0a1f1d;
-  --color-ink-muted: #4a5856;
-  --color-ink-subtle: #7a8684;
+  /* Neutrals — no pure black, no pure white */
+  --color-ink: #1f3534;
+  --color-ink-muted: #4a5a58;
+  --color-ink-subtle: #788481;
 
-  --color-surface: #ffffff;
-  --color-surface-2: #fafaf7;
-  --color-surface-3: #f5f4ee;
-  --color-border: #e8e6dd;
-  --color-border-strong: #d4d0c2;
+  --color-surface: #f0ede5;        /* DEFAULT page bg = cream */
+  --color-surface-2: #f7f5ee;      /* lighter cream for hover/secondary */
+  --color-surface-3: #e3dfd2;      /* deeper cream for divider sections */
+  --color-card: #faf8f1;           /* cards = warm off-white, never pure white */
+  --color-border: #d8d3c4;
+  --color-border-strong: #c4be9f;
 
   /* Status */
   --color-success: #0e7c66;
@@ -41,11 +44,11 @@
   --radius-xl: 24px;
   --radius-pill: 999px;
 
-  /* Elevation */
-  --shadow-xs: 0 1px 2px rgba(10, 31, 29, 0.04);
-  --shadow-sm: 0 1px 3px rgba(10, 31, 29, 0.06), 0 1px 2px rgba(10, 31, 29, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(10, 31, 29, 0.08), 0 2px 4px rgba(10, 31, 29, 0.04);
-  --shadow-lg: 0 16px 40px -8px rgba(10, 31, 29, 0.12), 0 4px 12px rgba(10, 31, 29, 0.06);
+  /* Elevation — soft, warm shadows */
+  --shadow-xs: 0 1px 2px rgba(31, 53, 52, 0.04);
+  --shadow-sm: 0 1px 3px rgba(31, 53, 52, 0.06), 0 1px 2px rgba(31, 53, 52, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(31, 53, 52, 0.08), 0 2px 4px rgba(31, 53, 52, 0.04);
+  --shadow-lg: 0 16px 40px -8px rgba(31, 53, 52, 0.12), 0 4px 12px rgba(31, 53, 52, 0.06);
   --shadow-glow: 0 0 0 1px rgba(0, 70, 67, 0.08), 0 8px 32px -4px rgba(0, 70, 67, 0.16);
 }
 
@@ -114,29 +117,33 @@ input, textarea, select {
 .section { padding: 4.5rem 0; }
 @media (min-width: 768px) { .section { padding: 6.5rem 0; } }
 
-/* Backgrounds */
-.bg-cream { background: var(--color-accent); }
-.bg-cream-deep { background: var(--color-accent-dark); }
-.bg-brand { background: var(--color-brand); color: #fff; }
-.bg-surface-2 { background: var(--color-surface-2); }
-.bg-surface-3 { background: var(--color-surface-3); }
+/* Section variants */
+.bg-cream { background: var(--color-surface); }
+.bg-cream-soft { background: var(--color-surface-2); }
+.bg-cream-deep { background: var(--color-surface-3); }
+.bg-card { background: var(--color-card); }
+.bg-brand { background: var(--color-brand); color: var(--color-accent); }
+.bg-brand-dark { background: var(--color-brand-dark); color: var(--color-accent); }
 
 .gradient-brand {
   background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%);
 }
-.gradient-mesh {
+.gradient-cream {
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-2) 100%);
+}
+.gradient-mesh-cream {
   background:
-    radial-gradient(at 20% 10%, rgba(0, 106, 100, 0.15) 0px, transparent 50%),
-    radial-gradient(at 80% 30%, rgba(240, 237, 229, 0.6) 0px, transparent 50%),
-    radial-gradient(at 40% 80%, rgba(0, 70, 67, 0.08) 0px, transparent 50%),
+    radial-gradient(at 20% 10%, rgba(0, 70, 67, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 30%, rgba(212, 207, 187, 0.5) 0px, transparent 50%),
+    radial-gradient(at 40% 80%, rgba(0, 70, 67, 0.05) 0px, transparent 50%),
     var(--color-surface);
 }
 
-/* Decorative grid */
+/* Decorative grid (subtle on cream) */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(10, 31, 29, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10, 31, 29, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(31, 53, 52, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 53, 52, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -154,19 +161,19 @@ input, textarea, select {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.eyebrow-cream {
-  background: var(--color-accent);
-  color: var(--color-brand);
-}
-.eyebrow-on-dark {
-  background: rgba(255, 255, 255, 0.1);
+.eyebrow-on-brand {
+  background: rgba(240, 237, 229, 0.15);
   color: var(--color-accent);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(240, 237, 229, 0.2);
+}
+.eyebrow-on-cream-deep {
+  background: var(--color-card);
+  color: var(--color-brand);
 }
 
 /* Card */
 .card-base {
-  background: var(--color-surface);
+  background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
@@ -176,7 +183,6 @@ input, textarea, select {
   box-shadow: var(--shadow-md);
 }
 
-/* Shimmer divider */
 .divider-shimmer {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-border-strong), transparent);
@@ -198,7 +204,7 @@ input, textarea, select {
   font-style: italic;
 }
 .prose-blog code {
-  background: var(--color-surface-3);
+  background: var(--color-card);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
   font-family: var(--font-mono);
@@ -210,15 +216,17 @@ input, textarea, select {
   margin: 1.5rem 0;
   border-collapse: collapse;
   font-size: 0.9375rem;
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 .prose-blog th, .prose-blog td {
   padding: 0.625rem 0.875rem;
   border: 1px solid var(--color-border);
   text-align: left;
 }
-.prose-blog th { background: var(--color-surface-3); font-weight: 600; }
+.prose-blog th { background: var(--color-surface-2); font-weight: 600; }
 
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

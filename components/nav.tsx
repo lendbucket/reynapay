@@ -25,17 +25,9 @@ const NAV_ITEMS: MenuItem[] = [
 
 export default function Nav() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMega, setOpenMega] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -52,20 +44,11 @@ export default function Nav() {
   }
 
   return (
-    <header
-      className={`sticky top-0 z-40 transition-all duration-200 ${
-        scrolled || mobileOpen || openMega
-          ? "bg-white/95 backdrop-blur-md shadow-[var(--shadow-xs)] border-b border-[var(--color-border)]"
-          : "bg-white/70 backdrop-blur-sm"
-      }`}
-    >
+    <header className="sticky top-0 z-40 bg-[var(--color-brand)] text-[var(--color-accent)] shadow-[var(--shadow-sm)]">
       <div className="container-page flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2.5 font-semibold text-[var(--color-ink)]" aria-label="Reyna Pay home">
-          {/* Logo wordmark — white logo on emerald chip so it reads on light header */}
-          <span className="inline-flex items-center justify-center h-8 px-2.5 rounded-[var(--radius-md)] bg-[var(--color-brand)]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Reyna Pay" className="h-4 w-auto" />
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Reyna Pay home">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Reyna Pay" className="h-5 w-auto md:h-6" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -83,8 +66,8 @@ export default function Nav() {
                     type="button"
                     className={`flex items-center gap-1 px-3 py-2 text-[0.9375rem] rounded-[var(--radius-md)] transition-colors ${
                       isOpen
-                        ? "text-[var(--color-brand)]"
-                        : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+                        ? "text-[var(--color-accent)] bg-white/10"
+                        : "text-[var(--color-accent)]/85 hover:text-[var(--color-accent)] hover:bg-white/5"
                     }`}
                     aria-expanded={isOpen}
                   >
@@ -101,8 +84,8 @@ export default function Nav() {
                 href={item.href!}
                 className={`px-3 py-2 text-[0.9375rem] rounded-[var(--radius-md)] transition-colors ${
                   active
-                    ? "text-[var(--color-brand)] font-semibold"
-                    : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]"
+                    ? "text-[var(--color-accent)] font-semibold bg-white/10"
+                    : "text-[var(--color-accent)]/85 hover:text-[var(--color-accent)] hover:bg-white/5"
                 }`}
               >
                 {item.label}
@@ -112,17 +95,17 @@ export default function Nav() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <Link href="/contact" className="text-[0.9375rem] text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] px-3 py-2">
+          <Link href="/contact" className="text-[0.9375rem] text-[var(--color-accent)]/85 hover:text-[var(--color-accent)] px-3 py-2">
             Talk to sales
           </Link>
-          <Button href="/apply" size="sm">
+          <Button href="/apply" variant="cream" size="sm">
             Get started <ArrowRight size={14} />
           </Button>
         </div>
 
         <button
           type="button"
-          className="lg:hidden p-2 -mr-2"
+          className="lg:hidden p-2 -mr-2 text-[var(--color-accent)]"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -130,12 +113,12 @@ export default function Nav() {
         </button>
       </div>
 
-      {/* Mega menus */}
+      {/* Mega menus — cream panel below brand nav */}
       {openMega && (
         <div
           onMouseEnter={() => openMenu(openMega)}
           onMouseLeave={scheduleClose}
-          className="hidden lg:block absolute left-0 right-0 top-full bg-white border-b border-[var(--color-border)] shadow-[var(--shadow-lg)]"
+          className="hidden lg:block absolute left-0 right-0 top-full bg-[var(--color-surface)] border-t border-[var(--color-brand-dark)] shadow-[var(--shadow-lg)]"
         >
           <div className="container-page py-10">
             {openMega === "products" && <MegaProducts />}
@@ -145,9 +128,9 @@ export default function Nav() {
         </div>
       )}
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — emerald with cream text */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-[var(--color-border)] bg-white max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="lg:hidden bg-[var(--color-brand-dark)] text-[var(--color-accent)] max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-white/10">
           <div className="container-page py-4">
             <MobileSection title="Products" items={PRODUCTS.map((p) => ({ label: p.name, href: p.url, external: !p.url.includes("reynapay.com") }))} />
             <MobileSection
@@ -158,14 +141,14 @@ export default function Nav() {
               title="Industries"
               items={INDUSTRIES.slice(0, 10).map((i) => ({ label: i.name, href: `/who-we-serve/${i.slug}` }))}
             />
-            <div className="border-t border-[var(--color-border)] my-4" />
-            <Link href="/pricing" className="block py-3 text-base font-medium">Pricing</Link>
-            <Link href="/partners" className="block py-3 text-base font-medium">Partners</Link>
-            <Link href="/blog" className="block py-3 text-base font-medium">Blog</Link>
-            <Link href="/about" className="block py-3 text-base font-medium">About</Link>
-            <Link href="/contact" className="block py-3 text-base font-medium">Contact</Link>
-            <div className="pt-4">
-              <Button href="/apply" className="w-full">Get started</Button>
+            <div className="border-t border-white/10 my-4" />
+            <Link href="/pricing" className="block py-3 text-base font-medium text-[var(--color-accent)]">Pricing</Link>
+            <Link href="/partners" className="block py-3 text-base font-medium text-[var(--color-accent)]">Partners</Link>
+            <Link href="/blog" className="block py-3 text-base font-medium text-[var(--color-accent)]">Blog</Link>
+            <Link href="/about" className="block py-3 text-base font-medium text-[var(--color-accent)]">About</Link>
+            <Link href="/contact" className="block py-3 text-base font-medium text-[var(--color-accent)]">Contact</Link>
+            <div className="pt-4 pb-4">
+              <Button href="/apply" variant="cream" className="w-full">Get started</Button>
             </div>
           </div>
         </div>
@@ -176,7 +159,7 @@ export default function Nav() {
 
 function MegaProducts() {
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid grid-cols-3 gap-6">
       {PRODUCTS.map((p) => {
         const isExternal = !p.url.includes("reynapay.com");
         return (
@@ -185,7 +168,7 @@ function MegaProducts() {
             href={p.url}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener" : undefined}
-            className="group p-5 rounded-[var(--radius-lg)] border border-transparent hover:border-[var(--color-border)] hover:bg-[var(--color-surface-2)] transition-all"
+            className="group p-5 rounded-[var(--radius-lg)] bg-[var(--color-card)] border border-[var(--color-border)] hover:border-[var(--color-brand)] hover:shadow-[var(--shadow-md)] transition-all"
           >
             <div className="flex items-center justify-between mb-2">
               <h4 className="font-semibold text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors">{p.name}</h4>
@@ -207,7 +190,7 @@ function MegaSolutions() {
         <Link
           key={s.slug}
           href={`/solutions/${s.slug}`}
-          className="group flex items-start gap-3 p-3 rounded-[var(--radius-md)] hover:bg-[var(--color-surface-2)] transition-colors"
+          className="group flex items-start gap-3 p-3 rounded-[var(--radius-md)] hover:bg-[var(--color-card)] transition-colors"
         >
           <div>
             <div className="font-medium text-[var(--color-ink)] group-hover:text-[var(--color-brand)] transition-colors text-[0.9375rem]">{s.name}</div>
@@ -251,11 +234,11 @@ function MegaIndustries() {
 function MobileSection({ title, items }: { title: string; items: Array<{ label: string; href: string; external?: boolean }> }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border-b border-[var(--color-border)]">
+    <div className="border-b border-white/10">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-between py-3.5 text-base font-medium"
+        className="w-full flex items-center justify-between py-3.5 text-base font-medium text-[var(--color-accent)]"
       >
         {title}
         <ChevronDown size={18} className={`transition-transform ${open ? "rotate-180" : ""}`} />
@@ -264,11 +247,11 @@ function MobileSection({ title, items }: { title: string; items: Array<{ label: 
         <div className="pb-3 space-y-1">
           {items.map((item) =>
             item.external ? (
-              <a key={item.label} href={item.href} target="_blank" rel="noopener" className="block py-2 pl-3 text-sm text-[var(--color-ink-muted)]">
+              <a key={item.label} href={item.href} target="_blank" rel="noopener" className="block py-2 pl-3 text-sm text-[var(--color-accent)]/75">
                 {item.label}
               </a>
             ) : (
-              <Link key={item.label} href={item.href} className="block py-2 pl-3 text-sm text-[var(--color-ink-muted)]">
+              <Link key={item.label} href={item.href} className="block py-2 pl-3 text-sm text-[var(--color-accent)]/75">
                 {item.label}
               </Link>
             )
