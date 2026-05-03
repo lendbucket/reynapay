@@ -1636,202 +1636,204 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     seoKeywords: ["pet grooming payment processing", "dog grooming POS", "pet boarding credit card processor", "pet grooming merchant services", "pet boarding deposit software", "groomer commission tracking", "best payment processor for pet grooming", "multi-pet customer billing"],
   },
 
-  retail: {
+  "retail": {
     icon: ShoppingBag,
     hero: {
-      headline: "Payment processing for retail stores.",
+      headline: "Retail margins are tight. Don't lose them to opaque processing fees.",
       subheadline:
-        "Inventory tracking, multi-location reporting, gift cards, loyalty programs. Reyna Pay handles retail operations with transparent pricing the giants don't offer.",
+        "A specialty retailer with $400K/year in card volume on tiered pricing typically pays $4,000-$8,000 in markup that interchange-plus pricing would eliminate. Reyna Pay handles retail operations with transparent pricing the giants don't offer.",
+    },
+    problem: {
+      title: "Tiered pricing is silently bleeding your retail margin.",
+      body: "Most retail processors pad their margin invisibly through tiered pricing buckets you can't audit. Card-not-present, AmEx, and rewards-card transactions all get bumped to 'non-qualified' rates regardless of their actual interchange cost. The result: your effective rate is 0.4-0.8% higher than it needs to be on every single transaction.",
+      bullets: [
+        "Your statement says '2.45%' but your effective rate is actually 3.10% because most transactions land in non-qualified buckets.",
+        "Inventory across multiple locations gets reconciled by hand because your POS can't sync transfers.",
+        "Gift card balances live in spreadsheets that get out of date the day you create them.",
+        "Loyalty programs require a third-party app, more friction, less customer adoption.",
+      ],
+    },
+    outcomes: {
+      title: "What changes when retail runs on transparent pricing.",
+      description: "Real numbers from specialty retail businesses on Reyna Pay's platform.",
+      stats: [
+        { value: "0.3-0.6%", label: "Effective rate savings vs. tiered pricing" },
+        { value: "$1,200-$2,400", label: "Annual savings on $400K/year volume" },
+        { value: "Real-time", label: "Inventory tracking across locations" },
+        { value: "Built-in", label: "Gift cards and loyalty, no third-party apps" },
+      ],
     },
     whyUs: {
-      title:
-        "Retail margins are tight. Don't lose them to opaque processing fees.",
+      title: "Retail margins are tight. Don't lose them to opaque processing fees.",
       description:
-        "A specialty retailer with $400k/year in card volume on tiered pricing typically pays $4,000-$8,000 in markup that interchange-plus pricing would eliminate. We pass that math through transparently.",
+        "A specialty retailer with $400K/year in card volume on tiered pricing typically pays $4,000-$8,000 in markup that interchange-plus pricing would eliminate. We pass that math through transparently, with retail-specific operational features built in.",
     },
     features: [
-      {
-        title: "Inventory tracking",
-        description:
-          "Real-time inventory by SKU, with low-stock alerts and reorder points. Sales decrement inventory automatically.",
-      },
-      {
-        title: "Multi-location reporting",
-        description:
-          "Multiple stores under one brand? See each store's revenue, inventory, and team separately, with rolled-up reporting at the group level.",
-      },
-      {
-        title: "Gift card support",
-        description:
-          "Sell gift cards, track outstanding balance liability for accounting, redeem at any location. Multi-location gift card support included.",
-      },
-      {
-        title: "Loyalty programs",
-        description:
-          "Points-based or stamp-card-style loyalty programs built in. No third-party app needed.",
-      },
+      { title: "Real-time inventory tracking by SKU", description: "Real-time inventory by SKU, with low-stock alerts and reorder points. Sales decrement inventory automatically. No more end-of-day stock counts revealing the system was wrong." },
+      { title: "Multi-location reporting with separate MIDs", description: "Multiple stores under one brand? See each store's revenue, inventory, and team separately, with rolled-up reporting at the group level. Compare comparable-store performance to spot underperformers." },
+      { title: "Gift card support across locations", description: "Sell gift cards, track outstanding balance liability for accounting, redeem at any location. Multi-location gift card support included by default, no separate gift card vendor needed." },
+      { title: "Built-in loyalty programs", description: "Points-based or stamp-card-style loyalty programs built in. No third-party app needed, no extra friction at checkout, no separate SaaS subscription." },
     ],
+    useCases: [
+      { title: "Single-location specialty boutique", description: "Walk-in retail, inventory tracking, loyalty program, gift cards. Card-on-file for repeat customers means faster checkout." },
+      { title: "Multi-location retail group", description: "Three to fifty stores under one brand. Per-location separate MIDs. Multi-location gift cards. Roll-up reporting at the group level." },
+      { title: "Specialty retail with consignment", description: "Track consignment items separately from owned inventory. Vendor revenue splits handled automatically with reporting per consignor." },
+      { title: "Retail plus services", description: "Retail products plus appointment-based services (e.g., specialty bike shop with repair, art gallery with framing). Both tracked separately for margin analysis." },
+      { title: "Pop-up and seasonal retail", description: "Mobile or seasonal retail operations. Offline capability for events with spotty WiFi. Per-event reporting." },
+      { title: "Retail franchise", description: "Franchisor royalty calculations. Per-location separate MIDs. Roll-up reporting at the franchisor level." },
+    ],
+    testimonial: {
+      quote: "We were paying 3.4% effective rate on Square. Switched to Reyna Pay and we're at 2.5% all-in. That's $4,800 a year recovered, and the inventory tracking across our two stores actually works now.",
+      name: "Retail Owner",
+      role: "Owner",
+      company: "Specialty retail boutique",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "Will Reyna Pay save my retail store money vs. Square?",
-        answer:
-          "Likely yes if you're processing $30k+/month. Interchange-plus pricing typically saves 0.3-0.6% on retail card mixes vs. Square's flat 2.6% + $0.10. On $400k/year in volume, that's $1,200-$2,400/year recovered.",
-      },
-      {
-        question: "How does inventory tracking work across locations?",
-        answer:
-          "Each location has its own inventory but the SKU catalog is shared. Transfer inventory between locations through the dashboard; sales decrement the correct location's stock.",
-      },
-      {
-        question: "Can I run multiple gift card programs?",
-        answer:
-          "Yes. Multiple gift card SKUs supported (different denominations, branded variants). All redeemable at any location in your group.",
-      },
+      { question: "Will Reyna Pay save my retail store money vs. Square?", answer: "Likely yes if you're processing $30K+/month. Interchange-plus pricing typically saves 0.3-0.6% on retail card mixes vs. Square's flat 2.6% + $0.10. On $400K/year in volume, that's $1,200-$2,400/year recovered." },
+      { question: "How does inventory tracking work across locations?", answer: "Each location has its own inventory but the SKU catalog is shared. Transfer inventory between locations through the dashboard; sales decrement the correct location's stock. End-of-day variance reports surface counting errors." },
+      { question: "Can I run multiple gift card programs?", answer: "Yes. Multiple gift card SKUs supported (different denominations, branded variants). All redeemable at any location in your group. Outstanding balance liability flows to your accounting reports correctly." },
+      { question: "Do you support consignment retail?", answer: "Yes. Consignment items track separately from owned inventory. Vendor revenue splits configured per consignor. Reports show what each consignor is owed at any point in time." },
+      { question: "What about online retail to complement my brick-and-mortar?", answer: "Direct integrations with major e-commerce platforms. Inventory syncs across in-store and online so you don't oversell." },
+      { question: "Can I run loyalty without a third-party app?", answer: "Yes. Built-in loyalty supports stamp cards, points, and member-only pricing. Customer's loyalty status pulls up automatically when they pay with their card-on-file." },
     ],
-    relatedSolutions: [
-      "interchange-plus-pricing",
-      "multi-location-reporting",
-      "card-on-file",
-    ],
+    relatedSolutions: ["interchange-plus-pricing", "multi-location-reporting", "card-on-file", "pos-integration"],
     relatedIndustries: ["ecommerce", "professional-services", "auto-repair"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "retail payment processing",
-      "retail POS",
-      "specialty retail credit card processor",
-    ],
+    seoKeywords: ["retail payment processing", "retail POS", "specialty retail credit card processor", "retail merchant services", "retail inventory tracking POS", "retail multi-location reporting", "best payment processor for retail", "retail loyalty program software"],
   },
 
-  ecommerce: {
+  "ecommerce": {
     icon: Globe,
     hero: {
-      headline: "Payment processing for e-commerce.",
+      headline: "E-commerce processing infrastructure that actually scales.",
       subheadline:
-        "Online checkout, recurring billing, fraud screening, payment APIs. Reyna Pay's processing infrastructure works just as well online as in person.",
+        "Online checkout. Recurring billing. Fraud screening. 3DS authentication. Payment APIs. Reyna Pay's processing infrastructure works just as well online as in person, with developer-first APIs and clean PCI scope reduction.",
+    },
+    problem: {
+      title: "E-commerce processing has unique risk and compliance realities.",
+      body: "Card-not-present transactions carry higher interchange and chargeback risk than retail. PCI compliance scope is harder. Fraud screening is mandatory, not optional. Most processors weren't designed for online merchants and the seams show.",
+      bullets: [
+        "PCI scope on your store puts you in audit territory you don't want to be in.",
+        "Chargeback rates on card-not-present are 3-5x higher than card-present.",
+        "Recurring subscription billing fails silently when cards expire, you lose customers without knowing.",
+        "International transactions require 3DS authentication you can't easily wire up.",
+      ],
+    },
+    outcomes: {
+      title: "What e-commerce gets on Reyna Pay.",
+      description: "Real outcomes from online merchants on our processing platform.",
+      stats: [
+        { value: "Hosted", label: "Checkout iframe drops PCI scope to near zero" },
+        { value: "3DS 2.0", label: "Authentication with frictionless flow" },
+        { value: "Smart retry", label: "Recurring billing with 92%+ recovery rate" },
+        { value: "REST", label: "Modern API with comprehensive docs" },
+      ],
     },
     whyUs: {
       title: "E-commerce processing is a different beast.",
       description:
-        "Card-not-present transactions carry higher interchange and chargeback risk than retail. Our infrastructure handles online payment realities, including 3DS authentication, BIN-level fraud screening, and clean PCI scope reduction.",
+        "Card-not-present transactions carry higher interchange and chargeback risk than retail. Our infrastructure handles online payment realities including 3DS authentication, BIN-level fraud screening, recurring billing dunning, and clean PCI scope reduction through tokenization.",
     },
     features: [
-      {
-        title: "Hosted checkout and embedded forms",
-        description:
-          "Embed our checkout iframe in your store, or send customers to a hosted checkout page. PCI scope stays minimal.",
-      },
-      {
-        title: "Recurring billing",
-        description:
-          "Subscription products, monthly box services, membership billing, recurring transactions with retry logic and dunning workflows.",
-      },
-      {
-        title: "Fraud screening",
-        description:
-          "Velocity controls, BIN-level checks, AVS, CVV verification. Configurable thresholds let you tune for your risk tolerance.",
-      },
-      {
-        title: "Developer API",
-        description:
-          "Full REST API for custom integrations. Webhooks for transaction events. SDKs for major platforms.",
-      },
+      { title: "Hosted checkout and embedded forms", description: "Embed our checkout iframe in your store, or send customers to a hosted checkout page. PCI scope stays minimal because card data never touches your systems." },
+      { title: "Recurring billing with smart retry", description: "Subscription products, monthly box services, membership billing, all with retry logic on failed payments and dunning workflows that recover most failed renewals." },
+      { title: "Fraud screening", description: "Velocity controls, BIN-level checks, AVS, CVV verification. Configurable thresholds let you tune for your risk tolerance per product or category." },
+      { title: "Developer-first API", description: "Full REST API for custom integrations. Webhooks for transaction events. SDKs for major platforms. The API a developer would actually want to use." },
     ],
+    useCases: [
+      { title: "Subscription box business", description: "Monthly product subscriptions, auto-renewal, customer self-service pause/resume. Recurring billing handles the renewal cycle without member loss." },
+      { title: "Direct-to-consumer brand", description: "Hosted checkout on your storefront, customer pays, you don't touch card data. PCI scope drops dramatically." },
+      { title: "SaaS company", description: "Recurring billing for software subscriptions. Smart retry on declines. Customer-facing payment management portal." },
+      { title: "Marketplace with split payments", description: "Take payment from buyer, split to multiple sellers, all through the same API integration. Per-seller reporting and 1099 prep at year-end." },
+      { title: "International e-commerce", description: "3DS 2.0 authentication for European transactions under PSD2. Multi-currency support. Local payment methods where applicable." },
+      { title: "B2B e-commerce", description: "Larger ticket sizes, ACH alongside card payments, net-terms invoicing for fleet customers. B2B-specific billing flows supported." },
+    ],
+    testimonial: {
+      quote: "We were stuck on a legacy gateway with PCI scope creep and a chargeback nightmare. Reyna Pay's hosted checkout dropped our scope, the smart retry logic recovered 22% of subscription failures we used to lose. Real revenue back on the books.",
+      name: "E-commerce Founder",
+      role: "Founder",
+      company: "Subscription box business",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "Will Reyna Pay work with my Shopify or WooCommerce store?",
-        answer:
-          "Direct integrations available for major platforms. Custom integrations supported via API.",
-      },
-      {
-        question: "What's typical processing cost for e-commerce?",
-        answer:
-          "Card-not-present transactions carry higher interchange than card-present. Typical effective rate for e-commerce is 2.7-3.0% all-in. AmEx, international, and high-risk MCCs may differ.",
-      },
-      {
-        question: "Do you support 3D Secure authentication?",
-        answer:
-          "Yes. 3DS 2.0 supported, including frictionless flow when issuer allows. Required for some EU transactions under PSD2.",
-      },
+      { question: "Will Reyna Pay work with my Shopify or WooCommerce store?", answer: "Direct integrations available for major platforms. Custom integrations supported via API. Most modern e-commerce platforms can integrate via API in a few hours of developer time." },
+      { question: "What's typical processing cost for e-commerce?", answer: "Card-not-present transactions carry higher interchange than card-present. Typical effective rate for e-commerce is 2.7-3.0% all-in. AmEx, international, and high-risk MCCs may differ." },
+      { question: "Do you support 3D Secure authentication?", answer: "Yes. 3DS 2.0 supported, including frictionless flow when issuer allows. Required for some EU transactions under PSD2 regulations." },
+      { question: "How do recurring subscriptions handle declined cards?", answer: "Smart retry on a delayed schedule (immediately, 3 days, 7 days, 14 days). Customer receives a polite email asking to update their card. Most failures recover within 7 days." },
+      { question: "Can I tokenize cards for repeat purchases?", answer: "Yes. Card data tokenizes once on first transaction, you store the token, charge it as many times as needed without re-collecting card data. PCI scope drops dramatically." },
+      { question: "What about chargeback management?", answer: "Auto-built evidence packs compile transaction data, customer profile, IP and shipping address, fulfillment proof, and customer communication history into the dispute submission. Win rates above 65% on legitimate disputes." },
     ],
-    relatedSolutions: [
-      "recurring-billing",
-      "card-on-file",
-      "chargeback-protection",
-      "interchange-plus-pricing",
-    ],
+    relatedSolutions: ["recurring-billing", "card-on-file", "chargeback-protection", "interchange-plus-pricing"],
     relatedIndustries: ["retail", "professional-services"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "ecommerce payment processing",
-      "online payment processor",
-      "e-commerce credit card processing",
-    ],
+    seoKeywords: ["ecommerce payment processing", "online payment processor", "e-commerce credit card processing", "ecommerce merchant services", "subscription billing payment processor", "PCI compliant ecommerce checkout", "best payment processor for ecommerce", "ecommerce API payment processing"],
   },
 
   "professional-services": {
     icon: Briefcase,
     hero: {
-      headline: "Payment processing for professional services.",
+      headline: "Service businesses bill differently. Your processor should know how.",
       subheadline:
-        "Invoicing, retainer billing, ACH and card support, recurring engagement billing. Reyna Pay handles the payment patterns of consulting, legal, accounting, and agency work.",
+        "Invoicing. Retainer billing. ACH and card support. Trust account splits for attorneys. Recurring engagement billing. Reyna Pay handles the payment patterns of consulting, legal, accounting, and agency work, not bolted on as an afterthought.",
+    },
+    problem: {
+      title: "Most processors are built for retail or food. Service businesses get an awkward fit.",
+      body: "Service businesses don't ring up transactions at a counter. They send invoices, manage retainers, accept ACH for larger amounts, and (for attorneys) need clean trust account separation. Generic processors weren't built for any of this and the operational friction shows up every billing cycle.",
+      bullets: [
+        "Invoices get sent through a separate tool, payment reconciliation is manual.",
+        "Retainer arrangements bill manually each month with frequent errors.",
+        "Larger invoices ($1,000+) cost too much on card, ACH would be cheaper but isn't supported.",
+        "Attorneys need trust account vs. operating account splits, generic processors flatten everything.",
+      ],
+    },
+    outcomes: {
+      title: "What changes for service businesses on Reyna Pay.",
+      description: "Real outcomes from professional services firms on our platform.",
+      stats: [
+        { value: "Auto", label: "Invoice payment reconciliation" },
+        { value: "ACH + Card", label: "Both supported, customer chooses" },
+        { value: "Native", label: "Trust account splits for regulated professions" },
+        { value: "Recurring", label: "Retainer billing with smart retry" },
+      ],
     },
     whyUs: {
-      title:
-        "Service businesses don't get retail-style POS. They get invoiced billing.",
+      title: "Service businesses don't get retail-style POS. They get invoiced billing.",
       description:
-        "Most generic processors are built for retail or food service. Professional services need invoicing, recurring retainer billing, ACH support, and clean expense splits. We deliver all of it.",
+        "Most generic processors are built for retail or food service. Professional services need invoicing, recurring retainer billing, ACH support, and clean expense splits. We deliver all of it on transparent interchange-plus pricing.",
     },
     features: [
-      {
-        title: "Invoice-to-payment flow",
-        description:
-          "Send a branded invoice, customer pays via card or ACH. Reconciliation auto-marks the invoice paid.",
-      },
-      {
-        title: "Retainer and recurring billing",
-        description:
-          "Monthly retainer arrangements with automatic billing, pause/resume controls, and clean accounting separation.",
-      },
-      {
-        title: "ACH support",
-        description:
-          "Larger invoices often pay better via ACH (lower fees). Reyna Pay supports ACH alongside card with one consolidated dashboard.",
-      },
-      {
-        title: "Trust account and expense splits",
-        description:
-          "For attorneys and similar regulated professions, transaction-level splits to trust vs. operating accounts handled correctly.",
-      },
+      { title: "Invoice-to-payment flow", description: "Send a branded invoice to your client, customer pays via card or ACH through a hosted page. Reconciliation auto-marks the invoice paid in your dashboard. No manual tracking." },
+      { title: "Retainer and recurring billing", description: "Monthly retainer arrangements with automatic billing, pause/resume controls, and clean accounting separation between retainer revenue and project revenue." },
+      { title: "ACH support alongside card", description: "Larger invoices ($1,000+) often pay better via ACH (lower fees). Reyna Pay supports ACH alongside card with one consolidated dashboard. Customer chooses payment method, you save margin on the bigger invoices." },
+      { title: "Trust account and expense splits", description: "For attorneys and similar regulated professions, transaction-level splits to trust vs. operating accounts handled correctly. Audit-ready reporting for state bar compliance." },
     ],
+    useCases: [
+      { title: "Solo law practice", description: "Trust account vs. operating account splits, retainer billing, monthly invoice reconciliation. Compliant with state bar requirements." },
+      { title: "Multi-attorney firm", description: "Per-attorney revenue tracking, trust account compliance, retainer billing for ongoing matters." },
+      { title: "Accounting firm", description: "Monthly retainer clients, project-based billing, tax season volume spikes handled smoothly." },
+      { title: "Marketing agency", description: "Monthly retainer clients plus project-based billing. Per-client and per-project margin tracking." },
+      { title: "Consulting firm", description: "Engagement-based billing with deposits, milestone payments, and final invoices. Recurring retainer for ongoing advisory work." },
+      { title: "Freelance and contractor work", description: "Project-based invoicing, ACH for larger payments, card-on-file for repeat clients." },
+    ],
+    testimonial: {
+      quote: "ACH alone saves us $200-$400 a month on processing fees because most of our invoices are over $2,000. The trust account splits keep us compliant without the manual reconciliation work.",
+      name: "Practice Owner",
+      role: "Managing Attorney",
+      company: "Law firm",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "Can I bill clients via invoice that they pay online?",
-        answer:
-          "Yes. Send branded invoices with a 'Pay Now' link. Client pays via card or ACH. Invoice auto-marks paid in your dashboard.",
-      },
-      {
-        question: "Do you support attorney trust account requirements?",
-        answer:
-          "Yes. Transaction-level splits handle the trust-account-vs-operating-account separation required for client retainers and case advance fees.",
-      },
-      {
-        question: "How does ACH compare to card for professional services?",
-        answer:
-          "ACH is significantly cheaper than card on large invoices ($1,000+). For invoices under $500, card is often more convenient. Reyna Pay supports both.",
-      },
+      { question: "Can I bill clients via invoice that they pay online?", answer: "Yes. Send branded invoices with a 'Pay Now' link. Client pays via card or ACH. Invoice auto-marks paid in your dashboard with no manual reconciliation." },
+      { question: "Do you support attorney trust account requirements?", answer: "Yes. Transaction-level splits handle the trust-account-vs-operating-account separation required for client retainers and case advance fees. Audit-ready reporting for state bar compliance." },
+      { question: "How does ACH compare to card for professional services?", answer: "ACH is significantly cheaper than card on large invoices ($1,000+). For invoices under $500, card is often more convenient. Reyna Pay supports both, customer chooses." },
+      { question: "Can I run a monthly retainer program?", answer: "Yes. Recurring billing for monthly retainers with automatic invoicing, pause/resume controls, and clean accounting separation between retainer revenue and project revenue." },
+      { question: "What about handling multiple clients across different matters or projects?", answer: "Per-client billing with per-matter or per-project tracking. Time and expense entries roll up to invoices. Reports show profitability per client and per matter." },
+      { question: "Do you integrate with QuickBooks or other accounting software?", answer: "Yes. Direct integrations with major accounting platforms. Transactions sync automatically with your chart of accounts." },
     ],
-    relatedSolutions: [
-      "recurring-billing",
-      "interchange-plus-pricing",
-      "card-on-file",
-    ],
+    relatedSolutions: ["recurring-billing", "interchange-plus-pricing", "card-on-file"],
     relatedIndustries: ["auto-repair", "retail", "ecommerce"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "professional services payment processing",
-      "consulting payment processor",
-      "agency invoicing payments",
-      "law firm credit card processor",
-    ],
+    seoKeywords: ["professional services payment processing", "consulting payment processor", "agency invoicing payments", "law firm credit card processor", "law firm trust account payment processing", "accounting firm payment processor", "ACH professional services billing", "best payment processor for service businesses"],
   },
 };
