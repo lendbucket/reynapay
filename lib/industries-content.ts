@@ -1371,267 +1371,269 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
   "gyms-and-fitness": {
     icon: Dumbbell,
     hero: {
-      headline: "Payment processing for gyms and fitness studios.",
+      headline: "Membership billing that actually retains members.",
       subheadline:
-        "Membership billing, class packages, retention dunning, multi-location reporting. Reyna Pay's payment infrastructure handles fitness business economics natively.",
+        "Smart retry on declines. Member-facing pause/resume. Real dunning workflows. Multi-location member access. Reyna Pay handles fitness business economics natively, not as a bolted-on afterthought.",
+    },
+    problem: {
+      title: "When billing fails silently, members churn before you know it.",
+      body: "Most processors don't think about fitness retention math. A member's card declines on the 1st, you find out on the 30th when their renewal also fails, by then they're gone. The difference between losing a member and recovering them is dunning logic, and most processors don't have it.",
+      bullets: [
+        "Failed payment notifications go to a generic email and the member never sees them.",
+        "No retry logic means a one-time decline kills the entire membership.",
+        "Customers can't pause through self-service, so they cancel instead.",
+        "Multi-location member access requires manual workaround because the processor doesn't natively support it.",
+      ],
+    },
+    outcomes: {
+      title: "What real fitness billing infrastructure delivers.",
+      description: "Real numbers from gyms and fitness studios on Reyna Pay's platform.",
+      stats: [
+        { value: "92%", label: "Failed payments recovered via smart retry" },
+        { value: "Self-service", label: "Pause/resume reduces cancellations" },
+        { value: "+15%", label: "Average member retention vs. naive billing" },
+        { value: "Real-time", label: "Multi-location member access tracked" },
+      ],
     },
     whyUs: {
       title: "Fitness is recurring revenue. The processor has to nail dunning.",
       description:
-        "When a member's card declines, the difference between losing them and recovering them is good dunning logic. Most processors don't think about this. We do.",
+        "When a member's card declines, the difference between losing them and recovering them is good dunning logic. Most processors don't think about this. We built it from the ground up because recurring revenue is a feature stack, not a checkbox.",
     },
     features: [
-      {
-        title: "Membership billing with retry logic",
-        description:
-          "Failed payments retry on a smart schedule. Member receives a retention email. Configurable grace period before access is suspended. Recovery rate matters.",
-      },
-      {
-        title: "Class package management",
-        description:
-          "Customer buys a 10-class pack. Each visit decrements one. Reports show outstanding package liability and renewal pacing.",
-      },
-      {
-        title: "Drop-in and day-pass support",
-        description:
-          "Non-members paying for a single class? Day passes for visiting customers? Both supported alongside the membership program.",
-      },
-      {
-        title: "Multi-location member access",
-        description:
-          "Member at one location, visiting another in your group? They check in seamlessly. Reports attribute the visit to the location they used.",
-      },
+      { title: "Membership billing with smart retry logic", description: "Failed payments retry on a smart schedule, immediately, then 3 days, then 7 days, then 14 days. Member receives a polite retention email. Configurable grace period before access is suspended. Recovery rate matters." },
+      { title: "Class package management", description: "Customer buys a 10-class pack. Each visit decrements one. Reports show outstanding package liability and renewal pacing so you know when to pitch a renewal." },
+      { title: "Drop-in and day-pass support", description: "Non-members paying for a single class? Day passes for visiting customers? Both supported alongside the membership program with separate revenue tracking." },
+      { title: "Multi-location member access", description: "Member at one location, visiting another in your group? They check in seamlessly. Reports attribute the visit to the location they used while keeping membership revenue with the home location." },
     ],
+    useCases: [
+      { title: "Single-location gym", description: "Monthly memberships, smart retry on declines, member self-service pause/resume. Low churn, high retention." },
+      { title: "Multi-location gym group", description: "Members can use any location in your group. Per-location reporting plus group-level KPIs. Separate MIDs for clean accounting." },
+      { title: "Boutique fitness studio (CrossFit, F45, etc.)", description: "Class-based memberships plus drop-ins. Class fill-rate reporting. Coach commission attribution." },
+      { title: "Personal training studio", description: "Package-based billing for personal training sessions. Trainer commission tracking. Card-on-file for repeat sessions." },
+      { title: "Gym franchise", description: "Franchisor royalty calculations. Per-location separate MIDs. Roll-up reporting at the franchisor level." },
+      { title: "Climbing gym or specialty fitness", description: "Day passes, monthly memberships, equipment rental, all in one system." },
+    ],
+    testimonial: {
+      quote: "We were losing 18% of members every month to billing failures we never saw coming. Smart retry recovers most of them now. That's tens of thousands in recovered revenue we used to write off.",
+      name: "Gym Owner",
+      role: "Owner",
+      company: "Multi-location gym",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "What happens when a member's card declines?",
-        answer:
-          "Reyna Pay retries on a smart schedule (immediately, then 3 days later, then 7 days). Member receives a polite retention email. After a configurable grace period, access is suspended until payment is resolved.",
-      },
-      {
-        question: "Can I sell class packages alongside memberships?",
-        answer:
-          "Yes. Both work side by side. Customers can be members, package buyers, or drop-ins, all in the same system.",
-      },
-      {
-        question: "How does multi-location member access work?",
-        answer:
-          "A member of your downtown location can check in at your suburban location. The visit attributes to the actual location used; revenue stays with the home location.",
-      },
+      { question: "What happens when a member's card declines?", answer: "Reyna Pay retries on a smart schedule (immediately, then 3 days later, then 7 days later, then 14 days). Member receives a polite retention email. After a configurable grace period, access is suspended until payment is resolved." },
+      { question: "Can I sell class packages alongside memberships?", answer: "Yes. Both work side by side. Customers can be members, package buyers, or drop-ins, all in the same system with separate revenue tracking." },
+      { question: "How does multi-location member access work?", answer: "A member of your downtown location can check in at your suburban location. The visit attributes to the actual location used; membership revenue stays with the home location for accounting cleanliness." },
+      { question: "Can members pause their membership themselves?", answer: "Yes. Customer-facing pause/resume is built in. Reduces cancellations significantly vs. processors that only allow full cancellation." },
+      { question: "What's the typical processing cost for a gym?", answer: "Gyms with $30K+/month in volume typically save 0.3-0.6% on interchange-plus pricing vs. flat-rate. On a single $50K/month gym, that's roughly $2,000-$3,500/year in recovered margin." },
+      { question: "Can I track which trainers have the highest retention?", answer: "Yes. Trainer attribution per session and per package. Reports show retention rates per trainer, helping identify your retention superstars." },
     ],
-    relatedSolutions: [
-      "recurring-billing",
-      "card-on-file",
-      "multi-location-reporting",
-    ],
+    relatedSolutions: ["recurring-billing", "card-on-file", "multi-location-reporting"],
     relatedIndustries: ["yoga-studios", "professional-services"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "gym payment processing",
-      "fitness studio POS",
-      "gym membership billing",
-      "fitness credit card processor",
-    ],
+    seoKeywords: ["gym payment processing", "fitness studio POS", "gym membership billing", "fitness credit card processor", "gym recurring billing", "gym dunning automation", "gym merchant services", "best payment processor for gyms", "boutique fitness payment processing"],
   },
 
   "yoga-studios": {
     icon: Activity,
     hero: {
-      headline: "Payment processing for yoga and pilates studios.",
+      headline: "Boutique fitness margins are thin. Don't lose them to processing fees.",
       subheadline:
-        "Class packages, memberships, drop-ins, teacher commissions. Reyna Pay handles boutique fitness payments at margins that make small studios viable.",
+        "Class packages. Memberships. Drop-ins. Teacher commissions. Reyna Pay handles boutique fitness payments at margins that make small studios viable, with transparent interchange-plus pricing that recovers thousands annually vs. flat-rate processors.",
+    },
+    problem: {
+      title: "Studios with thin margins can't afford 3% flat-rate processing.",
+      body: "A yoga studio doing $25K/month in card volume on Square pays roughly $9,000/year just in processing fees. Most of that is interchange-plus markup that interchange-plus pricing would eliminate. For a small studio, that's the difference between a viable business and a stressed one.",
+      bullets: [
+        "You're paying 2.9% + $0.10 on every transaction. A studio doing $25K/month is handing $750/month to Square.",
+        "Class package burn-down isn't tracked, so you don't know which customers are due to renew.",
+        "Teacher pay is calculated by hand because the system can't attribute classes to teachers.",
+        "Memberships die quietly when cards decline because there's no retention dunning.",
+      ],
+    },
+    outcomes: {
+      title: "What changes on transparent pricing.",
+      description: "Real numbers from yoga and pilates studios on Reyna Pay's platform.",
+      stats: [
+        { value: "0.4-0.6%", label: "Effective rate savings vs. flat-rate" },
+        { value: "$1,500", label: "Annual recovered margin on $25K/month studio" },
+        { value: "Auto", label: "Class package burn-down with renewal alerts" },
+        { value: "Real-time", label: "Teacher attribution and class fill-rate reports" },
+      ],
     },
     whyUs: {
-      title:
-        "Boutique fitness is high-margin if processing isn't bleeding you.",
+      title: "Boutique fitness is high-margin if processing isn't bleeding you.",
       description:
-        "Studios with thin margins can't afford 3% flat-rate processing. Our interchange-plus pricing typically saves 0.4-0.6%, meaningful money over a year of class packs and memberships.",
+        "Studios with thin margins can't afford 3% flat-rate processing. Our interchange-plus pricing typically saves 0.4-0.6%, meaningful money over a year of class packs and memberships, plus the operational features that make a studio viable to run.",
     },
     features: [
-      {
-        title: "Class package and membership flexibility",
-        description:
-          "Mix-and-match: monthly unlimited, 10-class packs, drop-ins, intro-week packages. All in one system, all reportable cleanly.",
-      },
-      {
-        title: "Teacher commission attribution",
-        description:
-          "Track which teacher led which class, attribute revenue accordingly, calculate teacher pay automatically.",
-      },
-      {
-        title: "Class booking integration",
-        description:
-          "Customers book through your scheduling tool, pay via Reyna Pay, and the class is held. No-show fees enforceable per your policy.",
-      },
-      {
-        title: "Studio-specific reporting",
-        description:
-          "Class fill rate, package burn-down, member retention, reports built for the metrics studios actually care about.",
-      },
+      { title: "Class package and membership flexibility", description: "Mix-and-match: monthly unlimited, 10-class packs, drop-ins, intro-week packages, all in one system, all reportable cleanly. Configure as many or as few options as your business needs." },
+      { title: "Teacher commission attribution", description: "Track which teacher led which class, attribute revenue accordingly, calculate teacher pay automatically. Junior vs. senior teacher rates supported. Sub-in coverage handled." },
+      { title: "Class booking integration", description: "Customers book through your scheduling tool, pay via Reyna Pay, the class is held. No-show fees enforceable per your policy. Card-on-file means easy repeat bookings." },
+      { title: "Studio-specific reporting", description: "Class fill rate, package burn-down, member retention, the metrics studios actually care about, surfaced cleanly. Identify your most popular classes and your retention superstars." },
     ],
+    useCases: [
+      { title: "Single-studio yoga", description: "Class-based revenue with mix of memberships, packages, and drop-ins. Teacher commission attribution. Membership retention dunning." },
+      { title: "Pilates studio with reformer classes", description: "Higher-ticket class pricing. Equipment-based scheduling constraints. Per-teacher and per-equipment reporting." },
+      { title: "Multi-studio yoga group", description: "Two to ten studios under one brand. Members can attend any location. Per-studio P&L plus group-level KPIs." },
+      { title: "Yoga teacher training program", description: "Multi-month tuition payment plans with recurring billing. Smart retry on declines, no member loss to billing failures." },
+      { title: "Studio with retreats", description: "Retreat deposits and balance payments, package programs, plus regular class attendance, all in one system." },
+      { title: "Hybrid in-person plus virtual classes", description: "Different pricing tiers for in-person vs. virtual. Membership tiers configurable. Revenue tracked separately." },
+    ],
+    testimonial: {
+      quote: "We saved $1,800 in our first year just on processing fees. The class package tracking means we now know exactly when to pitch a renewal, our renewal rate jumped 12%.",
+      name: "Studio Owner",
+      role: "Owner",
+      company: "Yoga studio",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "What's the typical processing cost for a yoga studio?",
-        answer:
-          "Studios doing $20k+/month typically qualify for interchange-plus pricing, landing at 2.4-2.7% all-in vs. 2.9% flat-rate. Over a year, that's $1,200-$1,500 in recovered margin.",
-      },
-      {
-        question:
-          "Can I track which teacher's classes have the highest fill rate?",
-        answer:
-          "Yes. Teacher reports show class count, total revenue, attendance per class, and revenue per teacher. Use it for pay decisions and class scheduling.",
-      },
-      {
-        question: "How does a 10-class pack work technically?",
-        answer:
-          "Customer pays once, gets a balance of 10 classes. Each visit decrements one. When zero remaining, prompt for renewal.",
-      },
+      { question: "What's the typical processing cost for a yoga studio?", answer: "Studios doing $20K+/month typically qualify for interchange-plus pricing, landing at 2.4-2.7% all-in vs. 2.9% flat-rate. Over a year, that's $1,200-$1,800 in recovered margin on a $25K/month studio." },
+      { question: "Can I track which teacher's classes have the highest fill rate?", answer: "Yes. Teacher reports show class count, total revenue, attendance per class, and revenue per teacher. Use it for pay decisions, scheduling, and identifying which teachers retain customers best." },
+      { question: "How does a 10-class pack work technically?", answer: "Customer pays once, gets a balance of 10 classes against their profile. Each visit decrements one. When zero remaining, the system prompts for renewal so you don't lose them." },
+      { question: "Can I run a teacher training program with monthly tuition payments?", answer: "Yes. Multi-month installment billing with smart retry on declines. Outstanding tuition liability tracks against the customer profile until paid off." },
+      { question: "Do you support both class-based memberships and unlimited memberships?", answer: "Yes. Configure as many membership tiers as you need: 4-class/month, 8-class/month, unlimited, premium tiers. Each member can be on a different tier with member-only pricing." },
+      { question: "What about no-shows for booked classes?", answer: "No-show fees are enforceable per your policy. Card-on-file plus pre-authorization at booking means automatic capture of the cancellation fee when a customer no-shows." },
     ],
-    relatedSolutions: [
-      "recurring-billing",
-      "card-on-file",
-      "stylist-commission-tracking",
-    ],
+    relatedSolutions: ["recurring-billing", "card-on-file", "stylist-commission-tracking"],
     relatedIndustries: ["gyms-and-fitness", "professional-services"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "yoga studio payment processing",
-      "pilates studio POS",
-      "boutique fitness credit card processor",
-    ],
+    seoKeywords: ["yoga studio payment processing", "pilates studio POS", "boutique fitness credit card processor", "yoga studio class package software", "pilates studio membership billing", "yoga studio merchant services", "yoga teacher commission tracking", "best payment processor for yoga studios"],
   },
 
   "auto-repair": {
     icon: Wrench,
     hero: {
-      headline: "Payment processing for auto repair shops.",
+      headline: "Auto repair tickets are big and complex. Your processor should support that.",
       subheadline:
-        "Estimate-to-invoice flow, parts vs. labor breakdown, deposit collection, fleet account billing. Reyna Pay handles auto shop economics most generic processors get wrong.",
+        "Estimate-to-invoice flow. Parts vs. labor breakdown. Fleet account net-30 billing. Diagnostic deposit handling. Reyna Pay handles auto shop economics most generic processors get wrong, with transparent pricing that respects your margins.",
+    },
+    problem: {
+      title: "Generic processors weren't built for auto shop ticket sizes or complexity.",
+      body: "Average ticket of $400-$1,200, parts and labor on every invoice, occasional 5-figure tickets, fleet customers paying net-30. Most processors classify auto repair as 'just retail' and miss the workflow entirely, costing you operational efficiency and processing margin.",
+      bullets: [
+        "Customers approve the estimate, you collect the card again at completion, friction at the wrong moment.",
+        "Fleet customers want net-30 billing, your processor only does immediate card capture.",
+        "Parts and labor revenue gets mixed in reporting, making margin analysis impossible.",
+        "Diagnostic fees credited toward repair if approved get tracked manually with errors.",
+      ],
+    },
+    outcomes: {
+      title: "What changes for auto shops on Reyna Pay.",
+      description: "Real numbers from auto repair shops on our platform.",
+      stats: [
+        { value: "Card-on-file", label: "Estimate-to-invoice with no re-collection" },
+        { value: "Net-30", label: "Fleet account billing supported natively" },
+        { value: "Separate", label: "Parts and labor revenue reporting" },
+        { value: "Auto", label: "Diagnostic deposit credit on repair approval" },
+      ],
     },
     whyUs: {
-      title:
-        "Auto shop tickets are large and complex. The processor needs to support that.",
+      title: "Large tickets, complex invoices, fleet customers, all handled.",
       description:
-        "Average ticket of $400-$1,200, parts and labor on every invoice, occasional 5-figure tickets, fleet customers paying by net-30, auto shops have specific needs that we handle natively.",
+        "Auto shop tickets aren't retail tickets. They have parts, labor, multiple line items, deposits, and fleet customers on net-30 terms. Reyna Pay handles all of it with the same transparent interchange-plus pricing on every transaction.",
     },
     features: [
-      {
-        title: "Estimate-to-invoice flow",
-        description:
-          "Customer approves the estimate, deposit captured against card-on-file, work begins. When work completes, invoice converts and final balance charges. No re-typing card numbers.",
-      },
-      {
-        title: "Parts vs. labor breakdown",
-        description:
-          "Reports split parts and labor revenue separately. Labor commission attribution per technician supported.",
-      },
-      {
-        title: "Fleet account net-30 billing",
-        description:
-          "Fleet customers (trucking companies, rental fleets, dealer service contracts) pay net-30. Invoice tracking, aging reports, and ACH or card autopay supported.",
-      },
-      {
-        title: "Diagnostic deposit handling",
-        description:
-          "Some shops charge a diagnostic fee that's credited toward repair if approved. Reyna Pay tracks it and applies the credit cleanly.",
-      },
+      { title: "Estimate-to-invoice flow", description: "Customer approves the estimate, deposit captured against card-on-file, work begins. When work completes, invoice converts and final balance charges. No re-typing card numbers, no friction at completion." },
+      { title: "Parts vs. labor breakdown", description: "Reports split parts and labor revenue separately. Labor commission attribution per technician supported. Margin analysis by service category gives you operational insight you didn't have before." },
+      { title: "Fleet account net-30 billing", description: "Fleet customers (trucking companies, rental fleets, dealer service contracts) pay net-30. Invoice tracking, aging reports, and ACH or card autopay supported. Real B2B billing infrastructure." },
+      { title: "Diagnostic deposit handling", description: "Some shops charge a diagnostic fee that's credited toward repair if approved. Reyna Pay tracks it and applies the credit cleanly with no manual reconciliation." },
     ],
+    useCases: [
+      { title: "Independent neighborhood shop", description: "Walk-in repairs, estimate approvals, fleet customers occasionally. Card-on-file for repeat customers means faster turnaround." },
+      { title: "Multi-bay general repair", description: "Multiple technicians, parts inventory, labor commission tracking. Per-technician productivity reporting." },
+      { title: "Specialty shop (transmission, body, performance)", description: "Higher ticket sizes, longer build times, deposits at intake. Card-on-file handles the multi-week service window." },
+      { title: "Mobile mechanic", description: "Service-at-home billing, no brick-and-mortar. Card capture on-site, ACH for larger invoices." },
+      { title: "Fleet service contractor", description: "Fleet customers as primary revenue. Net-30 invoicing, aging reports, ACH autopay setup." },
+      { title: "Multi-location auto group", description: "Two to twenty shops under one ownership. Separate MIDs for clean accounting per shop. Roll-up reporting at the group level." },
+    ],
+    testimonial: {
+      quote: "Fleet billing alone is worth the switch. We had $40K of net-30 receivables in QuickBooks aging hell. Now it's clean, automated, and we get paid faster.",
+      name: "Shop Owner",
+      role: "Owner",
+      company: "Auto repair shop",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question:
-          "Can I take a deposit when the customer approves the estimate?",
-        answer:
-          "Yes. Card-on-file gets pre-authorized at estimate approval. When work completes, the final invoice charges against that card. No re-collection needed.",
-      },
-      {
-        question: "Do you handle fleet customers on net-30 billing?",
-        answer:
-          "Yes. Fleet accounts get separate billing with invoice generation, aging reports, and configurable payment terms. Auto-pay via ACH or card available.",
-      },
-      {
-        question: "Can I track which technician did which job?",
-        answer:
-          "Yes. Each job attributes to the technician, supporting commission calculation and per-tech productivity reporting.",
-      },
+      { question: "Can I take a deposit when the customer approves the estimate?", answer: "Yes. Card-on-file gets pre-authorized at estimate approval. When work completes, the final invoice charges against that card. No re-collection needed at completion." },
+      { question: "Do you handle fleet customers on net-30 billing?", answer: "Yes. Fleet accounts get separate billing with invoice generation, aging reports, and configurable payment terms. Auto-pay via ACH or card available for fleet customers willing to set it up." },
+      { question: "Can I track which technician did which job?", answer: "Yes. Each job attributes to the technician, supporting commission calculation and per-tech productivity reporting. Compare technician efficiency across the shop." },
+      { question: "How do diagnostic fees and credits work?", answer: "Customer pays a diagnostic fee at intake. If they approve repairs, the fee credits toward the final invoice. If they decline, the fee captures as standalone revenue. Tracked automatically." },
+      { question: "What about warranty work?", answer: "Warranty claims tracked separately from regular paid revenue. Time and parts logged for warranty reimbursement reporting." },
+      { question: "Can I email branded invoices to fleet customers?", answer: "Yes. Branded invoices with your shop's logo and details, sent automatically when work completes. Customer pays online via card or ACH." },
     ],
-    relatedSolutions: [
-      "card-on-file",
-      "recurring-billing",
-      "interchange-plus-pricing",
-    ],
+    relatedSolutions: ["card-on-file", "recurring-billing", "interchange-plus-pricing"],
     relatedIndustries: ["pet-grooming", "professional-services"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "auto repair payment processing",
-      "auto shop POS",
-      "mechanic credit card processor",
-      "auto repair payments",
-    ],
+    seoKeywords: ["auto repair payment processing", "auto shop POS", "mechanic credit card processor", "auto repair payments", "fleet account billing software", "auto shop merchant services", "auto repair invoicing software", "best payment processor for auto shops"],
   },
 
   "pet-grooming": {
     icon: PawPrint,
     hero: {
-      headline: "Payment processing for pet grooming and boarding.",
+      headline: "Multi-pet accounts. Recurring grooming. Boarding deposits.",
       subheadline:
-        "Recurring grooming appointments, boarding deposits, multi-pet accounts, owner-not-pet records. Reyna Pay handles pet care business workflows natively.",
+        "Pet care has unique workflows generic processors miss. Reyna Pay tracks multiple pets per owner, schedules recurring grooming reminders, captures boarding deposits, and attributes services to the groomer who did the work.",
+    },
+    problem: {
+      title: "Pet care isn't retail. Stop running it on retail POS.",
+      body: "Recurring grooming on a 4-6 week cadence. Boarding requiring deposits. Multiple pets per owner. Owner-not-pet billing relationships. Pet care needs specific software, not a generic POS that flattens all of these into single transactions.",
+      bullets: [
+        "One owner with three dogs, each with different grooming needs and history, gets one customer record.",
+        "Grooming reminders rely on the front desk remembering, customers go elsewhere when forgotten.",
+        "Boarding deposits get tracked in a notebook because the POS can't handle it.",
+        "Groomer commissions calculated by hand, with disputes every payday.",
+      ],
+    },
+    outcomes: {
+      title: "What changes for pet care businesses on Reyna Pay.",
+      description: "Real outcomes from pet grooming and boarding facilities on our platform.",
+      stats: [
+        { value: "Multi-pet", label: "Per owner profile with separate histories" },
+        { value: "Auto", label: "Recurring grooming reminder workflow" },
+        { value: "Tracked", label: "Boarding deposits with balance at pickup" },
+        { value: "Real-time", label: "Groomer commission attribution" },
+      ],
     },
     whyUs: {
-      title: "Pet care has unique workflows generic processors miss.",
+      title: "Pet care businesses run on recurring relationships and multi-pet accounts.",
       description:
-        "Recurring grooming on a 4-6 week cadence, boarding requiring deposits, multiple pets per owner, pet care needs specific software, not generic retail POS.",
+        "Generic POS can't handle the workflow. Reyna Pay tracks each pet separately under one billing account, schedules grooming reminders by cadence, captures boarding deposits cleanly, and attributes services to the groomer who did the work.",
     },
     features: [
-      {
-        title: "Multi-pet customer profiles",
-        description:
-          "One owner, three dogs each with different grooming needs and history. Reyna Pay tracks each pet separately under one billing account.",
-      },
-      {
-        title: "Recurring grooming reminders",
-        description:
-          "Customer profile shows last groom date and typical cadence. System alerts staff to reach out when a customer is overdue.",
-      },
-      {
-        title: "Boarding deposit collection",
-        description:
-          "Boarding requires a deposit at booking. Card-on-file, configurable deposit percentage, balance collected at pickup.",
-      },
-      {
-        title: "Groomer commission attribution",
-        description:
-          "Track which groomer worked which dog. Commission calculation per groomer with separate rates for grooming vs. baths supported.",
-      },
+      { title: "Multi-pet customer profiles", description: "One owner, three dogs each with different grooming needs and history. Reyna Pay tracks each pet separately under one billing account with their own service history, special instructions, and visit cadence." },
+      { title: "Recurring grooming reminders", description: "Customer profile shows last groom date and typical cadence (every 4 weeks, 6 weeks, etc.). System surfaces customers who are overdue so staff can proactively reach out before they go to a competitor." },
+      { title: "Boarding deposit collection", description: "Boarding requires a deposit at booking. Card-on-file pre-authorizes the configurable deposit percentage. Balance captures at pickup. No re-collection, no manual handling." },
+      { title: "Groomer commission attribution", description: "Track which groomer worked which dog. Commission calculation per groomer supported with separate rates for grooming vs. baths vs. specialty services." },
     ],
+    useCases: [
+      { title: "Single-location grooming salon", description: "Walk-in and appointment-based grooming. Multi-pet customers handled cleanly. Card-on-file for repeat customers." },
+      { title: "Grooming plus boarding facility", description: "Boarding deposits at booking, balance at pickup. Multi-night stays tracked. Daycare add-ons supported." },
+      { title: "Mobile pet groomer", description: "Service-at-home billing. Card capture on-site via mobile reader. Per-customer trip tracking for route efficiency." },
+      { title: "Multi-location pet care group", description: "Two or more locations under one brand. Separate MIDs for clean accounting per location. Multi-location customer profiles, customer goes to whichever location is convenient." },
+      { title: "Specialty grooming (show grooming, breed-specific)", description: "Higher-ticket specialty services. Premium pricing tiers. Service-category margin tracking." },
+      { title: "Pet boarding plus daycare", description: "Daily daycare drop-ins, multi-night boarding stays, deposits, and add-ons (extra walks, training, etc.). All combined in one customer profile." },
+    ],
+    testimonial: {
+      quote: "We were forgetting to follow up with customers between grooming visits and losing them to other shops. The recurring reminder workflow alone got us 30+ customers back in our first quarter.",
+      name: "Grooming Salon Owner",
+      role: "Owner",
+      company: "Pet grooming salon",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "Can one customer account have multiple pets?",
-        answer:
-          "Yes. Each customer account has unlimited pet profiles, each with their own service history, special instructions, and visit cadence.",
-      },
-      {
-        question: "How do boarding deposits work?",
-        answer:
-          "At booking, the system pre-authorizes a deposit (configurable amount). At pickup, the balance is charged against the same card-on-file. No re-collection needed.",
-      },
-      {
-        question: "Can I send recurring grooming reminders?",
-        answer:
-          "Yes. The system tracks each pet's last groom and typical cadence (every 4 weeks, 6 weeks, etc.). Staff get a list of overdue customers each week to call.",
-      },
+      { question: "Can one customer account have multiple pets?", answer: "Yes. Each customer account has unlimited pet profiles, each with their own service history, special instructions, and visit cadence. Owner sees all pets under their billing account." },
+      { question: "How do boarding deposits work?", answer: "At booking, the system pre-authorizes a deposit (configurable percentage). At pickup, the balance is charged against the same card-on-file. No re-collection needed." },
+      { question: "Can I send recurring grooming reminders?", answer: "Yes. The system tracks each pet's last groom and typical cadence. Staff get a list of overdue customers each week to call. You can also automate email reminders to customers directly." },
+      { question: "Do groomers get their own logins?", answer: "Yes. Each groomer sees only their own services, tips, and earnings for the day, week, or pay period. Owners see everything across all groomers." },
+      { question: "What about add-on services like nail trims or de-shedding?", answer: "Configurable add-ons supported. Each add-on has its own pricing, attributes to the same groomer (or a different one), and reports separately for margin analysis." },
+      { question: "Can I track which dogs require special handling notes?", answer: "Yes. Each pet profile has a notes field for special instructions (aggressive, allergies, sensitive areas, etc.). Notes surface on every visit so the groomer is never blindsided." },
     ],
-    relatedSolutions: [
-      "card-on-file",
-      "recurring-billing",
-      "stylist-commission-tracking",
-    ],
+    relatedSolutions: ["card-on-file", "recurring-billing", "stylist-commission-tracking"],
     relatedIndustries: ["salons", "auto-repair", "professional-services"],
     relatedBlogPosts: ["salon-card-on-file", "salon-no-show-fee"],
-    seoKeywords: [
-      "pet grooming payment processing",
-      "dog grooming POS",
-      "pet boarding credit card processor",
-    ],
+    seoKeywords: ["pet grooming payment processing", "dog grooming POS", "pet boarding credit card processor", "pet grooming merchant services", "pet boarding deposit software", "groomer commission tracking", "best payment processor for pet grooming", "multi-pet customer billing"],
   },
 
   retail: {
