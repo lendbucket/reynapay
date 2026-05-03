@@ -92,9 +92,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         "The salon payment processor your booking software wishes you had.",
       subheadline:
         "Card-on-file, stylist commission attribution, automated no-show fees, and booking integration, built by people who actually run salons. Your stylists get paid faster. Your no-show losses drop. Your accountant stops calling you.",
-      imageUrl:
-        "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      imageAlt: "Modern salon interior with stylist working on client",
+      imageUrl: "/industries/salons-hero.jpg",
+      imageAlt: "Modern salon interior",
     },
     problem: {
       title: "Most salon owners are bleeding money and don't know it.",
@@ -133,33 +132,29 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "Stylist commission attribution that actually works",
         description:
           "Every transaction auto-attributes service revenue and tips to the stylist who performed the work. Pay periods close in 15 minutes instead of four hours of spreadsheet reconciliation. Junior, senior, and master stylist commission tiers supported. Tip-out chains tracked. Disputes drop to near zero because the math is provable.",
-        imageUrl:
-          "https://images.pexels.com/photos/3993453/pexels-photo-3993453.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Stylist completing payment on tablet",
+        imageUrl: "/industries/salons-feature-1.jpg",
+        imageAlt: "Stylist completing payment",
       },
       {
         title: "Card-on-file with no-show automation",
         description:
           "Customer taps once, the system remembers them. Card stored securely, PCI scope handled. When they no-show their next appointment, the system charges your published cancellation fee automatically. No awkward phone call. No chasing. Real reduction in lost chair time and recovered revenue you would have otherwise written off.",
-        imageUrl:
-          "https://images.pexels.com/photos/7440054/pexels-photo-7440054.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Customer paying with card at salon checkout",
+        imageUrl: "/industries/salons-feature-2.jpg",
+        imageAlt: "Customer paying at salon",
       },
       {
         title: "Booking software integration",
         description:
           "Pre-authorize cards at booking time. When the appointment date arrives and the customer doesn't show, you've already got the authorization in place, fee captured, no fight. Direct integrations with the major salon booking platforms. Open API for custom setups.",
-        imageUrl:
-          "https://images.pexels.com/photos/3992855/pexels-photo-3992855.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Salon booking calendar on tablet",
+        imageUrl: "/industries/salons-feature-3.jpg",
+        imageAlt: "Salon booking calendar",
       },
       {
         title: "Multi-location reporting with separate MIDs",
         description:
           "Own three salons? See all three in one dashboard, with each location's MID isolated for clean accounting. Roll up to the group, drill into any single chair. Compare revenue per stylist across locations. Identify which suite is your top performer and which is leaking.",
-        imageUrl:
-          "https://images.pexels.com/photos/3993124/pexels-photo-3993124.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Multi-location salon dashboard analytics",
+        imageUrl: "/industries/salons-feature-4.jpg",
+        imageAlt: "Multi-location salon dashboard",
       },
     ],
     useCases: [
@@ -282,9 +277,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         "Payment processing built for the way barbershops actually run.",
       subheadline:
         "Walk-ins. Regulars. Tips. Mixed W-2 and chair-rental staffing. Cash-to-card transitions. Reyna Pay's SalonTransact handles all of it, the realities most processors flatten into a generic retail flow.",
-      imageUrl:
-        "https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      imageAlt: "Modern barbershop interior with multiple chairs",
+      imageUrl: "/industries/barbershops-hero.jpg",
+      imageAlt: "Modern barbershop interior",
     },
     problem: {
       title: "Square wasn't built for a barbershop. You can feel it every day.",
@@ -324,33 +318,27 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "Mixed staffing model support, finally",
         description:
           "Some barbers are W-2, some rent the chair, some do both depending on the day. Reyna Pay handles all of it. Transaction-level splits route service revenue to the barber while booth rent gets collected separately through ACH. Each barber's profile is configured independently with their own commission and rental terms.",
-        imageUrl:
-          "https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/barbershops-feature-1.jpg",
         imageAlt: "Barber finishing a haircut",
       },
       {
         title: "Tip-out chain tracking",
         description:
           "Senior barbers tip out shampoo assistants and shoeshine staff in many shops. Reyna Pay tracks the tip-out percentages so the math is provable, the disputes vanish, and every staff member gets their cut without a midnight calculator session.",
-        imageUrl:
-          "https://images.pexels.com/photos/1570807/pexels-photo-1570807.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/barbershops-feature-2.jpg",
         imageAlt: "Barbershop payment terminal",
       },
       {
         title: "Walk-in optimization",
         description:
           "Most barbershop revenue is walk-ins, not appointments. The terminal flow is optimized for fast checkout, under 15 seconds for a regular paying with card-on-file. Tip prompts that don't slow the line. Receipt-by-text option so customers walk straight out the door.",
-        imageUrl:
-          "https://images.pexels.com/photos/2076930/pexels-photo-2076930.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Customer paying at barbershop counter",
       },
       {
         title: "Multi-shop reporting",
         description:
           "Own multiple shops? See all of them in one view, with separate MIDs for clean accounting per entity. Compare revenue per chair across shops to spot underperformers. Identify which barber is dragging the average and which is your hidden top earner.",
-        imageUrl:
-          "https://images.pexels.com/photos/3998420/pexels-photo-3998420.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Multi-location barbershop reporting dashboard",
+        imageUrl: "/industries/barbershops-feature-4.jpg",
+        imageAlt: "Multi-location barbershop reporting",
       },
     ],
     useCases: [
@@ -455,8 +443,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       headline: "Payment processing for med spas, without the high-risk drama.",
       subheadline:
         "$2,000 laser packages. $500 injectable visits. Recurring memberships. Most processors flag your tickets as suspicious and freeze your funds. We don't. Reyna Pay underwrites med spas as standard merchants and handles your real workflows.",
-      imageUrl:
-        "https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      imageUrl: "/industries/med-spas-hero.jpg",
       imageAlt: "Modern med spa treatment room",
     },
     problem: {
@@ -500,33 +487,29 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "High-ticket transaction support, without the hold",
         description:
           "Single transactions of $2,000 to $10,000 are routine for med spas. We don't flag, hold, or pause high-ticket transactions when the customer profile is consistent. Your $5,000 laser package settles tomorrow, not in 7 days when the risk team finally calls back.",
-        imageUrl:
-          "https://images.pexels.com/photos/3985331/pexels-photo-3985331.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Med spa laser treatment in progress",
+        imageUrl: "/industries/med-spas-feature-1.jpg",
+        imageAlt: "Med spa laser treatment",
       },
       {
         title: "Membership and recurring billing",
         description:
           "Monthly membership programs with automatic billing, smart retry logic on failed payments, and clean dunning workflows. Card-on-file is mandatory for membership programs and we handle it natively. Member-only pricing applied automatically. Pause/resume controls customer-facing.",
-        imageUrl:
-          "https://images.pexels.com/photos/3997385/pexels-photo-3997385.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Med spa membership card on tablet",
+        imageUrl: "/industries/med-spas-feature-2.jpg",
+        imageAlt: "Med spa membership card",
       },
       {
         title: "Prepaid package management",
         description:
           "Customers pre-pay for a 6-pack of laser sessions, redeem one at a time. Reyna Pay tracks the package balance, attributes redemption to the technician who performed the service, and surfaces customers due for renewal pitches. Outstanding package liability shows up in your accounting reports cleanly.",
-        imageUrl:
-          "https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Med spa receptionist processing prepaid package",
+        imageUrl: "/industries/med-spas-feature-3.jpg",
+        imageAlt: "Med spa reception desk",
       },
       {
         title: "Provider-level commission tracking",
         description:
           "Just like stylist commission attribution, but for injectors, laser techs, and aestheticians. Track service revenue by provider for accurate commission and bonus calculation. Senior injector vs. junior tech rates handled separately. Reports show revenue per provider per service category.",
-        imageUrl:
-          "https://images.pexels.com/photos/4046316/pexels-photo-4046316.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Med spa injector reviewing patient chart",
+        imageUrl: "/industries/med-spas-feature-4.jpg",
+        imageAlt: "Med spa injector reviewing patient",
       },
     ],
     useCases: [
@@ -635,9 +618,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       headline: "Payment processing for tattoo studios that actually works.",
       subheadline:
         "Booking deposits. Artist commission attribution. Cash-to-card friendly reporting. Chargeback evidence packs that win disputes. Reyna Pay handles tattoo studio payment workflows the way they actually happen, without classifying you as high-risk.",
-      imageUrl:
-        "https://images.pexels.com/photos/2919608/pexels-photo-2919608.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      imageAlt: "Tattoo studio interior with workstations",
+      imageUrl: "/industries/tattoo-studios-hero.jpg",
+      imageAlt: "Tattoo studio interior",
     },
     problem: {
       title: "Your processor doesn't understand the tattoo business.",
@@ -676,33 +658,25 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "Booking deposit collection that won't get lost",
         description:
           "Take a deposit when the appointment is booked, applied to the final bill at checkout. If the customer no-shows or cancels late, the deposit converts to a cancellation fee automatically per your published policy. No more chasing deposits or losing them in Venmo accounts.",
-        imageUrl:
-          "https://images.pexels.com/photos/2272854/pexels-photo-2272854.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Tattoo artist consulting with client at booking",
+        imageUrl: "/industries/tattoo-studios-feature-1.jpg",
+        imageAlt: "Tattoo artist consulting with client",
       },
       {
         title: "Artist commission attribution",
         description:
           "Each artist has their own profile. Service revenue and tips auto-attribute. Independent-contractor artists see their own earnings only; shop owners see everything. 1099 reporting handled at year-end with zero spreadsheet work. Junior, senior, and guest-spot rates supported.",
-        imageUrl:
-          "https://images.pexels.com/photos/2102146/pexels-photo-2102146.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Tattoo artist working on client",
       },
       {
         title: "Cash-to-card friendly reporting",
         description:
           "Many tattoo shops still run a meaningful cash mix. Our reports separate cash, card, and ACH revenue clearly so accounting and tax filings are clean, no more reconciling envelopes at month end. Cash deposits tracked alongside card processing in one dashboard.",
-        imageUrl:
-          "https://images.pexels.com/photos/4123815/pexels-photo-4123815.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/tattoo-studios-feature-3.jpg",
         imageAlt: "Tattoo studio reception desk",
       },
       {
         title: "Chargeback evidence packs that win disputes",
         description:
           "Tattoo chargebacks are notoriously contested. We auto-compile signed waivers, deposit consent records, photos of finished work, and customer communication into the dispute submission. Studios running this end-to-end win 78% of disputed transactions versus the industry average around 30%.",
-        imageUrl:
-          "https://images.pexels.com/photos/3593923/pexels-photo-3593923.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Tattoo studio chargeback documentation",
       },
     ],
     useCases: [
@@ -804,8 +778,7 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       headline: "Payment processing built for nail salons.",
       subheadline:
         "Walk-in flow, technician commission tracking, retail product sales, package services, gift cards. Reyna Pay's SalonTransact platform handles nail salon operations end-to-end, the way the work actually flows.",
-      imageUrl:
-        "https://images.pexels.com/photos/704815/pexels-photo-704815.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      imageUrl: "/industries/nail-salons-hero.jpg",
       imageAlt: "Modern nail salon interior",
     },
     problem: {
@@ -849,32 +822,26 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "Technician attribution that just works",
         description:
           "Service revenue, tips, and product commission attribute to the tech who did the work. Pay periods close cleanly with zero manual reconciliation. Junior, senior, and master nail tech rates handled. Retail commission percentages can differ from service commission.",
-        imageUrl:
-          "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/nail-salons-feature-1.jpg",
         imageAlt: "Nail technician finishing manicure",
       },
       {
         title: "Retail product sales tracking",
         description:
           "Selling polish, files, lotions retail? Track inventory by SKU, attribute commission to the tech who sold the product, and report retail margin separately from service revenue. Low-stock alerts. Reorder points. The retail side of your business finally visible.",
-        imageUrl:
-          "https://images.pexels.com/photos/2113855/pexels-photo-2113855.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/nail-salons-feature-2.jpg",
         imageAlt: "Nail salon retail product display",
       },
       {
         title: "Package and gift card support",
         description:
           "Customers pre-pay for a 5-visit package or buy a gift card. Reyna Pay tracks the balance, redeems against future visits, and handles unused balance liability for accounting. Multi-location gift cards supported, sold at one salon, redeemable at another.",
-        imageUrl:
-          "https://images.pexels.com/photos/887352/pexels-photo-887352.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Nail salon gift card display",
       },
       {
         title: "Walk-in friendly checkout",
         description:
           "Most nail salons see walk-ins more than appointments. Optimized terminal flow, sub-15-second checkout for regulars on card-on-file. Tip prompts that don't slow the line. Receipt-by-text option so customers walk out without waiting on a printer.",
-        imageUrl:
-          "https://images.pexels.com/photos/3997991/pexels-photo-3997991.jpeg?auto=compress&cs=tinysrgb&w=1200",
+        imageUrl: "/industries/nail-salons-feature-4.jpg",
         imageAlt: "Nail salon checkout counter",
       },
     ],
@@ -977,9 +944,8 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
       headline: "Payment processing for lash and brow studios.",
       subheadline:
         "Membership programs, fill appointments, tech commission, prepaid lash sets. Reyna Pay's SalonTransact handles the recurring-revenue patterns lash and brow studios actually live on, the recurring billing, fill cadence tracking, and retention math that turn one-time customers into members.",
-      imageUrl:
-        "https://images.pexels.com/photos/3997980/pexels-photo-3997980.jpeg?auto=compress&cs=tinysrgb&w=1600",
-      imageAlt: "Lash extension application in modern studio",
+      imageUrl: "/industries/lash-and-brow-hero.jpg",
+      imageAlt: "Lash extension studio",
     },
     problem: {
       title:
@@ -1022,33 +988,23 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
         title: "Membership program management",
         description:
           "Monthly fill memberships with automatic billing, member-only pricing, and clean retention analytics. Card-on-file is required for memberships and works natively. Failed payments retry on a smart schedule. Members get retention emails before access pauses.",
-        imageUrl:
-          "https://images.pexels.com/photos/3997381/pexels-photo-3997381.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Lash studio membership card on tablet",
       },
       {
         title: "Fill appointment tracking",
         description:
           "When was the customer's last full set? Their last fill? Reyna Pay tracks the cadence and alerts staff when a customer is overdue. Reports surface customers who haven't been in within their typical fill window so you can proactively reach out before they go to a competitor.",
-        imageUrl:
-          "https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Lash technician applying extensions",
+        imageUrl: "/industries/lash-and-brow-feature-2.jpg",
+        imageAlt: "Lash extension application",
       },
       {
         title: "Tech commission attribution",
         description:
           "Service revenue and tips attribute to the lash/brow tech who did the work. Junior vs. senior commission rates supported. Retail product commission tracked separately from service commission. Pay periods close in minutes.",
-        imageUrl:
-          "https://images.pexels.com/photos/3993247/pexels-photo-3993247.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Lash technician at workstation",
       },
       {
         title: "Prepaid set bundles",
         description:
           "Customer prepays for a full set + 3 fills. The system tracks the bundle balance, redeems against each visit, and surfaces renewal prompts at the right time. Outstanding bundle liability flows to your accounting reports correctly.",
-        imageUrl:
-          "https://images.pexels.com/photos/4763438/pexels-photo-4763438.jpeg?auto=compress&cs=tinysrgb&w=1200",
-        imageAlt: "Lash studio reception with package display",
       },
     ],
     useCases: [
