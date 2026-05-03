@@ -1100,268 +1100,272 @@ export const INDUSTRY_CONTENT: Record<string, IndustryContent> = {
     ],
   },
 
-  restaurants: {
+  "restaurants": {
     icon: Coffee,
     hero: {
-      headline: "Payment processing for restaurants.",
+      headline: "Payment processing built for how restaurants actually run.",
       subheadline:
-        "Table management, tip pooling, kitchen ticketing, integrated payments. Reyna Pay's restaurant platform, KasseApp, is built around how restaurants actually operate.",
+        "Tables. Tabs. Tip pools. Course pacing. 86 alerts. Modifier hell. Reyna Pay's KasseApp is restaurant-first software built around the workflow front-of-house actually runs, not bolted onto a generic retail POS.",
+    },
+    problem: {
+      title: "Generic POS systems are killing your service.",
+      body: "Most processors give you the same software they sell to coffee shops and call it a 'restaurant package.' They don't understand course pacing, table holds, server attribution, or the speed front-of-house actually needs during a Friday rush. The wrong system slows the floor and bleeds margin.",
+      bullets: [
+        "Servers waste 30-60 seconds per ticket fighting a UI that wasn't built for a 12-table section.",
+        "Tip pools get hand-calculated at midnight with errors that compound into payroll headaches.",
+        "Modifiers and course timing get manually managed because the system can't sequence them.",
+        "Card-present interchange is supposed to be cheap, but tiered pricing buries you at non-qualified rates.",
+      ],
+    },
+    outcomes: {
+      title: "What changes when restaurants run on KasseApp.",
+      description: "Real numbers from full-service restaurants on Reyna Pay's processing platform.",
+      stats: [
+        { value: "0.3-0.6%", label: "Effective rate savings vs. tiered pricing" },
+        { value: "Auto", label: "Tip pool distribution at shift close" },
+        { value: "Real-time", label: "Server attribution and section reporting" },
+        { value: "$5K+", label: "Annual savings on a $50K/month restaurant" },
+      ],
     },
     whyUs: {
       title: "Restaurants need real restaurant infrastructure.",
       description:
-        "Generic processors don't understand table holds, course pacing, server tip pools, or 86'd menu items. KasseApp is restaurant-first, and Reyna Pay's processing rails make it transparent and affordable.",
+        "KasseApp is restaurant-first software running on Reyna Pay's transparent processing rails. Tables, courses, modifiers, server attribution, tip pools, kitchen ticketing, all native. Not bolted on as an afterthought.",
     },
     features: [
-      {
-        title: "Table management",
-        description:
-          "Visual floor plan, table holds, course pacing, split checks, transfer tabs. Built around how front-of-house actually flows.",
-      },
-      {
-        title: "Tip pool management",
-        description:
-          "Configure your tip pool, by hours worked, by section, custom rules. Tips auto-distribute at end of shift. No more hand-calculation at midnight.",
-      },
-      {
-        title: "Kitchen ticket integration",
-        description:
-          "Orders flow from POS to kitchen printers or KDS automatically. Modifiers, course timing, and 86 alerts handled.",
-      },
-      {
-        title: "Integrated payments",
-        description:
-          "Same provider for POS and processing means clean reconciliation at end of day. No third-party payment integration drift.",
-      },
+      { title: "Table management with course pacing", description: "Visual floor plan, table holds, course timing, split checks, transfer tabs. Built around how front-of-house actually flows during a real service." },
+      { title: "Tip pool management that runs itself", description: "Configure your tip pool by hours, by section, by role, or custom rules. Tips auto-distribute at end of shift. No more midnight calculator sessions, no more disputes." },
+      { title: "Kitchen ticket integration", description: "Orders flow from POS to kitchen printers or KDS automatically. Modifiers, course timing, and 86 alerts handled. Front-of-house and back-of-house stay synchronized." },
+      { title: "Integrated payments with transparent pricing", description: "Same provider for POS and processing means clean reconciliation at end of day. Interchange-plus pricing means no hidden tiered padding eating your margin." },
     ],
+    useCases: [
+      { title: "Full-service restaurant", description: "Tables, courses, modifiers, server attribution, tip pools. The primary use case for KasseApp." },
+      { title: "Quick-service and counter", description: "Counter ordering with no table assignment. Fast cashier turnover. Optimized for high-throughput volume." },
+      { title: "Multi-concept restaurant group", description: "Multiple restaurants under one ownership. Per-location P&L. Group-level KPIs and roll-up reporting." },
+      { title: "Restaurant with delivery integration", description: "Direct integrations with major delivery platforms. Orders route into KasseApp, revenue attributes correctly, commission accounting handled." },
+      { title: "Bar-restaurant hybrid", description: "Combine table management with open-tab functionality for the bar side. Tip pools handled separately if your structure requires it." },
+      { title: "Restaurant with private events", description: "Event banquet billing, deposit management, gratuity handling for parties of 8+. All native." },
+    ],
+    testimonial: {
+      quote: "We saved $6,400 in our first year on processing fees alone. The tip pool feature paid for itself in the first month, our closing manager goes home an hour earlier every night.",
+      name: "Restaurant Owner",
+      role: "Owner",
+      company: "Full-service restaurant",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "Will KasseApp work for a full-service restaurant?",
-        answer:
-          "Yes, full-service is the primary use case. Tables, courses, modifiers, server attribution, tip pools, all native.",
-      },
-      {
-        question: "What about quick-service and counter ordering?",
-        answer:
-          "Quick-service mode supported with simplified counter flows, fast cashier turnover, and no table assignment required.",
-      },
-      {
-        question: "Does KasseApp integrate with delivery platforms?",
-        answer:
-          "Yes, direct integrations with major delivery platforms route orders into KasseApp, attribute revenue correctly, and handle the commission accounting on delivery transactions.",
-      },
-      {
-        question: "What's the typical processing cost for a restaurant?",
-        answer:
-          "Restaurants with $30k+/month in volume typically save 0.3-0.6% on interchange-plus pricing vs. flat-rate. Tip processing fees vary slightly because tips have unique interchange treatment.",
-      },
+      { question: "Will KasseApp work for a full-service restaurant?", answer: "Yes, full-service is the primary use case. Tables, courses, modifiers, server attribution, tip pools, all native to the platform." },
+      { question: "What about quick-service and counter ordering?", answer: "Quick-service mode supported with simplified counter flows, fast cashier turnover, and no table assignment required. Run multiple service modes in the same restaurant." },
+      { question: "Does KasseApp integrate with delivery platforms?", answer: "Yes, direct integrations with major delivery platforms route orders into KasseApp, attribute revenue correctly, and handle the commission accounting on delivery transactions." },
+      { question: "What's the typical processing cost for a restaurant?", answer: "Restaurants with $30K+/month in volume typically save 0.3-0.6% on interchange-plus pricing vs. flat-rate. Tip processing fees vary slightly because tips have unique interchange treatment." },
+      { question: "Can servers see their own tip totals during their shift?", answer: "Yes, each server gets their own login showing only their own services, tips, and section earnings for the day or pay period." },
+      { question: "How does kitchen ticket printing work?", answer: "Orders flow from POS to kitchen printers or KDS based on modifier and course rules. Multiple kitchen stations supported (e.g., grill, fry, cold)." },
     ],
-    relatedSolutions: [
-      "tip-pools",
-      "multi-location-reporting",
-      "interchange-plus-pricing",
-      "pos-integration",
-    ],
+    relatedSolutions: ["tip-pools", "multi-location-reporting", "interchange-plus-pricing", "pos-integration"],
     relatedIndustries: ["bars", "coffee-shops", "food-trucks"],
     relatedBlogPosts: ["franchise-salon-payment-processing"],
-    seoKeywords: [
-      "restaurant payment processing",
-      "restaurant POS",
-      "restaurant credit card processor",
-      "restaurant payments",
-    ],
+    seoKeywords: ["restaurant payment processing", "restaurant POS", "restaurant credit card processor", "restaurant payments", "full service restaurant POS", "restaurant tip pooling software", "restaurant merchant services", "best POS for restaurants"],
   },
 
-  bars: {
+  "bars": {
     icon: GlassWater,
     hero: {
-      headline: "Payment processing for bars.",
+      headline: "Bars run different. Your processor should know that.",
       subheadline:
-        "Open tabs, tip pooling, late-night reconciliation, age-verified inventory. Reyna Pay's KasseApp handles bar-specific workflows that generic restaurant POS systems flatten.",
+        "Open tabs. Tip pooling. Late-night reconciliation. Age verification. Pre-authorized holds. Reyna Pay's KasseApp handles bar-specific workflows that generic restaurant POS systems flatten or miss entirely.",
+    },
+    problem: {
+      title: "Bars aren't restaurants. The POS shouldn't pretend they are.",
+      body: "Most processors give you a restaurant POS and call it good. But a bar isn't a restaurant. The workflows are different, the tab management is different, the tip culture is different, and the late-night reconciliation is its own special hell. Generic POS makes all of it harder.",
+      bullets: [
+        "Open tabs get stuck or lost because the POS doesn't auto-close them at last call.",
+        "Tip-out chains to bar-backs and runners get hand-calculated nightly with disputes every shift.",
+        "Age verification logs are paper-based, useless for compliance audits.",
+        "Late-night close-out takes 45 minutes because reconciliation is manual.",
+      ],
+    },
+    outcomes: {
+      title: "What bar operators get on KasseApp.",
+      description: "Real outcomes from bars running on Reyna Pay's platform.",
+      stats: [
+        { value: "Auto-close", label: "Open tabs at configurable closing time" },
+        { value: "0", label: "Stuck or lost tabs at last call" },
+        { value: "Tracked", label: "Age verification logs for compliance" },
+        { value: "<10 min", label: "End-of-night reconciliation" },
+      ],
     },
     whyUs: {
-      title: "Bars aren't restaurants. The POS shouldn't pretend they are.",
+      title: "Pre-authorized tabs, real tip-out tracking, late-night ready.",
       description:
-        "Pre-authorized open tabs, drink-by-drink ordering, batch close-out at end of night, mandatory ID verification logs, bars have specific needs. KasseApp handles them natively.",
+        "Bar workflows have specifics most processors miss. Pre-authorize the card, run drinks all night against the open tab, batch close at last call. Tip pools by shift. Configurable age verification. Late-night reconciliation that closes itself.",
     },
     features: [
-      {
-        title: "Open tab management",
-        description:
-          "Pre-authorize a card, run drinks against the tab all night, close out cleanly at last call. Auto-close on closing time prevents stuck open tabs.",
-      },
-      {
-        title: "Tip pool by shift",
-        description:
-          "Bartender tip pools, server tip outs to bar-backs and runners. Configure once, distributes automatically at shift close.",
-      },
-      {
-        title: "Age verification logs",
-        description:
-          "Optional ID-check capture and log for compliance. Age-restricted items can require ID re-verification after a configurable interval.",
-      },
-      {
-        title: "Late-night reconciliation",
-        description:
-          "End-of-night reports for cash handling, card batches, tip distribution. Owner sees the whole night's math in one view.",
-      },
+      { title: "Open tab management with auto-close", description: "Pre-authorize a card, run drinks against the tab all night, close out cleanly at last call. Auto-close on closing time prevents stuck open tabs and lost revenue." },
+      { title: "Tip pool by shift, by role", description: "Bartender tip pools, server tip outs to bar-backs and runners. Configure once, distributes automatically at shift close. Custom percentages per role." },
+      { title: "Age verification logs", description: "Optional ID-check capture and timestamped log for compliance. Age-restricted items can require ID re-verification after a configurable interval." },
+      { title: "Late-night reconciliation built for the close", description: "End-of-night reports for cash handling, card batches, tip distribution. Owner sees the whole night's math in one view, closing manager goes home." },
     ],
+    useCases: [
+      { title: "Neighborhood bar", description: "Open-tab regulars, walk-in volume, tip-driven culture. Card-on-file for repeat customers means sub-15-second checkout." },
+      { title: "Cocktail bar with tab control", description: "Pre-authorized tabs at $50, $100, $200 thresholds. Auto-bump at threshold. Auto-close at last call." },
+      { title: "Sports bar with food service", description: "Bar tabs plus food service combined. Tip pools handled separately for bar staff vs. servers if your model requires it." },
+      { title: "Nightclub with bottle service", description: "High-ticket bottle service tabs with deposit pre-authorization. VIP host commission attribution. Cash-and-card hybrid handling." },
+      { title: "Multi-bar group", description: "Two or more bars under one ownership. Separate MIDs per location for clean accounting. Roll-up reporting at the group level." },
+      { title: "Live music venue", description: "Cover charge collection, drink tabs, age verification. Event-based reporting for show-night P&L." },
+    ],
+    testimonial: {
+      quote: "We had 8-12 stuck open tabs every weekend night that we'd manually try to chase. Now they auto-close. That's $500-$800 a week we used to write off, recovered.",
+      name: "Bar Owner",
+      role: "Owner",
+      company: "Neighborhood bar",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "How do open tabs work?",
-        answer:
-          "Bartender pre-authorizes the customer's card (a small hold). Drinks ring to the open tab through the night. At last call, the tab closes and the final amount is captured against the pre-auth.",
-      },
-      {
-        question: "Can I split a tab between multiple cards?",
-        answer:
-          "Yes. Tabs split by amount, by item, by percentage, or even by individual drink. The bartender chooses how to allocate at close.",
-      },
-      {
-        question: "What about happy hour pricing?",
-        answer:
-          "Time-based menu pricing supported. Happy hour rules trigger automatically during the configured window.",
-      },
+      { question: "How do open tabs work?", answer: "Bartender pre-authorizes the customer's card with a small hold. Drinks ring to the open tab through the night. At last call, the tab closes and the final amount is captured against the pre-auth." },
+      { question: "Can I split a tab between multiple cards?", answer: "Yes. Tabs split by amount, by item, by percentage, or even by individual drink. The bartender chooses how to allocate at close." },
+      { question: "What about happy hour pricing?", answer: "Time-based menu pricing supported. Happy hour rules trigger automatically during the configured window without manual intervention." },
+      { question: "Do you support cash transactions alongside card tabs?", answer: "Yes. Cash transactions log alongside card transactions. End-of-night reports separate cash and card revenue for clean reconciliation." },
+      { question: "What if a customer walks out on an open tab?", answer: "The pre-authorized hold captures at the tab amount when the auto-close time hits. If the customer disputes, our chargeback evidence pack auto-compiles the bar's tab record, the items consumed, and the timestamp." },
+      { question: "Can my bartenders see their own tip totals?", answer: "Yes. Each bartender gets their own login showing their tips, sales, and shift earnings in real time." },
     ],
     relatedSolutions: ["tip-pools", "card-on-file", "interchange-plus-pricing"],
     relatedIndustries: ["restaurants", "coffee-shops", "food-trucks"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "bar payment processing",
-      "bar POS",
-      "nightclub credit card processor",
-      "bar tab POS",
-    ],
+    seoKeywords: ["bar payment processing", "bar POS", "nightclub credit card processor", "bar tab POS", "bar open tab software", "bar tip pool management", "bar merchant services", "best POS for bars"],
   },
 
   "coffee-shops": {
     icon: Coffee,
     hero: {
-      headline: "Payment processing for coffee shops.",
+      headline: "Sub-10-second checkout. Loyalty programs. Mobile ordering. Built for the morning rush.",
       subheadline:
-        "Quick-service flow, mobile ordering, loyalty programs, fast checkout. Reyna Pay's KasseApp handles coffee shop volume the way it actually flows, fast.",
+        "Coffee shops live or die on speed. Reyna Pay's KasseApp handles 200+ transactions during a 90-minute morning rush without choking, with card-on-file, mobile ordering, and built-in loyalty programs as table stakes.",
+    },
+    problem: {
+      title: "If your POS slows down during the morning rush, you're losing customers.",
+      body: "Coffee is high-volume, low-ticket. Speed matters more than almost anything else. The wrong POS adds friction at the worst possible moment, the customer who's late for work isn't going to wait 30 seconds for your terminal to process their order.",
+      bullets: [
+        "Each extra 5 seconds of checkout time means 12+ fewer customers served per morning rush.",
+        "Loyalty programs require a third-party app, more friction, less adoption.",
+        "Mobile ordering integrations are clunky or non-existent on generic POS.",
+        "Multi-location reporting requires manual exports and spreadsheets.",
+      ],
+    },
+    outcomes: {
+      title: "What changes when speed is the design priority.",
+      description: "Real numbers from coffee shops running on KasseApp.",
+      stats: [
+        { value: "8-10 sec", label: "Card-on-file regular checkout time" },
+        { value: "+15%", label: "Average tip increase from frictionless prompts" },
+        { value: "Built-in", label: "Loyalty programs, no third-party app" },
+        { value: "Real-time", label: "Multi-location dashboard with separate MIDs" },
+      ],
     },
     whyUs: {
       title: "Coffee is high-volume, low-ticket. Speed matters.",
       description:
-        "A coffee shop processor needs to handle 200+ transactions during a 90-minute morning rush without choking. Card-on-file, mobile ordering, and loyalty programs are table stakes. KasseApp handles all three.",
+        "A coffee shop processor needs to handle 200+ transactions during a 90-minute morning rush without choking. Card-on-file, mobile ordering, and loyalty programs are table stakes. KasseApp handles all three natively.",
     },
     features: [
-      {
-        title: "Sub-10-second checkout",
-        description:
-          "Optimized terminal flow for the morning rush. Card-on-file regulars check out in seconds. New customers in under 15 seconds including receipt.",
-      },
-      {
-        title: "Loyalty programs",
-        description:
-          "Buy 9 coffees, get the 10th free. Or points-based programs. Built-in, no third-party app needed.",
-      },
-      {
-        title: "Mobile ordering integration",
-        description:
-          "Customers order ahead through your branded mobile app. Order routes to your espresso bar. Customer gets a notification when ready.",
-      },
-      {
-        title: "Multi-location reporting",
-        description:
-          "Three coffee shops? See all three in one dashboard, with separate MIDs per location. Compare avg ticket and morning rush volume across stores.",
-      },
+      { title: "Sub-10-second checkout for regulars", description: "Optimized terminal flow for the morning rush. Card-on-file regulars check out in seconds. New customers in under 15 seconds including receipt." },
+      { title: "Built-in loyalty programs", description: "Buy 9 coffees, get the 10th free. Or points-based programs. Or member-only pricing. Built-in, no third-party app needed, no extra customer friction." },
+      { title: "Mobile ordering integration", description: "Customers order ahead through your branded mobile app. Order routes to your espresso bar. Customer gets a notification when ready. Fewer line builds, more revenue per shift." },
+      { title: "Multi-location reporting", description: "Three coffee shops? See all three in one dashboard, with separate MIDs per location. Compare avg ticket, morning rush volume, and loyalty redemption across stores." },
     ],
+    useCases: [
+      { title: "Single-location specialty coffee", description: "Walk-in volume, tip-driven culture, loyalty program. Card-on-file for regulars eliminates the morning rush bottleneck." },
+      { title: "Multi-location coffee group", description: "Three to fifty coffee shops under one brand. Separate MIDs per location. Multi-location loyalty cards. Roll-up reporting." },
+      { title: "Coffee shop with food", description: "Pastries, sandwiches, hot food. Modifier support for milk types, dietary needs, sizes. Real food-service inventory tracking." },
+      { title: "Drive-through coffee", description: "Optimized for the drive-through line speed. Mobile ordering integrates with curbside pickup workflow." },
+      { title: "Coffee subscription service", description: "Monthly subscription billing for whole bean delivery. Recurring billing with retry logic on declines." },
+      { title: "Coffee shop with retail products", description: "Selling beans, mugs, gear retail? Track inventory, attribute commission to baristas selling product, report retail margin separately." },
+    ],
+    testimonial: {
+      quote: "We went from 60-second average checkout to 12 seconds for regulars. That's an extra 35-40 customers served every morning rush. Pure revenue.",
+      name: "Coffee Shop Owner",
+      role: "Owner",
+      company: "Specialty coffee shop",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "How fast is checkout during a morning rush?",
-        answer:
-          "Card-on-file regulars check out in 8-10 seconds. New customers in 12-15 seconds including receipt. KasseApp's flow is optimized specifically for high-throughput coffee.",
-      },
-      {
-        question: "Do you support tip prompts on the customer terminal?",
-        answer:
-          "Yes. Configure tip suggestions ($1, $2, custom), or percent-based prompts. Disable for very small transactions if you prefer.",
-      },
-      {
-        question: "Can I run a loyalty program without a third-party app?",
-        answer:
-          "Yes. Built-in loyalty supports stamp cards, points, and member-only pricing. No third-party SaaS required.",
-      },
+      { question: "How fast is checkout during a morning rush?", answer: "Card-on-file regulars check out in 8-10 seconds. New customers in 12-15 seconds including receipt. KasseApp's flow is optimized specifically for high-throughput coffee." },
+      { question: "Do you support tip prompts on the customer terminal?", answer: "Yes. Configure tip suggestions ($1, $2, custom), or percent-based prompts. Disable for very small transactions if you prefer." },
+      { question: "Can I run a loyalty program without a third-party app?", answer: "Yes. Built-in loyalty supports stamp cards, points, and member-only pricing. No third-party SaaS required, no extra app for customers to download." },
+      { question: "Will mobile ordering work with my existing app?", answer: "We support direct integration if you have a custom mobile app, or our white-label mobile order solution if you don't. Either way, orders route into KasseApp seamlessly." },
+      { question: "How do I track barista sales for tip pools?", answer: "Each barista has their own profile. Sales attribute automatically. Tip pools distribute at shift close per your configured rules (by hours worked, by sales, custom)." },
+      { question: "What about multi-location loyalty?", answer: "Member earns at any location, redeems at any location. All locations share the same loyalty database under your brand." },
     ],
-    relatedSolutions: [
-      "card-on-file",
-      "multi-location-reporting",
-      "pos-integration",
-    ],
+    relatedSolutions: ["card-on-file", "multi-location-reporting", "pos-integration", "recurring-billing"],
     relatedIndustries: ["restaurants", "bars", "food-trucks"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "coffee shop payment processing",
-      "coffee shop POS",
-      "cafe credit card processor",
-    ],
+    seoKeywords: ["coffee shop payment processing", "coffee shop POS", "cafe credit card processor", "coffee shop loyalty program software", "coffee shop merchant services", "coffee shop mobile ordering", "best POS for coffee shops"],
   },
 
   "food-trucks": {
     icon: Truck,
     hero: {
-      headline: "Payment processing for food trucks.",
+      headline: "Mobile-first, offline-capable, fast. Built for food truck reality.",
       subheadline:
-        "Mobile-first, offline-capable, fast checkout. Reyna Pay's KasseApp handles food truck operations including the unique connectivity and event-based realities of mobile food.",
+        "Spotty event WiFi. Multi-truck operations. Cross-jurisdiction tax. Multi-staff rushes. Reyna Pay's KasseApp handles food truck operations including the unique connectivity and event-based realities that break generic POS systems.",
+    },
+    problem: {
+      title: "Food trucks have unique operational realities most POS systems break on.",
+      body: "Spotty connectivity at events. Multiple staff at once during rushes. Multi-truck operations. Cross-jurisdiction tax. Generic POS systems were built for a brick-and-mortar with reliable WiFi, your truck doesn't have that luxury, and your processor shouldn't pretend it does.",
+      bullets: [
+        "Event WiFi drops mid-rush, you lose 20-30 transactions before connection comes back.",
+        "Multiple trucks operating different events make consolidated reporting impossible.",
+        "Cross-jurisdiction operations (city, county, state borders) make tax handling a manual nightmare.",
+        "Multiple staff at peak rushes need fast, separate logins, generic POS can't keep up.",
+      ],
+    },
+    outcomes: {
+      title: "What food truck operators get on KasseApp.",
+      description: "Real outcomes from food trucks running on Reyna Pay's platform.",
+      stats: [
+        { value: "Offline", label: "Capable, transactions queue for sync" },
+        { value: "0", label: "Lost sales from connectivity drops" },
+        { value: "Per-truck", label: "Reporting with roll-up across operations" },
+        { value: "Auto", label: "Tax rate switching by location" },
+      ],
     },
     whyUs: {
-      title: "Food trucks have unique operational realities.",
+      title: "Food trucks have specific operational needs. We handle them.",
       description:
-        "Spotty connectivity at events. Multiple staff at once during rushes. Multi-truck operations. Tax considerations for cross-jurisdiction operations. KasseApp handles them.",
+        "Spotty connectivity, event-based revenue, cross-jurisdiction tax, multi-truck operations, all real challenges that break generic POS systems. KasseApp was designed for mobile food from day one, with offline capability and per-location tax handling built in.",
     },
     features: [
-      {
-        title: "Offline capability",
-        description:
-          "Connection drops? Transactions queue locally and sync when connectivity returns. No lost sales because of bad event WiFi.",
-      },
-      {
-        title: "Multi-truck reporting",
-        description:
-          "Run two or three trucks? See each truck's revenue separately and rolled up. Compare event performance across trucks.",
-      },
-      {
-        title: "Sub-10-second checkout",
-        description:
-          "Lines move fast. Optimized for one-handed operation while service workers prep food.",
-      },
-      {
-        title: "Cross-jurisdiction tax handling",
-        description:
-          "Operating across city or state lines? Configure tax rates per location. KasseApp applies the correct rate based on where the truck is parked that day.",
-      },
+      { title: "Offline capability that just works", description: "Connection drops? Transactions queue locally and sync automatically when connectivity returns. No lost sales because of bad event WiFi, no awkward conversations with hungry customers." },
+      { title: "Multi-truck reporting", description: "Run two or three trucks? See each truck's revenue separately and rolled up at the group level. Compare event performance across trucks. Identify which events are profitable per truck." },
+      { title: "Sub-10-second checkout", description: "Lines move fast, and your POS needs to keep up. Optimized for one-handed operation while service workers prep food. Tap-to-pay native, signature only when required." },
+      { title: "Cross-jurisdiction tax handling", description: "Operating across city or state lines? Configure tax rates per location. KasseApp applies the correct rate based on where the truck is parked that day, automatically." },
     ],
+    useCases: [
+      { title: "Single food truck", description: "One truck, multiple weekly events. Offline capability for events with spotty WiFi. Tax rate switching per event location." },
+      { title: "Multi-truck operation", description: "Two to ten trucks. Separate revenue tracking per truck. Roll-up reporting at the operation level. Compare truck performance." },
+      { title: "Food truck plus catering", description: "Truck operations plus pre-paid catering bookings. Catering deposits captured at booking, balance at delivery." },
+      { title: "Festival and event circuit", description: "Different events with different tax rates, different commission splits with venues. Each event configured independently." },
+      { title: "Food truck with brick-and-mortar", description: "Truck plus storefront under one brand. Combined reporting. Inventory tracking across both operations." },
+      { title: "Ghost kitchen plus food truck", description: "Delivery-only kitchen plus mobile truck operation. Each operation tracked separately, combined for total revenue reporting." },
+    ],
+    testimonial: {
+      quote: "We lost a $1,800 night because the venue WiFi dropped during the rush and our old POS couldn't process anything. Reyna Pay's offline mode means that doesn't happen anymore.",
+      name: "Food Truck Owner",
+      role: "Owner",
+      company: "Multi-truck operation",
+      isPlaceholder: true,
+    },
     faqs: [
-      {
-        question: "What happens when connectivity drops at an event?",
-        answer:
-          "Transactions process locally and queue for sync. When connectivity returns, queued transactions submit. Customers see no difference; you don't lose a sale.",
-      },
-      {
-        question: "How do I switch between event tax rates?",
-        answer:
-          "Configure each event location with its tax rate. When you arrive, switch the truck to that location and the right tax applies automatically.",
-      },
-      {
-        question: "Will the platform work on a tablet over cellular?",
-        answer:
-          "Yes. KasseApp is optimized for tablets on cellular. The offline capability handles intermittent connectivity gracefully.",
-      },
+      { question: "What happens when connectivity drops at an event?", answer: "Transactions process locally and queue for sync. When connectivity returns, queued transactions submit automatically. Customers see no difference, you don't lose a sale." },
+      { question: "How do I switch between event tax rates?", answer: "Configure each event location with its tax rate. When you arrive, switch the truck to that location and the right tax applies automatically to every subsequent transaction." },
+      { question: "Will the platform work on a tablet over cellular?", answer: "Yes. KasseApp is optimized for tablets running on cellular hotspots. The offline capability handles intermittent connectivity gracefully." },
+      { question: "Can multiple staff use the same truck POS during a rush?", answer: "Yes. Each staff member has their own login on shared hardware. Sales attribute correctly per staffer. Tip pools handle the math." },
+      { question: "What about catering deposits?", answer: "Catering bookings can capture a deposit pre-payment via card-on-file. Balance auto-charges at event time or completion per your policy." },
+      { question: "How do I track which events are profitable?", answer: "Per-event reporting shows revenue, hours, staff cost, and net margin per event. Identify your high-ROI venues and your money-losers." },
     ],
-    relatedSolutions: [
-      "card-on-file",
-      "interchange-plus-pricing",
-      "pos-integration",
-    ],
+    relatedSolutions: ["card-on-file", "interchange-plus-pricing", "pos-integration", "multi-location-reporting"],
     relatedIndustries: ["restaurants", "bars", "coffee-shops"],
     relatedBlogPosts: [],
-    seoKeywords: [
-      "food truck payment processing",
-      "food truck POS",
-      "mobile food credit card processor",
-    ],
+    seoKeywords: ["food truck payment processing", "food truck POS", "mobile food credit card processor", "food truck offline POS", "food truck merchant services", "food truck multi location reporting", "best POS for food trucks"],
   },
 
   "gyms-and-fitness": {
